@@ -61,12 +61,12 @@
     }).call(this, r(60))
 }, function(t, e, r) {
     var n = r(0),
-        i = r(96).f,
+        i = r(95).f,
         a = r(71),
         o = r(27),
-        s = r(99),
+        s = r(98),
         l = r(273),
-        h = r(106);
+        h = r(105);
     t.exports = function(t, e) {
         var r, c, u, f, p, d = t.target,
             m = t.global,
@@ -110,7 +110,7 @@
     var n = r(0),
         i = r(149),
         a = r(17),
-        o = r(100),
+        o = r(99),
         s = r(148),
         l = r(147),
         h = i("wks"),
@@ -126,7 +126,7 @@
     }
 }, function(t, e, r) {
     var n = r(0),
-        i = r(97),
+        i = r(96),
         a = n.Object;
     t.exports = function(t) {
         return a(i(t))
@@ -154,6 +154,15 @@
 }, function(t, e) {
     var r = Array.isArray;
     t.exports = r
+}, function(t, e, r) {
+    var n = r(0),
+        i = r(13),
+        a = n.String,
+        o = n.TypeError;
+    t.exports = function(t) {
+        if (i(t)) return t;
+        throw o(a(t) + " is not an object")
+    }
 }, function(t, e, r) {
     "use strict";
     var n = {},
@@ -210,7 +219,7 @@
     };
     var x, S = "resize.webflow orientationchange.webflow load.webflow";
 
-    function A(t, e) {
+    function T(t, e) {
         var r = [],
             n = {};
         return n.up = u.throttle(function(t) {
@@ -226,31 +235,22 @@
         }, n
     }
 
-    function T(t) {
+    function A(t) {
         c(t) && t()
     }
 
     function I() {
         x && (x.reject(), l.off("load", x.resolve)), x = new s.Deferred, l.on("load", x.resolve)
     }
-    n.resize = A(l, S), n.scroll = A(l, "scroll.webflow resize.webflow orientationchange.webflow load.webflow"), n.redraw = A(), n.location = function(t) {
+    n.resize = T(l, S), n.scroll = T(l, "scroll.webflow resize.webflow orientationchange.webflow load.webflow"), n.redraw = T(), n.location = function(t) {
         window.location = t
     }, n.env() && (n.location = function() {}), n.ready = function() {
-        p = !0, d ? (d = !1, u.each(i, m)) : u.each(a, T), u.each(o, T), n.resize.up()
+        p = !0, d ? (d = !1, u.each(i, m)) : u.each(a, A), u.each(o, A), n.resize.up()
     }, n.load = function(t) {
         x.then(t)
     }, n.destroy = function(t) {
         t = t || {}, d = !0, l.triggerHandler("__wf_destroy"), null != t.domready && (p = t.domready), u.each(i, v), n.resize.off(), n.scroll.off(), n.redraw.off(), a = [], o = [], "pending" === x.state() && I()
     }, s(n.ready), I(), t.exports = window.Webflow = n
-}, function(t, e, r) {
-    var n = r(0),
-        i = r(13),
-        a = n.String,
-        o = n.TypeError;
-    t.exports = function(t) {
-        if (i(t)) return t;
-        throw o(a(t) + " is not an object")
-    }
 }, function(t, e, r) {
     var n = r(5);
     t.exports = function(t) {
@@ -330,7 +330,7 @@
     var n = r(0),
         i = r(20),
         a = r(150),
-        o = r(12),
+        o = r(11),
         s = r(68),
         l = n.TypeError,
         h = Object.defineProperty;
@@ -380,7 +380,7 @@
     }
 }, function(t, e, r) {
     var n = r(40),
-        i = r(97);
+        i = r(96);
     t.exports = function(t) {
         return n(i(t))
     }
@@ -401,16 +401,16 @@
                 f = 7 == t,
                 p = 5 == t || u;
             return function(d, m, v, y) {
-                for (var g, E, b = o(d), _ = a(b), x = n(m, v), S = s(_), A = 0, T = y || l, I = e ? T(d, S) : r || f ? T(d, 0) : void 0; S > A; A++)
-                    if ((p || A in _) && (E = x(g = _[A], A, b), t))
-                        if (e) I[A] = E;
+                for (var g, E, b = o(d), _ = a(b), x = n(m, v), S = s(_), T = 0, A = y || l, I = e ? A(d, S) : r || f ? A(d, 0) : void 0; S > T; T++)
+                    if ((p || T in _) && (E = x(g = _[T], T, b), t))
+                        if (e) I[T] = E;
                         else if (E) switch (t) {
                     case 3:
                         return !0;
                     case 5:
                         return g;
                     case 6:
-                        return A;
+                        return T;
                     case 2:
                         h(I, g)
                 } else switch (t) {
@@ -448,7 +448,7 @@
         i = r(5),
         a = r(17),
         o = r(71),
-        s = r(99),
+        s = r(98),
         l = r(72),
         h = r(41),
         c = r(151).CONFIGURABLE,
@@ -467,7 +467,7 @@
 }, function(t, e, r) {
     var n = r(197),
         i = r(251),
-        a = r(94),
+        a = r(93),
         o = r(10),
         s = r(260);
     t.exports = function(t) {
@@ -514,13 +514,13 @@
         return "Array" == n(t)
     }
 }, function(t, e, r) {
-    var n, i = r(12),
+    var n, i = r(11),
         a = r(281),
-        o = r(105),
+        o = r(104),
         s = r(73),
         l = r(156),
-        h = r(101),
-        c = r(102),
+        h = r(100),
+        c = r(101),
         u = c("IE_PROTO"),
         f = function() {},
         p = function(t) {
@@ -565,7 +565,7 @@
     }
 }, function(t, e, r) {
     var n = r(129),
-        i = r(87);
+        i = r(86);
     t.exports = function(t) {
         return null != t && i(t.length) && !n(t)
     }
@@ -589,7 +589,7 @@
         c = r(71),
         u = r(17),
         f = r(70),
-        p = r(102),
+        p = r(101),
         d = r(73),
         m = s.TypeError,
         v = s.WeakMap;
@@ -799,7 +799,7 @@
     } : function(t) {
         return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t
     };
-    e.clone = l, e.addLast = u, e.addFirst = f, e.removeLast = p, e.removeFirst = d, e.insert = m, e.removeAt = v, e.replaceAt = y, e.getIn = g, e.set = E, e.setIn = b, e.update = _, e.updateIn = x, e.merge = S, e.mergeDeep = A, e.mergeIn = T, e.omit = I, e.addDefaults = w;
+    e.clone = l, e.addLast = u, e.addFirst = f, e.removeLast = p, e.removeFirst = d, e.insert = m, e.removeAt = v, e.replaceAt = y, e.getIn = g, e.set = E, e.setIn = b, e.update = _, e.updateIn = x, e.merge = S, e.mergeDeep = T, e.mergeIn = A, e.omit = I, e.addDefaults = P;
     /*!
      * Timm
      *
@@ -924,12 +924,12 @@
         return s.length ? h.call.apply(h, [null, !1, !1, t, e, r, n, i, a].concat(s)) : h(!1, !1, t, e, r, n, i, a)
     }
 
-    function A(t, e, r, n, i, a) {
+    function T(t, e, r, n, i, a) {
         for (var o = arguments.length, s = Array(o > 6 ? o - 6 : 0), l = 6; l < o; l++) s[l - 6] = arguments[l];
         return s.length ? h.call.apply(h, [null, !1, !0, t, e, r, n, i, a].concat(s)) : h(!1, !0, t, e, r, n, i, a)
     }
 
-    function T(t, e, r, n, i, a, o) {
+    function A(t, e, r, n, i, a, o) {
         var s = g(t, e);
         null == s && (s = {});
         for (var l = arguments.length, c = Array(l > 7 ? l - 7 : 0), u = 7; u < l; u++) c[u - 7] = arguments[u];
@@ -950,11 +950,11 @@
         return a
     }
 
-    function w(t, e, r, n, i, a) {
+    function P(t, e, r, n, i, a) {
         for (var o = arguments.length, s = Array(o > 6 ? o - 6 : 0), l = 6; l < o; l++) s[l - 6] = arguments[l];
         return s.length ? h.call.apply(h, [null, !0, !1, t, e, r, n, i, a].concat(s)) : h(!0, !1, t, e, r, n, i, a)
     }
-    var P = {
+    var w = {
         clone: l,
         addLast: u,
         addFirst: f,
@@ -969,12 +969,12 @@
         update: _,
         updateIn: x,
         merge: S,
-        mergeDeep: A,
-        mergeIn: T,
+        mergeDeep: T,
+        mergeIn: A,
         omit: I,
-        addDefaults: w
+        addDefaults: P
     };
-    e.default = P
+    e.default = w
 }, function(t, e, r) {
     var n = r(199),
         i = r(200),
@@ -992,7 +992,7 @@
     }
     l.prototype.clear = n, l.prototype.delete = i, l.prototype.get = a, l.prototype.has = o, l.prototype.set = s, t.exports = l
 }, function(t, e, r) {
-    var n = r(80);
+    var n = r(79);
     t.exports = function(t, e) {
         for (var r = t.length; r--;)
             if (n(t[r][0], e)) return r;
@@ -1020,7 +1020,7 @@
     }
 }, function(t, e, r) {
     var n = r(137),
-        i = r(88),
+        i = r(87),
         a = r(39);
     t.exports = function(t) {
         return a(t) ? n(t) : i(t)
@@ -1039,7 +1039,7 @@
     t.exports = l
 }, function(t, e, r) {
     var n = r(10),
-        i = r(93),
+        i = r(92),
         a = r(252),
         o = r(255);
     t.exports = function(t, e) {
@@ -1079,7 +1079,7 @@
     }
 }, function(t, e, r) {
     var n = r(0),
-        i = r(99),
+        i = r(98),
         a = n["__core-js_shared__"] || i("__core-js_shared__", {});
     t.exports = a
 }, function(t, e, r) {
@@ -1103,7 +1103,7 @@
     t.exports = {}
 }, function(t, e, r) {
     var n = r(0),
-        i = r(107),
+        i = r(106),
         a = r(5),
         o = r(49),
         s = r(6)("toStringTag"),
@@ -1123,7 +1123,7 @@
     var n = r(0),
         i = r(15),
         a = r(21),
-        o = r(12),
+        o = r(11),
         s = r(69),
         l = r(76),
         h = n.TypeError;
@@ -1153,31 +1153,6 @@
 }, function(t, e, r) {
     var n = r(2);
     t.exports = n([].slice)
-}, function(t, e, r) {
-    "use strict";
-    var n = r(366);
-
-    function i(t, e) {
-        var r = document.createEvent("CustomEvent");
-        r.initCustomEvent(e, !0, !0, null), t.dispatchEvent(r)
-    }
-    var a = window.jQuery,
-        o = {},
-        s = {
-            reset: function(t, e) {
-                n.triggers.reset(t, e)
-            },
-            intro: function(t, e) {
-                n.triggers.intro(t, e), i(e, "COMPONENT_ACTIVE")
-            },
-            outro: function(t, e) {
-                n.triggers.outro(t, e), i(e, "COMPONENT_INACTIVE")
-            }
-        };
-    o.triggers = {}, o.types = {
-        INTRO: "w-ix-intro.w-ix",
-        OUTRO: "w-ix-outro.w-ix"
-    }, a.extend(o.triggers, s), t.exports = o
 }, function(t, e) {
     t.exports = function(t, e) {
         return t === e || t != t && e != e
@@ -1236,7 +1211,7 @@
         return "number" == typeof t && t > -1 && t % 1 == 0 && t <= r
     }
 }, function(t, e, r) {
-    var n = r(89),
+    var n = r(88),
         i = r(246),
         a = Object.prototype.hasOwnProperty;
     t.exports = function(t) {
@@ -1253,7 +1228,7 @@
     }
 }, function(t, e, r) {
     var n = r(247),
-        i = r(81),
+        i = r(80),
         a = r(248),
         o = r(249),
         s = r(140),
@@ -1284,7 +1259,7 @@
         return e
     }), t.exports = m
 }, function(t, e, r) {
-    var n = r(92);
+    var n = r(91);
     t.exports = function(t, e, r) {
         var i = null == t ? void 0 : n(t, e);
         return void 0 === i ? r : i
@@ -1389,14 +1364,14 @@
     }
 }, function(t, e, r) {
     var n = r(149),
-        i = r(100),
+        i = r(99),
         a = n("keys");
     t.exports = function(t) {
         return a[t] || (a[t] = i(t))
     }
 }, function(t, e, r) {
     var n = r(152),
-        i = r(105).concat("length", "prototype");
+        i = r(104).concat("length", "prototype");
     e.f = Object.getOwnPropertyNames || function(t) {
         return n(t, i)
     }
@@ -1488,8 +1463,8 @@
         o = r(151),
         s = r(5),
         l = r(298),
-        h = r(110),
-        c = r(111),
+        h = r(109),
+        c = r(110),
         u = r(77),
         f = r(71),
         p = r(27),
@@ -1506,7 +1481,7 @@
         };
     t.exports = function(t, e, r, o, d, v, S) {
         l(r, e, o);
-        var A, T, I, w = function(t) {
+        var T, A, I, P = function(t) {
                 if (t === d && O) return O;
                 if (!b && t in D) return D[t];
                 switch (t) {
@@ -1521,36 +1496,36 @@
                     return new r(this)
                 }
             },
-            P = e + " Iterator",
+            w = e + " Iterator",
             C = !1,
             D = t.prototype,
             M = D[_] || D["@@iterator"] || d && D[d],
-            O = !b && M || w(d),
+            O = !b && M || P(d),
             k = "Array" == e && D.entries || M;
-        if (k && (A = h(k.call(new t))) !== Object.prototype && A.next && (a || h(A) === E || (c ? c(A, E) : s(A[_]) || p(A, _, x)), u(A, P, !0, !0), a && (m[P] = x)), y && "values" == d && M && "values" !== M.name && (!a && g ? f(D, "name", "values") : (C = !0, O = function() {
+        if (k && (T = h(k.call(new t))) !== Object.prototype && T.next && (a || h(T) === E || (c ? c(T, E) : s(T[_]) || p(T, _, x)), u(T, w, !0, !0), a && (m[w] = x)), y && "values" == d && M && "values" !== M.name && (!a && g ? f(D, "name", "values") : (C = !0, O = function() {
                 return i(M, this)
             })), d)
-            if (T = {
-                    values: w("values"),
-                    keys: v ? O : w("keys"),
-                    entries: w("entries")
+            if (A = {
+                    values: P("values"),
+                    keys: v ? O : P("keys"),
+                    entries: P("entries")
                 }, S)
-                for (I in T) !b && !C && I in D || p(D, I, T[I]);
+                for (I in A) !b && !C && I in D || p(D, I, A[I]);
             else n({
                 target: e,
                 proto: !0,
                 forced: b || C
-            }, T);
+            }, A);
         return a && !S || D[_] === O || p(D, _, O, {
             name: d
-        }), m[e] = O, T
+        }), m[e] = O, A
     }
 }, function(t, e, r) {
     var n = r(0),
         i = r(17),
         a = r(5),
         o = r(7),
-        s = r(102),
+        s = r(101),
         l = r(299),
         h = s("IE_PROTO"),
         c = n.Object,
@@ -1563,7 +1538,7 @@
     }
 }, function(t, e, r) {
     var n = r(2),
-        i = r(12),
+        i = r(11),
         a = r(300);
     t.exports = Object.setPrototypeOf || ("__proto__" in {} ? function() {
         var t, e = !1,
@@ -1612,11 +1587,11 @@
     var n = r(0),
         i = r(22),
         a = r(15),
-        o = r(12),
+        o = r(11),
         s = r(69),
         l = r(154),
         h = r(4),
-        c = r(98),
+        c = r(97),
         u = r(75),
         f = r(76),
         p = r(153),
@@ -1627,17 +1602,17 @@
         v = m.prototype;
     t.exports = function(t, e, r) {
         var n, y, g, E, b, _, x, S = r && r.that,
-            A = !(!r || !r.AS_ENTRIES),
-            T = !(!r || !r.IS_ITERATOR),
+            T = !(!r || !r.AS_ENTRIES),
+            A = !(!r || !r.IS_ITERATOR),
             I = !(!r || !r.INTERRUPTED),
-            w = i(e, S),
-            P = function(t) {
+            P = i(e, S),
+            w = function(t) {
                 return n && p(n, "normal", t), new m(!0, t)
             },
             C = function(t) {
-                return A ? (o(t), I ? w(t[0], t[1], P) : w(t[0], t[1])) : I ? w(t, P) : w(t)
+                return T ? (o(t), I ? P(t[0], t[1], w) : P(t[0], t[1])) : I ? P(t, w) : P(t)
             };
-        if (T) n = t;
+        if (A) n = t;
         else {
             if (!(y = f(t))) throw d(s(t) + " is not iterable");
             if (l(y)) {
@@ -1659,7 +1634,7 @@
     }
 }, function(t, e, r) {
     var n = r(0),
-        i = r(98),
+        i = r(97),
         a = n.TypeError;
     t.exports = function(t, e) {
         if (i(e, t)) return t;
@@ -1671,6 +1646,31 @@
         for (var i in e) n(t, i, e[i], r);
         return t
     }
+}, function(t, e, r) {
+    "use strict";
+    var n = r(366);
+
+    function i(t, e) {
+        var r = document.createEvent("CustomEvent");
+        r.initCustomEvent(e, !0, !0, null), t.dispatchEvent(r)
+    }
+    var a = window.jQuery,
+        o = {},
+        s = {
+            reset: function(t, e) {
+                n.triggers.reset(t, e)
+            },
+            intro: function(t, e) {
+                n.triggers.intro(t, e), i(e, "COMPONENT_ACTIVE")
+            },
+            outro: function(t, e) {
+                n.triggers.outro(t, e), i(e, "COMPONENT_INACTIVE")
+            }
+        };
+    o.triggers = {}, o.types = {
+        INTRO: "w-ix-intro.w-ix",
+        OUTRO: "w-ix-outro.w-ix"
+    }, a.extend(o.triggers, s), t.exports = o
 }, function(t, e, r) {
     "use strict";
     r.r(e), r.d(e, "ActionTypes", function() {
@@ -1852,15 +1852,15 @@
         _ = s.IX2_INSTANCE_ADDED,
         x = s.IX2_INSTANCE_STARTED,
         S = s.IX2_INSTANCE_REMOVED,
-        A = s.IX2_ELEMENT_STATE_CHANGED,
-        T = s.IX2_ACTION_LIST_PLAYBACK_CHANGED,
+        T = s.IX2_ELEMENT_STATE_CHANGED,
+        A = s.IX2_ACTION_LIST_PLAYBACK_CHANGED,
         I = s.IX2_VIEWPORT_WIDTH_CHANGED,
-        w = s.IX2_MEDIA_QUERIES_DEFINED,
-        P = o.IX2VanillaUtils.reifyState;
+        P = s.IX2_MEDIA_QUERIES_DEFINED,
+        w = o.IX2VanillaUtils.reifyState;
     e.rawDataImported = function(t) {
         return {
             type: l,
-            payload: (0, i.default)({}, P(t))
+            payload: (0, i.default)({}, w(t))
         }
     };
     e.sessionInitialized = function(t) {
@@ -2004,7 +2004,7 @@
     };
     e.elementStateChanged = function(t, e, r, n) {
         return {
-            type: A,
+            type: T,
             payload: {
                 elementId: t,
                 actionTypeId: e,
@@ -2017,7 +2017,7 @@
         var e = t.actionListId,
             r = t.isPlaying;
         return {
-            type: T,
+            type: A,
             payload: {
                 actionListId: e,
                 isPlaying: r
@@ -2037,7 +2037,7 @@
     };
     e.mediaQueriesDefined = function() {
         return {
-            type: w
+            type: P
         }
     }
 }, function(t, e, r) {
@@ -2239,22 +2239,22 @@
             _ = /(em|cm|mm|in|pt|pc|px|%)$/,
             x = /(deg|rad|turn)$/,
             S = "unitless",
-            A = /(all|none) 0s ease 0s/,
-            T = /^(width|height)$/,
+            T = /(all|none) 0s ease 0s/,
+            A = /^(width|height)$/,
             I = " ",
-            w = p.createElement("a"),
-            P = ["Webkit", "Moz", "O", "ms"],
+            P = p.createElement("a"),
+            w = ["Webkit", "Moz", "O", "ms"],
             C = ["-webkit-", "-moz-", "-o-", "-ms-"],
             D = function(t) {
-                if (t in w.style) return {
+                if (t in P.style) return {
                     dom: t,
                     css: t
                 };
                 var e, r, n = "",
                     i = t.split("-");
                 for (e = 0; e < i.length; e++) n += i[e].charAt(0).toUpperCase() + i[e].slice(1);
-                for (e = 0; e < P.length; e++)
-                    if ((r = P[e] + n) in w.style) return {
+                for (e = 0; e < w.length; e++)
+                    if ((r = w[e] + n) in P.style) return {
                         dom: r,
                         css: C[e] + t
                     }
@@ -2268,16 +2268,16 @@
             };
         if (M.transition) {
             var O = M.timing.dom;
-            if (w.style[O] = u["ease-in-back"][0], !w.style[O])
+            if (P.style[O] = u["ease-in-back"][0], !P.style[O])
                 for (var k in f) u[k][0] = f[k]
         }
-        var R = e.frame = function() {
+        var F = e.frame = function() {
                 var t = d.requestAnimationFrame || d.webkitRequestAnimationFrame || d.mozRequestAnimationFrame || d.oRequestAnimationFrame || d.msRequestAnimationFrame;
                 return t && M.bind ? t.bind(d) : function(t) {
                     d.setTimeout(t, 16)
                 }
             }(),
-            F = e.now = function() {
+            R = e.now = function() {
                 var t = d.performance,
                     e = t && (t.now || t.webkitNow || t.msNow || t.mozNow);
                 return e && M.bind ? e.bind(t) : Date.now || function() {
@@ -2342,7 +2342,7 @@
                             var d = this,
                                 m = !1,
                                 v = {};
-                            R(function() {
+                            F(function() {
                                 p.call(d, t, function(t) {
                                     t.active && (m = !0, v[t.name] = t.nextStyle)
                                 }), m && d.$el.css(v)
@@ -2415,7 +2415,7 @@
                 e.init = function(e) {
                     if (this.$el = t(e), this.el = this.$el[0], this.props = {}, this.queue = [], this.style = "", this.active = !1, W.keepInherited && !W.fallback) {
                         var r = q(this.el, "transition");
-                        r && !A.test(r) && (this.upstream = r)
+                        r && !T.test(r) && (this.upstream = r)
                     }
                     M.backface && W.hideBackface && U(this.el, M.backface.css, "hidden")
                 }, E("add", i), E("start", a), E("wait", function(t) {
@@ -2474,7 +2474,7 @@
                     var a = e[0];
                     r[2] && (a = r[2]), Y[a] && (a = Y[a]), this.name = a, this.type = r[1], this.duration = l(e[1], this.duration, i), this.ease = function(t, e, r) {
                         return void 0 !== e && (r = e), t in u ? t : r
-                    }(e[2], this.ease, o), this.delay = l(e[3], this.delay, s), this.span = this.duration + this.delay, this.active = !1, this.nextStyle = null, this.auto = T.test(this.name), this.unit = n.unit || this.unit || W.defaultUnit, this.angle = n.angle || this.angle || W.defaultAngle, W.fallback || n.fallback ? this.animate = this.fallback : (this.animate = this.transition, this.string = this.name + I + this.duration + "ms" + ("ease" != this.ease ? I + u[this.ease][0] : "") + (this.delay ? I + this.delay + "ms" : ""))
+                    }(e[2], this.ease, o), this.delay = l(e[3], this.delay, s), this.span = this.duration + this.delay, this.active = !1, this.nextStyle = null, this.auto = A.test(this.name), this.unit = n.unit || this.unit || W.defaultUnit, this.angle = n.angle || this.angle || W.defaultAngle, W.fallback || n.fallback ? this.animate = this.fallback : (this.animate = this.transition, this.string = this.name + I + this.duration + "ms" + ("ease" != this.ease ? I + u[this.ease][0] : "") + (this.delay ? I + this.delay + "ms" : ""))
                 }, t.set = function(t) {
                     t = this.convert(t, this.type), this.update(t), this.redraw()
                 }, t.transition = function(t) {
@@ -2607,7 +2607,7 @@
                 function r() {
                     var t, e, n, i = l.length;
                     if (i)
-                        for (R(r), e = F(), t = i; t--;)(n = l[t]) && n.render(e)
+                        for (F(r), e = R(), t = i; t--;)(n = l[t]) && n.render(e)
                 }
                 var n = {
                     ease: u.ease[1],
@@ -2620,10 +2620,10 @@
                     u[e] && (e = u[e][1]), "function" != typeof e && (e = n.ease), this.ease = e, this.update = t.update || o, this.complete = t.complete || o, this.context = t.context || this, this.name = t.name;
                     var r = t.from,
                         i = t.to;
-                    void 0 === r && (r = n.from), void 0 === i && (i = n.to), this.unit = t.unit || "", "number" == typeof r && "number" == typeof i ? (this.begin = r, this.change = i - r) : this.format(i, r), this.value = this.begin + this.unit, this.start = F(), !1 !== t.autoplay && this.play()
+                    void 0 === r && (r = n.from), void 0 === i && (i = n.to), this.unit = t.unit || "", "number" == typeof r && "number" == typeof i ? (this.begin = r, this.change = i - r) : this.format(i, r), this.value = this.begin + this.unit, this.start = R(), !1 !== t.autoplay && this.play()
                 }, e.play = function() {
                     var t;
-                    this.active || (this.start || (this.start = F()), this.active = !0, t = this, 1 === l.push(t) && R(r))
+                    this.active || (this.start || (this.start = R()), this.active = !0, t = this, 1 === l.push(t) && F(r))
                 }, e.stop = function() {
                     var e, r, n;
                     this.active && (this.active = !1, e = this, (n = t.inArray(e, l)) >= 0 && (r = l.slice(n + 1), l.length = n, r.length && (l = l.concat(r))))
@@ -2888,7 +2888,7 @@
         return c.delete(t), c.delete(e), y
     }
 }, function(t, e, r) {
-    var n = r(83),
+    var n = r(82),
         i = r(10);
     t.exports = function(t, e, r) {
         var a = e(t);
@@ -2913,9 +2913,9 @@
     var n = r(240),
         i = r(64),
         a = r(10),
-        o = r(84),
-        s = r(85),
-        l = r(86),
+        o = r(83),
+        s = r(84),
+        l = r(85),
         h = Object.prototype.hasOwnProperty;
     t.exports = function(t, e) {
         var r = a(t),
@@ -2984,7 +2984,7 @@
     var n = r(0),
         i = r(16),
         a = r(5),
-        o = r(98),
+        o = r(97),
         s = r(147),
         l = n.Object;
     t.exports = s ? function(t) {
@@ -3016,7 +3016,7 @@
 }, function(t, e, r) {
     var n = r(20),
         i = r(9),
-        a = r(101);
+        a = r(100);
     t.exports = !n && !i(function() {
         return 7 != Object.defineProperty(a("div"), "a", {
             get: function() {
@@ -3041,7 +3041,7 @@
     var n = r(2),
         i = r(17),
         a = r(24),
-        o = r(104).indexOf,
+        o = r(103).indexOf,
         s = r(73),
         l = n([].push);
     t.exports = function(t, e) {
@@ -3054,7 +3054,7 @@
     }
 }, function(t, e, r) {
     var n = r(15),
-        i = r(12),
+        i = r(11),
         a = r(33);
     t.exports = function(t, e, r) {
         var o, s;
@@ -3138,7 +3138,7 @@
 }, function(t, e, r) {
     "use strict";
     var n = r(1),
-        i = r(104).includes,
+        i = r(103).includes,
         a = r(8);
     n({
         target: "Array",
@@ -3153,7 +3153,7 @@
     var n, i, a, o = r(9),
         s = r(5),
         l = r(36),
-        h = r(110),
+        h = r(109),
         c = r(27),
         u = r(6),
         f = r(50),
@@ -3206,9 +3206,9 @@
         o = r(13),
         s = r(17),
         l = r(18).f,
-        h = r(103),
+        h = r(102),
         c = r(326),
-        u = r(100),
+        u = r(99),
         f = r(327),
         p = !1,
         d = u("meta"),
@@ -3269,14 +3269,14 @@
     a[d] = !0
 }, function(t, e, r) {
     var n, i, a, o, s = r(0),
-        l = r(112),
+        l = r(111),
         h = r(22),
         c = r(5),
         u = r(17),
         f = r(9),
         p = r(156),
         d = r(78),
-        m = r(101),
+        m = r(100),
         v = r(164),
         y = r(55),
         g = s.setImmediate,
@@ -3285,46 +3285,46 @@
         _ = s.Dispatch,
         x = s.Function,
         S = s.MessageChannel,
-        A = s.String,
-        T = 0,
+        T = s.String,
+        A = 0,
         I = {};
     try {
         n = s.location
     } catch (t) {}
-    var w = function(t) {
+    var P = function(t) {
             if (u(I, t)) {
                 var e = I[t];
                 delete I[t], e()
             }
         },
-        P = function(t) {
+        w = function(t) {
             return function() {
-                w(t)
+                P(t)
             }
         },
         C = function(t) {
-            w(t.data)
+            P(t.data)
         },
         D = function(t) {
-            s.postMessage(A(t), n.protocol + "//" + n.host)
+            s.postMessage(T(t), n.protocol + "//" + n.host)
         };
     g && E || (g = function(t) {
         var e = d(arguments, 1);
-        return I[++T] = function() {
+        return I[++A] = function() {
             l(c(t) ? t : x(t), void 0, e)
-        }, i(T), T
+        }, i(A), A
     }, E = function(t) {
         delete I[t]
     }, y ? i = function(t) {
-        b.nextTick(P(t))
+        b.nextTick(w(t))
     } : _ && _.now ? i = function(t) {
-        _.now(P(t))
+        _.now(w(t))
     } : S && !v ? (o = (a = new S).port2, a.port1.onmessage = C, i = h(o.postMessage, o)) : s.addEventListener && c(s.postMessage) && !s.importScripts && n && "file:" !== n.protocol && !f(D) ? (i = D, s.addEventListener("message", C, !1)) : i = "onreadystatechange" in m("script") ? function(t) {
         p.appendChild(m("script")).onreadystatechange = function() {
-            p.removeChild(this), w(t)
+            p.removeChild(this), P(t)
         }
     } : function(t) {
-        setTimeout(P(t), 0)
+        setTimeout(w(t), 0)
     }), t.exports = {
         set: g,
         clear: E
@@ -3347,11 +3347,11 @@
     }
 }, function(t, e, r) {
     "use strict";
-    var n = r(112),
-        i = r(12),
+    var n = r(111),
+        i = r(11),
         a = r(36),
         o = r(33),
-        s = r(117),
+        s = r(116),
         l = r(41),
         h = r(16),
         c = r(344),
@@ -3609,6 +3609,7 @@
         STYLE_OPACITY: "STYLE_OPACITY",
         STYLE_SIZE: "STYLE_SIZE",
         STYLE_FILTER: "STYLE_FILTER",
+        STYLE_FONT_VARIATION: "STYLE_FONT_VARIATION",
         STYLE_BACKGROUND_COLOR: "STYLE_BACKGROUND_COLOR",
         STYLE_BORDER: "STYLE_BORDER",
         STYLE_TEXT_COLOR: "STYLE_TEXT_COLOR",
@@ -3947,7 +3948,7 @@
     var o = a(r(46)),
         s = a(r(411)),
         l = a(r(176)),
-        h = a(r(91)),
+        h = a(r(90)),
         c = a(r(412)),
         u = a(r(418)),
         f = a(r(430)),
@@ -3964,18 +3965,18 @@
             return _.includes(t)
         },
         S = v.IX2EngineConstants,
-        A = S.COLON_DELIMITER,
-        T = S.BOUNDARY_SELECTOR,
+        T = S.COLON_DELIMITER,
+        A = S.BOUNDARY_SELECTOR,
         I = S.HTML_ELEMENT,
-        w = S.RENDER_GENERAL,
-        P = S.W_MOD_IX,
+        P = S.RENDER_GENERAL,
+        w = S.W_MOD_IX,
         C = y.IX2VanillaUtils,
         D = C.getAffectedElements,
         M = C.getElementId,
         O = C.getDestinationValues,
         k = C.observeStore,
-        R = C.getInstanceId,
-        F = C.renderHTMLElement,
+        F = C.getInstanceId,
+        R = C.renderHTMLElement,
         L = C.clearAllStyles,
         N = C.getMaxDurationItemIndex,
         V = C.getComputedStyle,
@@ -4083,7 +4084,7 @@
             o = t.testManual,
             s = r.getState().ixSession;
         i && r.dispatch((0, g.rawDataImported)(i)), s.active || (r.dispatch((0, g.sessionInitialized)({
-            hasBoundaryNodes: Boolean(document.querySelector(T)),
+            hasBoundaryNodes: Boolean(document.querySelector(A)),
             reducedMotion: document.body.hasAttribute("data-wf-ix-vacation") && window.matchMedia("(prefers-reduced-motion)").matches
         })), a && (function(t) {
             var e = t.getState().ixData.eventTypeMap;
@@ -4135,7 +4136,7 @@
                                         s = (e.smoothing || 0) / 100,
                                         f = (e.restingState || 0) / 100;
                                     o && t.forEach(function(t, i) {
-                                        var a = c + A + i;
+                                        var a = c + T + i;
                                         ! function(t) {
                                             var e = t.store,
                                                 r = t.eventStateKey,
@@ -4157,7 +4158,7 @@
                                                 _ = l.continuousActionGroups,
                                                 x = l.id;
                                             j(v, o) && (x = z(r, x));
-                                            var S = d.hasBoundaryNodes && i ? E.getClosestElement(i, T) : null;
+                                            var S = d.hasBoundaryNodes && i ? E.getClosestElement(i, A) : null;
                                             _.forEach(function(t) {
                                                 var e = t.keyframe,
                                                     r = t.actionItems;
@@ -4166,7 +4167,7 @@
                                                         a = t.config.target;
                                                     if (a) {
                                                         var o = a.boundaryMode ? S : null,
-                                                            s = W(a) + A + r;
+                                                            s = W(a) + T + r;
                                                         if (g[s] = function() {
                                                                 var t, e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : [],
                                                                     r = arguments.length > 1 ? arguments[1] : void 0,
@@ -4297,7 +4298,7 @@
                     window.addEventListener(r, e), t.dispatch((0, g.eventListenerAdded)(window, [r, e]))
                 }), e()
             }(t)
-        }(r), -1 === (e = document.documentElement).className.indexOf(P) && (e.className += " ".concat(P)), r.getState().ixSession.hasDefinedMediaQueries && function(t) {
+        }(r), -1 === (e = document.documentElement).className.indexOf(w) && (e.className += " ".concat(w)), r.getState().ixSession.hasDefinedMediaQueries && function(t) {
             k({
                 store: t,
                 select: function(t) {
@@ -4364,7 +4365,7 @@
         ft = function(t, e) {
             (0, d.default)(t, function(t, r) {
                 t.forEach(function(t, n) {
-                    e(t, r, r + A + n)
+                    e(t, r, r + T + n)
                 })
             })
         },
@@ -4450,7 +4451,7 @@
             a = t.actionListId,
             o = e.getState(),
             s = o.ixInstances,
-            l = o.ixSession.hasBoundaryNodes && n ? E.getClosestElement(n, T) : null;
+            l = o.ixSession.hasBoundaryNodes && n ? E.getClosestElement(n, A) : null;
         (0, d.default)(s, function(t) {
             var n = (0, h.default)(t, "actionItem.config.target.boundaryMode"),
                 o = !i || t.eventStateKey === i;
@@ -4486,13 +4487,13 @@
         if (!b || !b.length) return !1;
         l >= b.length && (0, h.default)(m, "config.loop") && (l = 0), 0 === l && _ && l++;
         var S = (0 === l || 1 === l && _) && x(null === (e = m.action) || void 0 === e ? void 0 : e.actionTypeId) ? m.config.delay : void 0,
-            A = (0, h.default)(b, [l, "actionItems"], []);
-        if (!A.length) return !1;
+            T = (0, h.default)(b, [l, "actionItems"], []);
+        if (!T.length) return !1;
         if (!H(y, d.mediaQueryKey)) return !1;
-        var I = d.hasBoundaryNodes && i ? E.getClosestElement(i, T) : null,
-            w = N(A),
-            P = !1;
-        return A.forEach(function(t, e) {
+        var I = d.hasBoundaryNodes && i ? E.getClosestElement(i, A) : null,
+            P = N(T),
+            w = !1;
+        return T.forEach(function(t, e) {
             var s = t.config,
                 h = t.actionTypeId,
                 f = K(h),
@@ -4508,8 +4509,8 @@
                 }).forEach(function(s, p) {
                     var d = f ? Q(h)(s, t) : null,
                         m = f ? $(h)(s, t) : null;
-                    P = !0;
-                    var v = w === e && 0 === p,
+                    w = !0;
+                    var v = P === e && 0 === p,
                         y = V({
                             element: s,
                             actionItem: t
@@ -4539,7 +4540,7 @@
                     })
                 })
             }
-        }), P
+        }), w
     }
 
     function gt(t) {
@@ -4554,16 +4555,16 @@
             p = a.restingValue,
             d = a.eventId,
             m = !f,
-            y = R(),
+            y = F(),
             b = n.getState(),
             _ = b.ixElements,
             x = b.ixSession,
             S = b.ixData,
-            A = M(_, l),
-            T = (_[A] || {}).refState,
+            T = M(_, l),
+            A = (_[T] || {}).refState,
             I = E.getRefType(l),
-            w = x.reducedMotion && v.ReducedMotionTypes[h.actionTypeId];
-        if (w && f) switch (null === (e = S.events[d]) || void 0 === e ? void 0 : e.eventTypeId) {
+            P = x.reducedMotion && v.ReducedMotionTypes[h.actionTypeId];
+        if (P && f) switch (null === (e = S.events[d]) || void 0 === e ? void 0 : e.eventTypeId) {
             case v.EventTypeConsts.MOUSE_MOVE:
             case v.EventTypeConsts.MOUSE_MOVE_IN_VIEWPORT:
                 r = p;
@@ -4571,13 +4572,13 @@
             default:
                 r = .5
         }
-        var P = B(l, T, i, h, E, u);
+        var w = B(l, A, i, h, E, u);
         n.dispatch((0, g.instanceAdded)((0, o.default)({
             instanceId: y,
-            elementId: A,
-            origin: P,
+            elementId: T,
+            origin: w,
             refType: I,
-            skipMotion: w,
+            skipMotion: P,
             skipToValue: r
         }, a))), bt(document.body, "ix2-animation-started", y), c ? function(t, e) {
             var r = t.getState().ixParameters;
@@ -4629,19 +4630,19 @@
             _ = e.getState(),
             x = _.ixData,
             S = _.ixSession,
-            A = (x.events[u] || {}).mediaQueries,
-            T = void 0 === A ? x.mediaQueryKeys : A;
-        if (H(T, S.mediaQueryKey) && (n || r || i)) {
-            if (h || l === w && i) {
+            T = (x.events[u] || {}).mediaQueries,
+            A = void 0 === T ? x.mediaQueryKeys : T;
+        if (H(A, S.mediaQueryKey) && (n || r || i)) {
+            if (h || l === P && i) {
                 e.dispatch((0, g.elementStateChanged)(a, s, h, o));
-                var P = e.getState().ixElements[a] || {},
-                    C = P.ref,
-                    D = P.refType,
-                    M = P.refState,
+                var w = e.getState().ixElements[a] || {},
+                    C = w.ref,
+                    D = w.refType,
+                    M = w.refState,
                     O = M && M[s];
                 switch (D) {
                     case I:
-                        F(C, M, O, u, o, v, E, l, b)
+                        R(C, M, O, u, o, v, E, l, b)
                 }
             }
             if (i) {
@@ -4716,10 +4717,10 @@
         return e
     }
 }, function(t, e, r) {
-    r(192), r(361), r(362), r(363), r(364), r(365), r(79), r(367), r(461), r(462), r(463), r(464), r(469), r(470), t.exports = r(471)
+    r(192), r(361), r(362), r(363), r(364), r(365), r(117), r(367), r(461), r(462), r(463), r(464), r(469), t.exports = r(470)
 }, function(t, e, r) {
     "use strict";
-    var n = r(11),
+    var n = r(12),
         i = r(194),
         a = r(360);
     n.define("lottie", t.exports = function() {
@@ -5297,8 +5298,8 @@
     }
 }, function(t, e, r) {
     var n = r(58),
-        i = r(81),
-        a = r(82),
+        i = r(80),
+        a = r(81),
         o = 200;
     t.exports = function(t, e) {
         var r = this.__data__;
@@ -5360,7 +5361,7 @@
 }, function(t, e, r) {
     var n = r(216),
         i = r(58),
-        a = r(81);
+        a = r(80);
     t.exports = function() {
         this.size = 0, this.__data__ = {
             hash: new n,
@@ -5453,10 +5454,10 @@
         i = r(133),
         a = r(233),
         o = r(237),
-        s = r(90),
+        s = r(89),
         l = r(10),
-        h = r(84),
-        c = r(86),
+        h = r(83),
+        c = r(85),
         u = 1,
         f = "[object Arguments]",
         p = "[object Array]",
@@ -5468,26 +5469,26 @@
             _ = E ? p : s(t),
             x = b ? p : s(e),
             S = (_ = _ == f ? d : _) == d,
-            A = (x = x == f ? d : x) == d,
-            T = _ == x;
-        if (T && h(t)) {
+            T = (x = x == f ? d : x) == d,
+            A = _ == x;
+        if (A && h(t)) {
             if (!h(e)) return !1;
             E = !0, S = !1
         }
-        if (T && !S) return g || (g = new n), E || c(t) ? i(t, e, r, v, y, g) : a(t, e, _, r, v, y, g);
+        if (A && !S) return g || (g = new n), E || c(t) ? i(t, e, r, v, y, g) : a(t, e, _, r, v, y, g);
         if (!(r & u)) {
             var I = S && m.call(t, "__wrapped__"),
-                w = A && m.call(e, "__wrapped__");
-            if (I || w) {
-                var P = I ? t.value() : t,
-                    C = w ? e.value() : e;
-                return g || (g = new n), y(P, C, r, v, g)
+                P = T && m.call(e, "__wrapped__");
+            if (I || P) {
+                var w = I ? t.value() : t,
+                    C = P ? e.value() : e;
+                return g || (g = new n), y(w, C, r, v, g)
             }
         }
-        return !!T && (g || (g = new n), o(t, e, r, v, y, g))
+        return !!A && (g || (g = new n), o(t, e, r, v, y, g))
     }
 }, function(t, e, r) {
-    var n = r(82),
+    var n = r(81),
         i = r(229),
         a = r(230);
 
@@ -5519,7 +5520,7 @@
 }, function(t, e, r) {
     var n = r(47),
         i = r(234),
-        a = r(80),
+        a = r(79),
         o = r(133),
         s = r(235),
         l = r(236),
@@ -5538,13 +5539,13 @@
         _ = "[object DataView]",
         x = n ? n.prototype : void 0,
         S = x ? x.valueOf : void 0;
-    t.exports = function(t, e, r, n, x, A, T) {
+    t.exports = function(t, e, r, n, x, T, A) {
         switch (r) {
             case _:
                 if (t.byteLength != e.byteLength || t.byteOffset != e.byteOffset) return !1;
                 t = t.buffer, e = e.buffer;
             case b:
-                return !(t.byteLength != e.byteLength || !A(new i(t), new i(e)));
+                return !(t.byteLength != e.byteLength || !T(new i(t), new i(e)));
             case u:
             case f:
             case m:
@@ -5557,13 +5558,13 @@
             case d:
                 var I = s;
             case y:
-                var w = n & h;
-                if (I || (I = l), t.size != e.size && !w) return !1;
-                var P = T.get(t);
-                if (P) return P == e;
-                n |= c, T.set(t, e);
-                var C = o(I(t), I(e), n, x, A, T);
-                return T.delete(t), C;
+                var P = n & h;
+                if (I || (I = l), t.size != e.size && !P) return !1;
+                var w = A.get(t);
+                if (w) return w == e;
+                n |= c, A.set(t, e);
+                var C = o(I(t), I(e), n, x, T, A);
+                return A.delete(t), C;
             case E:
                 if (S) return S.call(t) == S.call(e)
         }
@@ -5656,7 +5657,7 @@
     }
 }, function(t, e, r) {
     var n = r(38),
-        i = r(87),
+        i = r(86),
         a = r(30),
         o = {};
     o["[object Float32Array]"] = o["[object Float64Array]"] = o["[object Int8Array]"] = o["[object Int16Array]"] = o["[object Int32Array]"] = o["[object Uint8Array]"] = o["[object Uint8ClampedArray]"] = o["[object Uint16Array]"] = o["[object Uint32Array]"] = !0, o["[object Arguments]"] = o["[object Array]"] = o["[object ArrayBuffer]"] = o["[object Boolean]"] = o["[object DataView]"] = o["[object Date]"] = o["[object Error]"] = o["[object Function]"] = o["[object Map]"] = o["[object Number]"] = o["[object Object]"] = o["[object RegExp]"] = o["[object Set]"] = o["[object String]"] = o["[object WeakMap]"] = !1, t.exports = function(t) {
@@ -5707,9 +5708,9 @@
     }
 }, function(t, e, r) {
     var n = r(132),
-        i = r(91),
+        i = r(90),
         a = r(257),
-        o = r(93),
+        o = r(92),
         s = r(141),
         l = r(142),
         h = r(48),
@@ -5743,7 +5744,7 @@
         return e
     }
 }, function(t, e, r) {
-    var n = r(82),
+    var n = r(81),
         i = "Expected a function";
 
     function a(t, e) {
@@ -5793,8 +5794,8 @@
     var n = r(65),
         i = r(64),
         a = r(10),
-        o = r(85),
-        s = r(87),
+        o = r(84),
+        s = r(86),
         l = r(48);
     t.exports = function(t, e, r) {
         for (var h = -1, c = (e = n(e, t)).length, u = !1; ++h < c;) {
@@ -5807,20 +5808,20 @@
 }, function(t, e, r) {
     var n = r(144),
         i = r(261),
-        a = r(93),
+        a = r(92),
         o = r(48);
     t.exports = function(t) {
         return a(t) ? n(o(t)) : i(t)
     }
 }, function(t, e, r) {
-    var n = r(92);
+    var n = r(91);
     t.exports = function(t) {
         return function(e) {
             return n(e, t)
         }
     }
 }, function(t, e, r) {
-    var n = r(95),
+    var n = r(94),
         i = 1 / 0,
         a = 1.7976931348623157e308;
     t.exports = function(t) {
@@ -5854,7 +5855,7 @@
     n({
         target: "Array",
         stat: !0,
-        forced: !r(108)(function(t) {
+        forced: !r(107)(function(t) {
             Array.from(t)
         })
     }, {
@@ -5912,7 +5913,7 @@
 }, function(t, e, r) {
     var n = r(17),
         i = r(274),
-        a = r(96),
+        a = r(95),
         o = r(18);
     t.exports = function(t, e) {
         for (var r = i(e), s = o.f, l = a.f, h = 0; h < r.length; h++) {
@@ -5923,9 +5924,9 @@
 }, function(t, e, r) {
     var n = r(16),
         i = r(2),
-        a = r(103),
+        a = r(102),
         o = r(276),
-        s = r(12),
+        s = r(11),
         l = i([].concat);
     t.exports = n("Reflect", "ownKeys") || function(t) {
         var e = a.f(s(t)),
@@ -5962,15 +5963,15 @@
             v = void 0 !== m;
         v && (m = i(m, n > 2 ? arguments[2] : void 0));
         var y, g, E, b, _, x, S = p(e),
-            A = 0;
+            T = 0;
         if (!S || this == d && l(S))
-            for (y = c(e), g = r ? new this(y) : d(y); y > A; A++) x = v ? m(e[A], A) : e[A], u(g, A, x);
+            for (y = c(e), g = r ? new this(y) : d(y); y > T; T++) x = v ? m(e[T], T) : e[T], u(g, T, x);
         else
-            for (_ = (b = f(e, S)).next, g = r ? new this : []; !(E = a(_, b)).done; A++) x = v ? s(b, m, [E.value, A], !0) : E.value, u(g, A, x);
-        return g.length = A, g
+            for (_ = (b = f(e, S)).next, g = r ? new this : []; !(E = a(_, b)).done; T++) x = v ? s(b, m, [E.value, T], !0) : E.value, u(g, T, x);
+        return g.length = T, g
     }
 }, function(t, e, r) {
-    var n = r(12),
+    var n = r(11),
         i = r(153);
     t.exports = function(t, e, r, a) {
         try {
@@ -6009,7 +6010,7 @@
 }, function(t, e, r) {
     var n = r(20),
         i = r(18),
-        a = r(12),
+        a = r(11),
         o = r(24),
         s = r(282);
     t.exports = n ? Object.defineProperties : function(t, e) {
@@ -6019,7 +6020,7 @@
     }
 }, function(t, e, r) {
     var n = r(152),
-        i = r(105);
+        i = r(104);
     t.exports = Object.keys || function(t) {
         return n(t, i)
     }
@@ -6235,7 +6236,7 @@
     "use strict";
     var n = r(1),
         i = r(2),
-        a = r(104).indexOf,
+        a = r(103).indexOf,
         o = r(26),
         s = i([].indexOf),
         l = !!s && 1 / s([1], 1, -0) < 0,
@@ -6256,7 +6257,7 @@
         i = r(8),
         a = r(52),
         o = r(41),
-        s = r(109),
+        s = r(108),
         l = o.set,
         h = o.getterFor("Array Iterator");
     t.exports = s(Array, "Array", function(t, e) {
@@ -6347,7 +6348,7 @@
     })
 }, function(t, e, r) {
     "use strict";
-    var n = r(112),
+    var n = r(111),
         i = r(24),
         a = r(34),
         o = r(4),
@@ -6481,7 +6482,7 @@
         a = r(21),
         o = r(7),
         s = r(4),
-        l = r(113),
+        l = r(112),
         h = r(9),
         c = r(311),
         u = r(26),
@@ -6582,7 +6583,7 @@
     var n = r(32).match(/AppleWebKit\/(\d+)\./);
     t.exports = !!n && +n[1]
 }, function(t, e, r) {
-    r(114)("Array")
+    r(113)("Array")
 }, function(t, e, r) {
     "use strict";
     var n = r(1),
@@ -6623,7 +6624,7 @@
 }, function(t, e, r) {
     r(8)("flatMap")
 }, function(t, e, r) {
-    var n = r(107),
+    var n = r(106),
         i = r(27),
         a = r(320);
     n || i(Object.prototype, "toString", a, {
@@ -6631,7 +6632,7 @@
     })
 }, function(t, e, r) {
     "use strict";
-    var n = r(107),
+    var n = r(106),
         i = r(74);
     t.exports = n ? {}.toString : function() {
         return "[object " + i(this) + "]"
@@ -6639,9 +6640,9 @@
 }, function(t, e, r) {
     "use strict";
     var n = r(322).charAt,
-        i = r(113),
+        i = r(112),
         a = r(41),
-        o = r(109),
+        o = r(108),
         s = a.set,
         l = a.getterFor("String Iterator");
     o(String, "String", function(t) {
@@ -6665,8 +6666,8 @@
 }, function(t, e, r) {
     var n = r(2),
         i = r(34),
-        a = r(113),
-        o = r(97),
+        a = r(112),
+        o = r(96),
         s = n("".charAt),
         l = n("".charCodeAt),
         h = n("".slice),
@@ -6697,15 +6698,15 @@
     var n = r(1),
         i = r(0),
         a = r(2),
-        o = r(106),
+        o = r(105),
         s = r(27),
         l = r(162),
-        h = r(115),
-        c = r(116),
+        h = r(114),
+        c = r(115),
         u = r(5),
         f = r(13),
         p = r(9),
-        d = r(108),
+        d = r(107),
         m = r(77),
         v = r(328);
     t.exports = function(t, e, r) {
@@ -6716,7 +6717,7 @@
             _ = b && b.prototype,
             x = b,
             S = {},
-            A = function(t) {
+            T = function(t) {
                 var e = a(_[t]);
                 s(_, t, "add" == t ? function(t) {
                     return e(this, 0 === t ? 0 : t), this
@@ -6734,26 +6735,26 @@
                 (new b).entries().next()
             })))) x = r.getConstructor(e, t, y, E), l.enable();
         else if (o(t, !0)) {
-            var T = new x,
-                I = T[E](g ? {} : -0, 1) != T,
-                w = p(function() {
-                    T.has(1)
+            var A = new x,
+                I = A[E](g ? {} : -0, 1) != A,
+                P = p(function() {
+                    A.has(1)
                 }),
-                P = d(function(t) {
+                w = d(function(t) {
                     new b(t)
                 }),
                 C = !g && p(function() {
                     for (var t = new b, e = 5; e--;) t[E](e, e);
                     return !t.has(-0)
                 });
-            P || ((x = e(function(t, e) {
+            w || ((x = e(function(t, e) {
                 c(t, _);
                 var r = v(new b, t, x);
                 return null != e && h(e, r[E], {
                     that: r,
                     AS_ENTRIES: y
                 }), r
-            })).prototype = _, _.constructor = x), (w || C) && (A("delete"), A("has"), y && A("get")), (C || I) && A(E), g && _.clear && delete _.clear
+            })).prototype = _, _.constructor = x), (P || C) && (T("delete"), T("has"), y && T("get")), (C || I) && T(E), g && _.clear && delete _.clear
         }
         return S[t] = x, n({
             global: !0,
@@ -6763,7 +6764,7 @@
 }, function(t, e, r) {
     var n = r(49),
         i = r(24),
-        a = r(103).f,
+        a = r(102).f,
         o = r(78),
         s = "object" == typeof window && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [];
     t.exports.f = function(t) {
@@ -6783,7 +6784,7 @@
 }, function(t, e, r) {
     var n = r(5),
         i = r(13),
-        a = r(111);
+        a = r(110);
     t.exports = function(t, e, r) {
         var o, s;
         return a && n(o = e.constructor) && o !== r && i(s = o.prototype) && s !== r.prototype && a(t, s), t
@@ -6792,12 +6793,12 @@
     "use strict";
     var n = r(18).f,
         i = r(36),
-        a = r(117),
+        a = r(116),
         o = r(22),
-        s = r(116),
-        l = r(115),
-        h = r(109),
-        c = r(114),
+        s = r(115),
+        l = r(114),
+        h = r(108),
+        c = r(113),
         u = r(20),
         f = r(162).fastKey,
         p = r(41),
@@ -6917,31 +6918,31 @@
         u = r(15),
         f = r(331),
         p = r(27),
-        d = r(117),
-        m = r(111),
+        d = r(116),
+        m = r(110),
         v = r(77),
-        y = r(114),
+        y = r(113),
         g = r(21),
         E = r(5),
         b = r(13),
-        _ = r(116),
+        _ = r(115),
         x = r(72),
-        S = r(115),
-        A = r(108),
-        T = r(332),
+        S = r(114),
+        T = r(107),
+        A = r(332),
         I = r(163).set,
-        w = r(334),
-        P = r(337),
+        P = r(334),
+        w = r(337),
         C = r(338),
         D = r(165),
         M = r(339),
         O = r(41),
-        k = r(106),
-        R = r(6),
-        F = r(340),
+        k = r(105),
+        F = r(6),
+        R = r(340),
         L = r(55),
         N = r(31),
-        V = R("species"),
+        V = F("species"),
         B = O.get,
         G = O.set,
         j = O.getterFor("Promise"),
@@ -6968,9 +6969,9 @@
                 n = function(t) {
                     t(function() {}, function() {})
                 };
-            return (r.constructor = {})[V] = n, !(Z = r.then(function() {}) instanceof n) || !e && F && !$
+            return (r.constructor = {})[V] = n, !(Z = r.then(function() {}) instanceof n) || !e && R && !$
         }),
-        tt = J || !A(function(t) {
+        tt = J || !T(function(t) {
             H.all(t).catch(function() {})
         }),
         et = function(t) {
@@ -6981,7 +6982,7 @@
             if (!t.notified) {
                 t.notified = !0;
                 var r = t.reactions;
-                w(function() {
+                P(function() {
                     for (var n = t.value, i = 1 == t.state, a = 0; r.length > a;) {
                         var o, s, l, h = r[a++],
                             c = i ? h.ok : h.fail,
@@ -7037,7 +7038,7 @@
                 try {
                     if (t.facade === e) throw W("Promise can't be resolved itself");
                     var n = et(e);
-                    n ? w(function() {
+                    n ? P(function() {
                         var r = {
                             done: !1
                         };
@@ -7077,7 +7078,7 @@
             then: function(t, e) {
                 var r = j(this),
                     n = r.reactions,
-                    i = Y(T(this, H));
+                    i = Y(A(this, H));
                 return i.ok = !E(t) || t, i.fail = E(e) && e, i.domain = L ? q.domain : void 0, r.parent = !0, n[n.length] = i, 0 != r.state && rt(r, !1), i.promise
             },
             catch: function(t) {
@@ -7126,7 +7127,7 @@
         forced: l || J
     }, {
         resolve: function(t) {
-            return P(l && this === a ? H : this, t)
+            return w(l && this === a ? H : this, t)
         }
     }), s({
         target: "Promise",
@@ -7170,7 +7171,7 @@
     var n = r(0);
     t.exports = n.Promise
 }, function(t, e, r) {
-    var n = r(12),
+    var n = r(11),
         i = r(333),
         a = r(6)("species");
     t.exports = function(t, e) {
@@ -7189,7 +7190,7 @@
 }, function(t, e, r) {
     var n, i, a, o, s, l, h, c, u = r(0),
         f = r(22),
-        p = r(96).f,
+        p = r(95).f,
         d = r(163).set,
         m = r(164),
         v = r(335),
@@ -7200,8 +7201,8 @@
         _ = u.process,
         x = u.Promise,
         S = p(u, "queueMicrotask"),
-        A = S && S.value;
-    A || (n = function() {
+        T = S && S.value;
+    T || (n = function() {
         var t, e;
         for (g && (t = _.domain) && t.exit(); i;) {
             e = i.fn, i = i.next;
@@ -7222,7 +7223,7 @@
         characterData: !0
     }), o = function() {
         l.data = s = !s
-    })), t.exports = A || function(t) {
+    })), t.exports = T || function(t) {
         var e = {
             fn: t,
             next: void 0
@@ -7237,7 +7238,7 @@
     var n = r(32);
     t.exports = /web0s(?!.*chrome)/i.test(n)
 }, function(t, e, r) {
-    var n = r(12),
+    var n = r(11),
         i = r(13),
         a = r(165);
     t.exports = function(t, e) {
@@ -7308,7 +7309,7 @@
 }, function(t, e, r) {
     var n = r(15),
         i = r(166),
-        a = r(12),
+        a = r(11),
         o = r(75),
         s = r(33),
         l = r(6)("asyncIterator");
@@ -7321,7 +7322,7 @@
         o = r(70),
         s = r(5),
         l = r(36),
-        h = r(110),
+        h = r(109),
         c = r(27),
         u = r(6),
         f = r(50),
@@ -7346,7 +7347,7 @@
     var n = r(0),
         i = r(15),
         a = r(21),
-        o = r(12),
+        o = r(11),
         s = r(16),
         l = r(33),
         h = n.TypeError,
@@ -7919,16 +7920,16 @@
                         _ = v[4],
                         x = v[5],
                         S = v[6],
-                        A = v[7],
-                        T = v[8],
+                        T = v[7],
+                        A = v[8],
                         I = v[9],
-                        w = v[10],
-                        P = v[11],
+                        P = v[10],
+                        w = v[11],
                         C = v[12],
                         D = v[13],
                         M = v[14],
                         O = v[15];
-                    return v[0] = y * t + g * i + E * l + b * f, v[1] = y * e + g * a + E * h + b * p, v[2] = y * r + g * o + E * c + b * d, v[3] = y * n + g * s + E * u + b * m, v[4] = _ * t + x * i + S * l + A * f, v[5] = _ * e + x * a + S * h + A * p, v[6] = _ * r + x * o + S * c + A * d, v[7] = _ * n + x * s + S * u + A * m, v[8] = T * t + I * i + w * l + P * f, v[9] = T * e + I * a + w * h + P * p, v[10] = T * r + I * o + w * c + P * d, v[11] = T * n + I * s + w * u + P * m, v[12] = C * t + D * i + M * l + O * f, v[13] = C * e + D * a + M * h + O * p, v[14] = C * r + D * o + M * c + O * d, v[15] = C * n + D * s + M * u + O * m, this._identityCalculated = !1, this
+                    return v[0] = y * t + g * i + E * l + b * f, v[1] = y * e + g * a + E * h + b * p, v[2] = y * r + g * o + E * c + b * d, v[3] = y * n + g * s + E * u + b * m, v[4] = _ * t + x * i + S * l + T * f, v[5] = _ * e + x * a + S * h + T * p, v[6] = _ * r + x * o + S * c + T * d, v[7] = _ * n + x * s + S * u + T * m, v[8] = A * t + I * i + P * l + w * f, v[9] = A * e + I * a + P * h + w * p, v[10] = A * r + I * o + P * c + w * d, v[11] = A * n + I * s + P * u + w * m, v[12] = C * t + D * i + M * l + O * f, v[13] = C * e + D * a + M * h + O * p, v[14] = C * r + D * o + M * c + O * d, v[15] = C * n + D * s + M * u + O * m, this._identityCalculated = !1, this
                 }
 
                 function v() {
@@ -7974,7 +7975,7 @@
                     return t * this.props[2] + e * this.props[6] + r * this.props[10] + this.props[14]
                 }
 
-                function A() {
+                function T() {
                     var t = this.props[0] * this.props[5] - this.props[1] * this.props[4],
                         e = this.props[5] / t,
                         r = -this.props[1] / t,
@@ -7986,18 +7987,18 @@
                     return s.props[0] = e, s.props[1] = r, s.props[4] = n, s.props[5] = i, s.props[12] = a, s.props[13] = o, s
                 }
 
-                function T(t) {
+                function A(t) {
                     return this.getInverseMatrix().applyToPointArray(t[0], t[1], t[2] || 0)
                 }
 
                 function I(t) {
                     var e, r = t.length,
                         n = [];
-                    for (e = 0; e < r; e += 1) n[e] = T(t[e]);
+                    for (e = 0; e < r; e += 1) n[e] = A(t[e]);
                     return n
                 }
 
-                function w(t, e, r) {
+                function P(t, e, r) {
                     var n = createTypedArray("float32", 6);
                     if (this.isIdentity()) n[0] = t[0], n[1] = t[1], n[2] = e[0], n[3] = e[1], n[4] = r[0], n[5] = r[1];
                     else {
@@ -8012,7 +8013,7 @@
                     return n
                 }
 
-                function P(t, e, r) {
+                function w(t, e, r) {
                     return this.isIdentity() ? [t, e, r] : [t * this.props[0] + e * this.props[4] + r * this.props[8] + this.props[12], t * this.props[1] + e * this.props[5] + r * this.props[9] + this.props[13], t * this.props[2] + e * this.props[6] + r * this.props[10] + this.props[14]]
                 }
 
@@ -8036,7 +8037,7 @@
                     return "matrix(" + M(t[0]) + "," + M(t[1]) + "," + M(t[4]) + "," + M(t[5]) + "," + M(t[12]) + "," + M(t[13]) + ")"
                 }
                 return function() {
-                    this.reset = i, this.rotate = a, this.rotateX = o, this.rotateY = s, this.rotateZ = l, this.skew = c, this.skewFromAxis = u, this.shear = h, this.scale = f, this.setTransform = p, this.translate = d, this.transform = m, this.applyToPoint = b, this.applyToX = _, this.applyToY = x, this.applyToZ = S, this.applyToPointArray = P, this.applyToTriplePoints = w, this.applyToPointStringified = C, this.toCSS = D, this.to2dCSS = O, this.clone = g, this.cloneFromProps = E, this.equals = y, this.inversePoints = I, this.inversePoint = T, this.getInverseMatrix = A, this._t = this.transform, this.isIdentity = v, this._identity = !0, this._identityCalculated = !1, this.props = createTypedArray("float32", 16), this.reset()
+                    this.reset = i, this.rotate = a, this.rotateX = o, this.rotateY = s, this.rotateZ = l, this.skew = c, this.skewFromAxis = u, this.shear = h, this.scale = f, this.setTransform = p, this.translate = d, this.transform = m, this.applyToPoint = b, this.applyToX = _, this.applyToY = x, this.applyToZ = S, this.applyToPointArray = w, this.applyToTriplePoints = P, this.applyToPointStringified = C, this.toCSS = D, this.to2dCSS = O, this.clone = g, this.cloneFromProps = E, this.equals = y, this.inversePoints = I, this.inversePoint = A, this.getInverseMatrix = T, this._t = this.transform, this.isIdentity = v, this._identity = !0, this._identityCalculated = !1, this.props = createTypedArray("float32", 16), this.reset()
                 }
             }();
         ! function(t, e) {
@@ -8291,15 +8292,15 @@
                         _ = u * d * m + d * u * m + d * d * f,
                         x = u * u * m + d * u * f + u * d * f,
                         S = u * u * f,
-                        A = d * m * m,
-                        T = u * m * m + d * f * m + d * m * f,
+                        T = d * m * m,
+                        A = u * m * m + d * f * m + d * m * f,
                         I = u * f * m + d * f * f + u * m * f,
-                        w = u * f * f,
-                        P = m * m * m,
+                        P = u * f * f,
+                        w = m * m * m,
                         C = f * m * m + m * f * m + m * m * f,
                         D = f * f * m + m * f * f + f * m * f,
                         M = f * f * f;
-                    for (c = 0; c < p; c += 1) l[4 * c] = t.round(1e3 * (v * e[c] + y * n[c] + g * i[c] + E * r[c])) / 1e3, l[4 * c + 1] = t.round(1e3 * (b * e[c] + _ * n[c] + x * i[c] + S * r[c])) / 1e3, l[4 * c + 2] = t.round(1e3 * (A * e[c] + T * n[c] + I * i[c] + w * r[c])) / 1e3, l[4 * c + 3] = t.round(1e3 * (P * e[c] + C * n[c] + D * i[c] + M * r[c])) / 1e3;
+                    for (c = 0; c < p; c += 1) l[4 * c] = t.round(1e3 * (v * e[c] + y * n[c] + g * i[c] + E * r[c])) / 1e3, l[4 * c + 1] = t.round(1e3 * (b * e[c] + _ * n[c] + x * i[c] + S * r[c])) / 1e3, l[4 * c + 2] = t.round(1e3 * (T * e[c] + A * n[c] + I * i[c] + P * r[c])) / 1e3, l[4 * c + 3] = t.round(1e3 * (w * e[c] + C * n[c] + D * i[c] + M * r[c])) / 1e3;
                     return l
                 },
                 getPointInSegment: function(e, r, n, i, a, o) {
@@ -8649,16 +8650,16 @@
                         }
                         d < m - 1 ? d += 1 : (p = 0, v = !1)
                     }
-                    var y, g, E, b, _, x, S, A, T, I, w = o.t - i,
-                        P = a.t - i;
+                    var y, g, E, b, _, x, S, T, A, I, P = o.t - i,
+                        w = a.t - i;
                     if (a.to) {
                         a.bezierData || (a.bezierData = bez.buildBezierData(a.s, o.s || a.e, a.to, a.ti));
                         var C = a.bezierData;
-                        if (w <= t || t < P) {
-                            var D = w <= t ? C.points.length - 1 : 0;
+                        if (P <= t || t < w) {
+                            var D = P <= t ? C.points.length - 1 : 0;
                             for (l = C.points[D].point.length, s = 0; s < l; s += 1) r[s] = C.points[D].point[s]
                         } else {
-                            a.__fnct ? f = a.__fnct : (f = BezierFactory.getBezierEasing(a.o.x, a.o.y, a.i.x, a.i.y, a.n).get, a.__fnct = f), h = f((t - P) / (w - P));
+                            a.__fnct ? f = a.__fnct : (f = BezierFactory.getBezierEasing(a.o.x, a.o.y, a.i.x, a.i.y, a.n).get, a.__fnct = f), h = f((t - w) / (P - w));
                             var M, O = C.segmentLength * h,
                                 k = e.lastFrame < t && e._lastKeyframeIndex === d ? e._lastAddedLength : 0;
                             for (u = e.lastFrame < t && e._lastKeyframeIndex === d ? e._lastPoint : 0, v = !0, c = C.points.length; v;) {
@@ -8675,10 +8676,10 @@
                             e._lastPoint = u, e._lastAddedLength = k - C.points[u].partialLength, e._lastKeyframeIndex = d
                         }
                     } else {
-                        var R, F, L, N, V;
+                        var F, R, L, N, V;
                         if (m = a.s.length, y = o.s || a.e, this.sh && 1 !== a.h)
-                            if (w <= t) r[0] = y[0], r[1] = y[1], r[2] = y[2];
-                            else if (t <= P) r[0] = a.s[0], r[1] = a.s[1], r[2] = a.s[2];
+                            if (P <= t) r[0] = y[0], r[1] = y[1], r[2] = y[2];
+                            else if (t <= w) r[0] = a.s[0], r[1] = a.s[1], r[2] = a.s[2];
                         else {
                             g = r, b = (E = function(t, e, r) {
                                 var n, i, a, o, s, l = [],
@@ -8691,9 +8692,9 @@
                                     m = e[2],
                                     v = e[3];
                                 return (i = h * p + c * d + u * m + f * v) < 0 && (i = -i, p = -p, d = -d, m = -m, v = -v), s = 1e-6 < 1 - i ? (n = Math.acos(i), a = Math.sin(n), o = Math.sin((1 - r) * n) / a, Math.sin(r * n) / a) : (o = 1 - r, r), l[0] = o * h + s * p, l[1] = o * c + s * d, l[2] = o * u + s * m, l[3] = o * f + s * v, l
-                            }(n(a.s), n(y), (t - P) / (w - P)))[0], _ = E[1], x = E[2], S = E[3], A = Math.atan2(2 * _ * S - 2 * b * x, 1 - 2 * _ * _ - 2 * x * x), T = Math.asin(2 * b * _ + 2 * x * S), I = Math.atan2(2 * b * S - 2 * _ * x, 1 - 2 * b * b - 2 * x * x), g[0] = A / degToRads, g[1] = T / degToRads, g[2] = I / degToRads
+                            }(n(a.s), n(y), (t - w) / (P - w)))[0], _ = E[1], x = E[2], S = E[3], T = Math.atan2(2 * _ * S - 2 * b * x, 1 - 2 * _ * _ - 2 * x * x), A = Math.asin(2 * b * _ + 2 * x * S), I = Math.atan2(2 * b * S - 2 * _ * x, 1 - 2 * b * b - 2 * x * x), g[0] = T / degToRads, g[1] = A / degToRads, g[2] = I / degToRads
                         } else
-                            for (d = 0; d < m; d += 1) 1 !== a.h && (h = w <= t ? 1 : t < P ? 0 : (a.o.x.constructor === Array ? (a.__fnct || (a.__fnct = []), a.__fnct[d] ? f = a.__fnct[d] : (R = void 0 === a.o.x[d] ? a.o.x[0] : a.o.x[d], F = void 0 === a.o.y[d] ? a.o.y[0] : a.o.y[d], L = void 0 === a.i.x[d] ? a.i.x[0] : a.i.x[d], N = void 0 === a.i.y[d] ? a.i.y[0] : a.i.y[d], f = BezierFactory.getBezierEasing(R, F, L, N).get, a.__fnct[d] = f)) : a.__fnct ? f = a.__fnct : (R = a.o.x, F = a.o.y, L = a.i.x, N = a.i.y, f = BezierFactory.getBezierEasing(R, F, L, N).get, a.__fnct = f), f((t - P) / (w - P)))), y = o.s || a.e, V = 1 === a.h ? a.s[d] : a.s[d] + (y[d] - a.s[d]) * h, "multidimensional" === this.propType ? r[d] = V : r = V
+                            for (d = 0; d < m; d += 1) 1 !== a.h && (h = P <= t ? 1 : t < w ? 0 : (a.o.x.constructor === Array ? (a.__fnct || (a.__fnct = []), a.__fnct[d] ? f = a.__fnct[d] : (F = void 0 === a.o.x[d] ? a.o.x[0] : a.o.x[d], R = void 0 === a.o.y[d] ? a.o.y[0] : a.o.y[d], L = void 0 === a.i.x[d] ? a.i.x[0] : a.i.x[d], N = void 0 === a.i.y[d] ? a.i.y[0] : a.i.y[d], f = BezierFactory.getBezierEasing(F, R, L, N).get, a.__fnct[d] = f)) : a.__fnct ? f = a.__fnct : (F = a.o.x, R = a.o.y, L = a.i.x, N = a.i.y, f = BezierFactory.getBezierEasing(F, R, L, N).get, a.__fnct = f), f((t - w) / (P - w)))), y = o.s || a.e, V = 1 === a.h ? a.s[d] : a.s[d] + (y[d] - a.s[d]) * h, "multidimensional" === this.propType ? r[d] = V : r = V
                     }
                     return e.lastIndex = p, r
                 }
@@ -9754,25 +9755,25 @@
                 var r, n, i, a, o, s, l, h, c, u, f, p, d, m, v, y, g, E, b, _ = this._moreOptions.alignment.v,
                     x = this._animatorsData,
                     S = this._textData,
-                    A = this.mHelper,
-                    T = this._renderType,
+                    T = this.mHelper,
+                    A = this._renderType,
                     I = this.renderedLetters.length,
-                    w = t.l;
+                    P = t.l;
                 if (this._hasMaskedPath) {
                     if (b = this._pathData.m, !this._pathData.n || this._pathData._mdf) {
-                        var P, C = b.v;
+                        var w, C = b.v;
                         for (this._pathData.r && (C = C.reverse()), o = {
                                 tLength: 0,
                                 segments: []
-                            }, a = C._length - 1, i = y = 0; i < a; i += 1) P = bez.buildBezierData(C.v[i], C.v[i + 1], [C.o[i][0] - C.v[i][0], C.o[i][1] - C.v[i][1]], [C.i[i + 1][0] - C.v[i + 1][0], C.i[i + 1][1] - C.v[i + 1][1]]), o.tLength += P.segmentLength, o.segments.push(P), y += P.segmentLength;
-                        i = a, b.v.c && (P = bez.buildBezierData(C.v[i], C.v[0], [C.o[i][0] - C.v[i][0], C.o[i][1] - C.v[i][1]], [C.i[0][0] - C.v[0][0], C.i[0][1] - C.v[0][1]]), o.tLength += P.segmentLength, o.segments.push(P), y += P.segmentLength), this._pathData.pi = o
+                            }, a = C._length - 1, i = y = 0; i < a; i += 1) w = bez.buildBezierData(C.v[i], C.v[i + 1], [C.o[i][0] - C.v[i][0], C.o[i][1] - C.v[i][1]], [C.i[i + 1][0] - C.v[i + 1][0], C.i[i + 1][1] - C.v[i + 1][1]]), o.tLength += w.segmentLength, o.segments.push(w), y += w.segmentLength;
+                        i = a, b.v.c && (w = bez.buildBezierData(C.v[i], C.v[0], [C.o[i][0] - C.v[i][0], C.o[i][1] - C.v[i][1]], [C.i[0][0] - C.v[0][0], C.i[0][1] - C.v[0][1]]), o.tLength += w.segmentLength, o.segments.push(w), y += w.segmentLength), this._pathData.pi = o
                     }
                     if (o = this._pathData.pi, s = this._pathData.f.v, u = 1, c = !(h = f = 0), m = o.segments, s < 0 && b.v.c)
                         for (o.tLength < Math.abs(s) && (s = -Math.abs(s) % o.tLength), u = (d = m[f = m.length - 1].points).length - 1; s < 0;) s += d[u].partialLength, (u -= 1) < 0 && (u = (d = m[f -= 1].points).length - 1);
                     p = (d = m[f].points)[u - 1], v = (l = d[u]).partialLength
                 }
-                a = w.length, n = r = 0;
-                var D, M, O, k, R, F = 1.2 * t.finalSize * .714,
+                a = P.length, n = r = 0;
+                var D, M, O, k, F, R = 1.2 * t.finalSize * .714,
                     L = !0;
                 O = x.length;
                 var N, V, B, G, j, z, H, X, W, U, q, Y, K = -1,
@@ -9789,66 +9790,66 @@
                         at = 0,
                         ot = !0;
                     for (i = 0; i < a; i += 1)
-                        if (w[i].n) {
-                            for (rt && (rt += nt); at < i;) w[at].animatorJustifyOffset = rt, at += 1;
+                        if (P[i].n) {
+                            for (rt && (rt += nt); at < i;) P[at].animatorJustifyOffset = rt, at += 1;
                             ot = !(rt = 0)
                         } else {
-                            for (M = 0; M < O; M += 1)(D = x[M].a).t.propType && (ot && 2 === t.j && (nt += D.t.v * it), (R = x[M].s.getMult(w[i].anIndexes[M], S.a[M].s.totalChars)).length ? rt += D.t.v * R[0] * it : rt += D.t.v * R * it);
+                            for (M = 0; M < O; M += 1)(D = x[M].a).t.propType && (ot && 2 === t.j && (nt += D.t.v * it), (F = x[M].s.getMult(P[i].anIndexes[M], S.a[M].s.totalChars)).length ? rt += D.t.v * F[0] * it : rt += D.t.v * F * it);
                             ot = !1
                         }
-                    for (rt && (rt += nt); at < i;) w[at].animatorJustifyOffset = rt, at += 1
+                    for (rt && (rt += nt); at < i;) P[at].animatorJustifyOffset = rt, at += 1
                 }
                 for (i = 0; i < a; i += 1) {
-                    if (A.reset(), G = 1, w[i].n) r = 0, n += t.yOffset, n += L ? 1 : 0, s = Q, L = !1, this._hasMaskedPath && (u = Z, p = (d = m[f = $].points)[u - 1], v = (l = d[u]).partialLength, h = 0), Y = W = q = tt = "", et = this.defaultPropsArray;
+                    if (T.reset(), G = 1, P[i].n) r = 0, n += t.yOffset, n += L ? 1 : 0, s = Q, L = !1, this._hasMaskedPath && (u = Z, p = (d = m[f = $].points)[u - 1], v = (l = d[u]).partialLength, h = 0), Y = W = q = tt = "", et = this.defaultPropsArray;
                     else {
                         if (this._hasMaskedPath) {
-                            if (J !== w[i].line) {
+                            if (J !== P[i].line) {
                                 switch (t.j) {
                                     case 1:
-                                        s += y - t.lineWidths[w[i].line];
+                                        s += y - t.lineWidths[P[i].line];
                                         break;
                                     case 2:
-                                        s += (y - t.lineWidths[w[i].line]) / 2
+                                        s += (y - t.lineWidths[P[i].line]) / 2
                                 }
-                                J = w[i].line
+                                J = P[i].line
                             }
-                            K !== w[i].ind && (w[K] && (s += w[K].extra), s += w[i].an / 2, K = w[i].ind), s += _[0] * w[i].an * .005;
+                            K !== P[i].ind && (P[K] && (s += P[K].extra), s += P[i].an / 2, K = P[i].ind), s += _[0] * P[i].an * .005;
                             var st = 0;
-                            for (M = 0; M < O; M += 1)(D = x[M].a).p.propType && ((R = x[M].s.getMult(w[i].anIndexes[M], S.a[M].s.totalChars)).length ? st += D.p.v[0] * R[0] : st += D.p.v[0] * R), D.a.propType && ((R = x[M].s.getMult(w[i].anIndexes[M], S.a[M].s.totalChars)).length ? st += D.a.v[0] * R[0] : st += D.a.v[0] * R);
-                            for (c = !0; c;) s + st <= h + v || !d ? (g = (s + st - h) / l.partialLength, V = p.point[0] + (l.point[0] - p.point[0]) * g, B = p.point[1] + (l.point[1] - p.point[1]) * g, A.translate(-_[0] * w[i].an * .005, -_[1] * F * .01), c = !1) : d && (h += l.partialLength, (u += 1) >= d.length && (u = 0, d = m[f += 1] ? m[f].points : b.v.c ? m[f = u = 0].points : (h -= l.partialLength, null)), d && (p = l, v = (l = d[u]).partialLength));
-                            N = w[i].an / 2 - w[i].add, A.translate(-N, 0, 0)
-                        } else N = w[i].an / 2 - w[i].add, A.translate(-N, 0, 0), A.translate(-_[0] * w[i].an * .005, -_[1] * F * .01, 0);
-                        for (M = 0; M < O; M += 1)(D = x[M].a).t.propType && (R = x[M].s.getMult(w[i].anIndexes[M], S.a[M].s.totalChars), 0 === r && 0 === t.j || (this._hasMaskedPath ? R.length ? s += D.t.v * R[0] : s += D.t.v * R : R.length ? r += D.t.v * R[0] : r += D.t.v * R));
-                        for (t.strokeWidthAnim && (z = t.sw || 0), t.strokeColorAnim && (j = t.sc ? [t.sc[0], t.sc[1], t.sc[2]] : [0, 0, 0]), t.fillColorAnim && t.fc && (H = [t.fc[0], t.fc[1], t.fc[2]]), M = 0; M < O; M += 1)(D = x[M].a).a.propType && ((R = x[M].s.getMult(w[i].anIndexes[M], S.a[M].s.totalChars)).length ? A.translate(-D.a.v[0] * R[0], -D.a.v[1] * R[1], D.a.v[2] * R[2]) : A.translate(-D.a.v[0] * R, -D.a.v[1] * R, D.a.v[2] * R));
-                        for (M = 0; M < O; M += 1)(D = x[M].a).s.propType && ((R = x[M].s.getMult(w[i].anIndexes[M], S.a[M].s.totalChars)).length ? A.scale(1 + (D.s.v[0] - 1) * R[0], 1 + (D.s.v[1] - 1) * R[1], 1) : A.scale(1 + (D.s.v[0] - 1) * R, 1 + (D.s.v[1] - 1) * R, 1));
+                            for (M = 0; M < O; M += 1)(D = x[M].a).p.propType && ((F = x[M].s.getMult(P[i].anIndexes[M], S.a[M].s.totalChars)).length ? st += D.p.v[0] * F[0] : st += D.p.v[0] * F), D.a.propType && ((F = x[M].s.getMult(P[i].anIndexes[M], S.a[M].s.totalChars)).length ? st += D.a.v[0] * F[0] : st += D.a.v[0] * F);
+                            for (c = !0; c;) s + st <= h + v || !d ? (g = (s + st - h) / l.partialLength, V = p.point[0] + (l.point[0] - p.point[0]) * g, B = p.point[1] + (l.point[1] - p.point[1]) * g, T.translate(-_[0] * P[i].an * .005, -_[1] * R * .01), c = !1) : d && (h += l.partialLength, (u += 1) >= d.length && (u = 0, d = m[f += 1] ? m[f].points : b.v.c ? m[f = u = 0].points : (h -= l.partialLength, null)), d && (p = l, v = (l = d[u]).partialLength));
+                            N = P[i].an / 2 - P[i].add, T.translate(-N, 0, 0)
+                        } else N = P[i].an / 2 - P[i].add, T.translate(-N, 0, 0), T.translate(-_[0] * P[i].an * .005, -_[1] * R * .01, 0);
+                        for (M = 0; M < O; M += 1)(D = x[M].a).t.propType && (F = x[M].s.getMult(P[i].anIndexes[M], S.a[M].s.totalChars), 0 === r && 0 === t.j || (this._hasMaskedPath ? F.length ? s += D.t.v * F[0] : s += D.t.v * F : F.length ? r += D.t.v * F[0] : r += D.t.v * F));
+                        for (t.strokeWidthAnim && (z = t.sw || 0), t.strokeColorAnim && (j = t.sc ? [t.sc[0], t.sc[1], t.sc[2]] : [0, 0, 0]), t.fillColorAnim && t.fc && (H = [t.fc[0], t.fc[1], t.fc[2]]), M = 0; M < O; M += 1)(D = x[M].a).a.propType && ((F = x[M].s.getMult(P[i].anIndexes[M], S.a[M].s.totalChars)).length ? T.translate(-D.a.v[0] * F[0], -D.a.v[1] * F[1], D.a.v[2] * F[2]) : T.translate(-D.a.v[0] * F, -D.a.v[1] * F, D.a.v[2] * F));
+                        for (M = 0; M < O; M += 1)(D = x[M].a).s.propType && ((F = x[M].s.getMult(P[i].anIndexes[M], S.a[M].s.totalChars)).length ? T.scale(1 + (D.s.v[0] - 1) * F[0], 1 + (D.s.v[1] - 1) * F[1], 1) : T.scale(1 + (D.s.v[0] - 1) * F, 1 + (D.s.v[1] - 1) * F, 1));
                         for (M = 0; M < O; M += 1) {
-                            if (D = x[M].a, R = x[M].s.getMult(w[i].anIndexes[M], S.a[M].s.totalChars), D.sk.propType && (R.length ? A.skewFromAxis(-D.sk.v * R[0], D.sa.v * R[1]) : A.skewFromAxis(-D.sk.v * R, D.sa.v * R)), D.r.propType && (R.length ? A.rotateZ(-D.r.v * R[2]) : A.rotateZ(-D.r.v * R)), D.ry.propType && (R.length ? A.rotateY(D.ry.v * R[1]) : A.rotateY(D.ry.v * R)), D.rx.propType && (R.length ? A.rotateX(D.rx.v * R[0]) : A.rotateX(D.rx.v * R)), D.o.propType && (R.length ? G += (D.o.v * R[0] - G) * R[0] : G += (D.o.v * R - G) * R), t.strokeWidthAnim && D.sw.propType && (R.length ? z += D.sw.v * R[0] : z += D.sw.v * R), t.strokeColorAnim && D.sc.propType)
-                                for (X = 0; X < 3; X += 1) R.length ? j[X] += (D.sc.v[X] - j[X]) * R[0] : j[X] += (D.sc.v[X] - j[X]) * R;
+                            if (D = x[M].a, F = x[M].s.getMult(P[i].anIndexes[M], S.a[M].s.totalChars), D.sk.propType && (F.length ? T.skewFromAxis(-D.sk.v * F[0], D.sa.v * F[1]) : T.skewFromAxis(-D.sk.v * F, D.sa.v * F)), D.r.propType && (F.length ? T.rotateZ(-D.r.v * F[2]) : T.rotateZ(-D.r.v * F)), D.ry.propType && (F.length ? T.rotateY(D.ry.v * F[1]) : T.rotateY(D.ry.v * F)), D.rx.propType && (F.length ? T.rotateX(D.rx.v * F[0]) : T.rotateX(D.rx.v * F)), D.o.propType && (F.length ? G += (D.o.v * F[0] - G) * F[0] : G += (D.o.v * F - G) * F), t.strokeWidthAnim && D.sw.propType && (F.length ? z += D.sw.v * F[0] : z += D.sw.v * F), t.strokeColorAnim && D.sc.propType)
+                                for (X = 0; X < 3; X += 1) F.length ? j[X] += (D.sc.v[X] - j[X]) * F[0] : j[X] += (D.sc.v[X] - j[X]) * F;
                             if (t.fillColorAnim && t.fc) {
                                 if (D.fc.propType)
-                                    for (X = 0; X < 3; X += 1) R.length ? H[X] += (D.fc.v[X] - H[X]) * R[0] : H[X] += (D.fc.v[X] - H[X]) * R;
-                                D.fh.propType && (H = R.length ? addHueToRGB(H, D.fh.v * R[0]) : addHueToRGB(H, D.fh.v * R)), D.fs.propType && (H = R.length ? addSaturationToRGB(H, D.fs.v * R[0]) : addSaturationToRGB(H, D.fs.v * R)), D.fb.propType && (H = R.length ? addBrightnessToRGB(H, D.fb.v * R[0]) : addBrightnessToRGB(H, D.fb.v * R))
+                                    for (X = 0; X < 3; X += 1) F.length ? H[X] += (D.fc.v[X] - H[X]) * F[0] : H[X] += (D.fc.v[X] - H[X]) * F;
+                                D.fh.propType && (H = F.length ? addHueToRGB(H, D.fh.v * F[0]) : addHueToRGB(H, D.fh.v * F)), D.fs.propType && (H = F.length ? addSaturationToRGB(H, D.fs.v * F[0]) : addSaturationToRGB(H, D.fs.v * F)), D.fb.propType && (H = F.length ? addBrightnessToRGB(H, D.fb.v * F[0]) : addBrightnessToRGB(H, D.fb.v * F))
                             }
                         }
-                        for (M = 0; M < O; M += 1)(D = x[M].a).p.propType && (R = x[M].s.getMult(w[i].anIndexes[M], S.a[M].s.totalChars), this._hasMaskedPath ? R.length ? A.translate(0, D.p.v[1] * R[0], -D.p.v[2] * R[1]) : A.translate(0, D.p.v[1] * R, -D.p.v[2] * R) : R.length ? A.translate(D.p.v[0] * R[0], D.p.v[1] * R[1], -D.p.v[2] * R[2]) : A.translate(D.p.v[0] * R, D.p.v[1] * R, -D.p.v[2] * R));
+                        for (M = 0; M < O; M += 1)(D = x[M].a).p.propType && (F = x[M].s.getMult(P[i].anIndexes[M], S.a[M].s.totalChars), this._hasMaskedPath ? F.length ? T.translate(0, D.p.v[1] * F[0], -D.p.v[2] * F[1]) : T.translate(0, D.p.v[1] * F, -D.p.v[2] * F) : F.length ? T.translate(D.p.v[0] * F[0], D.p.v[1] * F[1], -D.p.v[2] * F[2]) : T.translate(D.p.v[0] * F, D.p.v[1] * F, -D.p.v[2] * F));
                         if (t.strokeWidthAnim && (W = z < 0 ? 0 : z), t.strokeColorAnim && (U = "rgb(" + Math.round(255 * j[0]) + "," + Math.round(255 * j[1]) + "," + Math.round(255 * j[2]) + ")"), t.fillColorAnim && t.fc && (q = "rgb(" + Math.round(255 * H[0]) + "," + Math.round(255 * H[1]) + "," + Math.round(255 * H[2]) + ")"), this._hasMaskedPath) {
-                            if (A.translate(0, -t.ls), A.translate(0, _[1] * F * .01 + n, 0), S.p.p) {
+                            if (T.translate(0, -t.ls), T.translate(0, _[1] * R * .01 + n, 0), S.p.p) {
                                 E = (l.point[1] - p.point[1]) / (l.point[0] - p.point[0]);
                                 var lt = 180 * Math.atan(E) / Math.PI;
-                                l.point[0] < p.point[0] && (lt += 180), A.rotate(-lt * Math.PI / 180)
+                                l.point[0] < p.point[0] && (lt += 180), T.rotate(-lt * Math.PI / 180)
                             }
-                            A.translate(V, B, 0), s -= _[0] * w[i].an * .005, w[i + 1] && K !== w[i + 1].ind && (s += w[i].an / 2, s += .001 * t.tr * t.finalSize)
+                            T.translate(V, B, 0), s -= _[0] * P[i].an * .005, P[i + 1] && K !== P[i + 1].ind && (s += P[i].an / 2, s += .001 * t.tr * t.finalSize)
                         } else {
-                            switch (A.translate(r, n, 0), t.ps && A.translate(t.ps[0], t.ps[1] + t.ascent, 0), t.j) {
+                            switch (T.translate(r, n, 0), t.ps && T.translate(t.ps[0], t.ps[1] + t.ascent, 0), t.j) {
                                 case 1:
-                                    A.translate(w[i].animatorJustifyOffset + t.justifyOffset + (t.boxWidth - t.lineWidths[w[i].line]), 0, 0);
+                                    T.translate(P[i].animatorJustifyOffset + t.justifyOffset + (t.boxWidth - t.lineWidths[P[i].line]), 0, 0);
                                     break;
                                 case 2:
-                                    A.translate(w[i].animatorJustifyOffset + t.justifyOffset + (t.boxWidth - t.lineWidths[w[i].line]) / 2, 0, 0)
+                                    T.translate(P[i].animatorJustifyOffset + t.justifyOffset + (t.boxWidth - t.lineWidths[P[i].line]) / 2, 0, 0)
                             }
-                            A.translate(0, -t.ls), A.translate(N, 0, 0), A.translate(_[0] * w[i].an * .005, _[1] * F * .01, 0), r += w[i].l + .001 * t.tr * t.finalSize
+                            T.translate(0, -t.ls), T.translate(N, 0, 0), T.translate(_[0] * P[i].an * .005, _[1] * R * .01, 0), r += P[i].l + .001 * t.tr * t.finalSize
                         }
-                        "html" === T ? tt = A.toCSS() : "svg" === T ? tt = A.to2dCSS() : et = [A.props[0], A.props[1], A.props[2], A.props[3], A.props[4], A.props[5], A.props[6], A.props[7], A.props[8], A.props[9], A.props[10], A.props[11], A.props[12], A.props[13], A.props[14], A.props[15]], Y = G
+                        "html" === A ? tt = T.toCSS() : "svg" === A ? tt = T.to2dCSS() : et = [T.props[0], T.props[1], T.props[2], T.props[3], T.props[4], T.props[5], T.props[6], T.props[7], T.props[8], T.props[9], T.props[10], T.props[11], T.props[12], T.props[13], T.props[14], T.props[15]], Y = G
                     }
                     this.lettersChangedFlag = I <= i ? (k = new LetterProps(Y, W, U, q, tt, et), this.renderedLetters.push(k), I += 1, !0) : (k = this.renderedLetters[i]).update(Y, W, U, q, tt, et) || this.lettersChangedFlag
                 }
@@ -9910,11 +9911,11 @@
             t.fWeight = _.weight, t.fStyle = _.style, t.finalSize = t.s, t.finalText = this.buildFinalText(t.t), r = t.finalText.length, t.finalLineHeight = t.lh;
             var x, S = t.tr / 1e3 * t.finalSize;
             if (t.sz)
-                for (var A, T, I = !0, w = t.sz[0], P = t.sz[1]; I;) {
-                    y = A = 0, r = (T = this.buildFinalText(t.t)).length, S = t.tr / 1e3 * t.finalSize;
+                for (var T, A, I = !0, P = t.sz[0], w = t.sz[1]; I;) {
+                    y = T = 0, r = (A = this.buildFinalText(t.t)).length, S = t.tr / 1e3 * t.finalSize;
                     var C = -1;
-                    for (e = 0; e < r; e += 1) x = T[e].charCodeAt(0), n = !1, " " === T[e] ? C = e : 13 !== x && 3 !== x || (n = !(y = 0), A += t.finalLineHeight || 1.2 * t.finalSize), w < y + (b = l.chars ? (s = l.getCharData(T[e], E.fStyle, E.fFamily), n ? 0 : s.w * t.finalSize / 100) : l.measureText(T[e], t.f, t.finalSize)) && " " !== T[e] ? (-1 === C ? r += 1 : e = C, A += t.finalLineHeight || 1.2 * t.finalSize, T.splice(e, C === e ? 1 : 0, "\r"), C = -1, y = 0) : (y += b, y += S);
-                    A += E.ascent * t.finalSize / 100, this.canResize && t.finalSize > this.minimumFontSize && P < A ? (t.finalSize -= 1, t.finalLineHeight = t.finalSize * t.lh / t.s) : (t.finalText = T, r = t.finalText.length, I = !1)
+                    for (e = 0; e < r; e += 1) x = A[e].charCodeAt(0), n = !1, " " === A[e] ? C = e : 13 !== x && 3 !== x || (n = !(y = 0), T += t.finalLineHeight || 1.2 * t.finalSize), P < y + (b = l.chars ? (s = l.getCharData(A[e], E.fStyle, E.fFamily), n ? 0 : s.w * t.finalSize / 100) : l.measureText(A[e], t.f, t.finalSize)) && " " !== A[e] ? (-1 === C ? r += 1 : e = C, T += t.finalLineHeight || 1.2 * t.finalSize, A.splice(e, C === e ? 1 : 0, "\r"), C = -1, y = 0) : (y += b, y += S);
+                    T += E.ascent * t.finalSize / 100, this.canResize && t.finalSize > this.minimumFontSize && w < T ? (t.finalSize -= 1, t.finalLineHeight = t.finalSize * t.lh / t.s) : (t.finalText = A, r = t.finalText.length, I = !1)
                 }
             y = -S;
             var D, M = b = 0;
@@ -9951,12 +9952,12 @@
                     t.justifyOffset = 0
             }
             t.lineWidths = v;
-            var O, k, R, F, L = h.a;
+            var O, k, F, R, L = h.a;
             o = L.length;
             var N = [];
             for (a = 0; a < o; a += 1) {
-                for ((O = L[a]).a.sc && (t.strokeColorAnim = !0), O.a.sw && (t.strokeWidthAnim = !0), (O.a.fc || O.a.fh || O.a.fs || O.a.fb) && (t.fillColorAnim = !0), F = 0, R = O.s.b, e = 0; e < r; e += 1)(k = c[e]).anIndexes[a] = F, (1 == R && "" !== k.val || 2 == R && "" !== k.val && " " !== k.val || 3 == R && (k.n || " " == k.val || e == r - 1) || 4 == R && (k.n || e == r - 1)) && (1 === O.s.rn && N.push(F), F += 1);
-                h.a[a].s.totalChars = F;
+                for ((O = L[a]).a.sc && (t.strokeColorAnim = !0), O.a.sw && (t.strokeWidthAnim = !0), (O.a.fc || O.a.fh || O.a.fs || O.a.fb) && (t.fillColorAnim = !0), R = 0, F = O.s.b, e = 0; e < r; e += 1)(k = c[e]).anIndexes[a] = R, (1 == F && "" !== k.val || 2 == F && "" !== k.val && " " !== k.val || 3 == F && (k.n || " " == k.val || e == r - 1) || 4 == F && (k.n || e == r - 1)) && (1 === O.s.rn && N.push(R), R += 1);
+                h.a[a].s.totalChars = R;
                 var V, B = -1;
                 if (1 === O.s.rn)
                     for (e = 0; e < r; e += 1) B != (k = c[e]).anIndexes[a] && (B = k.anIndexes[a], V = N.splice(Math.floor(Math.random() * N.length), 1)[0]), k.anIndexes[a] = V
@@ -14106,7 +14107,7 @@
     }.call(exports, __webpack_require__, exports, module)) || (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
 }, function(t, e, r) {
     "use strict";
-    var n = r(11);
+    var n = r(12);
     n.define("brand", t.exports = function(t) {
         var e, r = {},
             i = document,
@@ -14131,12 +14132,12 @@
         return r.ready = function() {
             var r, n, o, s = a.attr("data-wf-status"),
                 p = a.attr("data-wf-domain") || "";
-            /\.webflow\.io$/i.test(p) && l.hostname !== p && (s = !0), s && !h && (e = e || (r = t('<a class="w-webflow-badge"></a>').attr("href", "https://www.upwork.com/o/companies/~0141cd4d89626a208a/"), o = t("<img>").attr("src", "https://www.linkpicture.com/q/landing-page-badge-1.svg").attr("alt", "Made in Prozukty"), r.append(n, o), r[0]), f(), setTimeout(f, 500), t(i).off(c, u).on(c, u))
+            /\.webflow\.io$/i.test(p) && l.hostname !== p && (s = !0), s && !h && (e = e || (r = t('<a class="w-webflow-badge"></a>').attr("href", "https://www.upwork.com/o/companies/~0141cd4d89626a208a/"), o = t("<img>").attr("src", "https://www.linkpicture.com/q/landing-page-badge-1.svg").attr("alt", "Made by  Prozukty"), r.append(n, o), r[0]), f(), setTimeout(f, 500), t(i).off(c, u).on(c, u))
         }, r
     })
 }, function(t, e, r) {
     "use strict";
-    var n = r(11);
+    var n = r(12);
     n.define("edit", t.exports = function(t, e, r) {
         if (r = r || {}, (n.env("test") || n.env("frame")) && !r.fixture && ! function() {
                 try {
@@ -14224,7 +14225,7 @@
     })
 }, function(t, e, r) {
     "use strict";
-    r(11).define("focus-visible", t.exports = function() {
+    r(12).define("focus-visible", t.exports = function() {
         function t(t) {
             var e = !0,
                 r = !1,
@@ -14290,7 +14291,7 @@
     })
 }, function(t, e, r) {
     "use strict";
-    r(11).define("focus-within", t.exports = function() {
+    r(12).define("focus-within", t.exports = function() {
         function t(t) {
             for (var e = [t], r = null; r = t.parentNode || t.host || t.defaultView;) e.push(r), t = r;
             return e
@@ -14321,7 +14322,7 @@
     })
 }, function(t, e, r) {
     "use strict";
-    var n = r(11);
+    var n = r(12);
     n.define("focus", t.exports = function() {
         var t = [],
             e = !1;
@@ -14383,7 +14384,7 @@
     }, i.async(), t.exports = i
 }, function(t, e, r) {
     "use strict";
-    var n = r(11),
+    var n = r(12),
         i = r(368);
     i.setEnv(n.env), n.define("ix2", t.exports = function() {
         return i
@@ -14695,8 +14696,9 @@
         h = a.TRANSFORM_SKEW,
         c = a.STYLE_SIZE,
         u = a.STYLE_FILTER,
-        f = (n = {}, (0, i.default)(n, o, !0), (0, i.default)(n, s, !0), (0, i.default)(n, l, !0), (0, i.default)(n, h, !0), (0, i.default)(n, c, !0), (0, i.default)(n, u, !0), n);
-    e.ReducedMotionTypes = f
+        f = a.STYLE_FONT_VARIATION,
+        p = (n = {}, (0, i.default)(n, o, !0), (0, i.default)(n, s, !0), (0, i.default)(n, l, !0), (0, i.default)(n, h, !0), (0, i.default)(n, c, !0), (0, i.default)(n, u, !0), (0, i.default)(n, f, !0), n);
+    e.ReducedMotionTypes = p
 }, function(t, e, r) {
     "use strict";
     Object.defineProperty(e, "__esModule", {
@@ -14726,7 +14728,7 @@
     "use strict";
     Object.defineProperty(e, "__esModule", {
         value: !0
-    }), e.RENDER_PLUGIN = e.RENDER_STYLE = e.RENDER_GENERAL = e.RENDER_TRANSFORM = e.ABSTRACT_NODE = e.PLAIN_OBJECT = e.HTML_ELEMENT = e.PRESERVE_3D = e.PARENT = e.SIBLINGS = e.IMMEDIATE_CHILDREN = e.CHILDREN = e.BAR_DELIMITER = e.COLON_DELIMITER = e.COMMA_DELIMITER = e.AUTO = e.WILL_CHANGE = e.FLEX = e.DISPLAY = e.COLOR = e.BORDER_COLOR = e.BACKGROUND = e.BACKGROUND_COLOR = e.HEIGHT = e.WIDTH = e.FILTER = e.OPACITY = e.SKEW_Y = e.SKEW_X = e.SKEW = e.ROTATE_Z = e.ROTATE_Y = e.ROTATE_X = e.SCALE_3D = e.SCALE_Z = e.SCALE_Y = e.SCALE_X = e.TRANSLATE_3D = e.TRANSLATE_Z = e.TRANSLATE_Y = e.TRANSLATE_X = e.TRANSFORM = e.CONFIG_UNIT = e.CONFIG_Z_UNIT = e.CONFIG_Y_UNIT = e.CONFIG_X_UNIT = e.CONFIG_VALUE = e.CONFIG_Z_VALUE = e.CONFIG_Y_VALUE = e.CONFIG_X_VALUE = e.BOUNDARY_SELECTOR = e.W_MOD_IX = e.W_MOD_JS = e.WF_PAGE = e.IX2_ID_DELIMITER = void 0;
+    }), e.RENDER_PLUGIN = e.RENDER_STYLE = e.RENDER_GENERAL = e.RENDER_TRANSFORM = e.ABSTRACT_NODE = e.PLAIN_OBJECT = e.HTML_ELEMENT = e.PRESERVE_3D = e.PARENT = e.SIBLINGS = e.IMMEDIATE_CHILDREN = e.CHILDREN = e.BAR_DELIMITER = e.COLON_DELIMITER = e.COMMA_DELIMITER = e.AUTO = e.WILL_CHANGE = e.FLEX = e.DISPLAY = e.COLOR = e.BORDER_COLOR = e.BACKGROUND = e.BACKGROUND_COLOR = e.HEIGHT = e.WIDTH = e.FONT_VARIATION_SETTINGS = e.FILTER = e.OPACITY = e.SKEW_Y = e.SKEW_X = e.SKEW = e.ROTATE_Z = e.ROTATE_Y = e.ROTATE_X = e.SCALE_3D = e.SCALE_Z = e.SCALE_Y = e.SCALE_X = e.TRANSLATE_3D = e.TRANSLATE_Z = e.TRANSLATE_Y = e.TRANSLATE_X = e.TRANSFORM = e.CONFIG_UNIT = e.CONFIG_Z_UNIT = e.CONFIG_Y_UNIT = e.CONFIG_X_UNIT = e.CONFIG_VALUE = e.CONFIG_Z_VALUE = e.CONFIG_Y_VALUE = e.CONFIG_X_VALUE = e.BOUNDARY_SELECTOR = e.W_MOD_IX = e.W_MOD_JS = e.WF_PAGE = e.IX2_ID_DELIMITER = void 0;
     e.IX2_ID_DELIMITER = "|";
     e.WF_PAGE = "data-wf-page";
     e.W_MOD_JS = "w-mod-js";
@@ -14757,6 +14759,7 @@
     e.SKEW_Y = "skewY";
     e.OPACITY = "opacity";
     e.FILTER = "filter";
+    e.FONT_VARIATION_SETTINGS = "font-variation-settings";
     e.WIDTH = "width";
     e.HEIGHT = "height";
     e.BACKGROUND_COLOR = "backgroundColor";
@@ -14883,23 +14886,23 @@
                     S = _.newState;
                 return (0, i.setIn)(t, ["eventState", x], S);
             case p:
-                var A = e.payload,
-                    T = A.actionListId,
-                    I = A.isPlaying;
-                return (0, i.setIn)(t, ["playbackState", T], I);
+                var T = e.payload,
+                    A = T.actionListId,
+                    I = T.isPlaying;
+                return (0, i.setIn)(t, ["playbackState", A], I);
             case d:
-                for (var w = e.payload, P = w.width, C = w.mediaQueries, D = C.length, M = null, O = 0; O < D; O++) {
+                for (var P = e.payload, w = P.width, C = P.mediaQueries, D = C.length, M = null, O = 0; O < D; O++) {
                     var k = C[O],
-                        R = k.key,
-                        F = k.min,
+                        F = k.key,
+                        R = k.min,
                         L = k.max;
-                    if (P >= F && P <= L) {
-                        M = R;
+                    if (w >= R && w <= L) {
+                        M = F;
                         break
                     }
                 }
                 return (0, i.merge)(t, {
-                    viewportWidth: P,
+                    viewportWidth: w,
                     mediaQueryKey: M
                 });
             case m:
@@ -15045,13 +15048,13 @@
     Object.defineProperty(e, "__esModule", {
         value: !0
     }), e.getInstanceId = function() {
-        return "i" + dt++
+        return "i" + vt++
     }, e.getElementId = function(t, e) {
         for (var r in t) {
             var n = t[r];
             if (n && n.ref === e) return n.id
         }
-        return "e" + mt++
+        return "e" + yt++
     }, e.reifyState = function() {
         var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
             e = t.events,
@@ -15080,7 +15083,7 @@
             r = t.select,
             n = t.onChange,
             i = t.comparator,
-            a = void 0 === i ? vt : i,
+            a = void 0 === i ? gt : i,
             o = e.getState,
             s = (0, e.subscribe)(function() {
                 var t = r(o());
@@ -15089,16 +15092,16 @@
             }),
             l = r(o());
         return s
-    }, e.getAffectedElements = gt, e.getComputedStyle = function(t) {
+    }, e.getAffectedElements = bt, e.getComputedStyle = function(t) {
         var e = t.element,
             r = t.actionItem;
         if (!g.IS_BROWSER_ENV) return {};
         switch (r.actionTypeId) {
-            case it:
-            case at:
             case ot:
             case st:
             case lt:
+            case ht:
+            case ct:
                 return window.getComputedStyle(e);
             default:
                 return {}
@@ -15108,43 +15111,44 @@
             r = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {},
             n = arguments.length > 3 ? arguments[3] : void 0,
             i = (arguments.length > 4 ? arguments[4] : void 0).getStyle,
-            a = n.actionTypeId,
-            o = n.config;
+            a = n.actionTypeId;
         if ((0, y.isPluginType)(a)) return (0, y.getPluginOrigin)(a)(e[a]);
-        switch (a) {
-            case Z:
+        switch (n.actionTypeId) {
             case J:
             case tt:
             case et:
-                return e[a] || St[a];
-            case nt:
-                return bt(e[a], n.config.filters);
             case rt:
+                return e[n.actionTypeId] || Pt[n.actionTypeId];
+            case it:
+                return xt(e[n.actionTypeId], n.config.filters);
+            case at:
+                return St(e[n.actionTypeId], n.config.fontVariations);
+            case nt:
                 return {
                     value: (0, c.default)(parseFloat(i(t, D)), 1)
                 };
-            case it:
-                var s, l, h = i(t, O),
-                    u = i(t, k);
-                return s = o.widthUnit === H ? Et.test(h) ? parseFloat(h) : parseFloat(r.width) : (0, c.default)(parseFloat(h), parseFloat(r.width)), l = o.heightUnit === H ? Et.test(u) ? parseFloat(u) : parseFloat(r.height) : (0, c.default)(parseFloat(u), parseFloat(r.height)), {
-                    widthValue: s,
-                    heightValue: l
-                };
-            case at:
             case ot:
+                var o, s, l = i(t, k),
+                    h = i(t, F);
+                return o = n.config.widthUnit === X ? _t.test(l) ? parseFloat(l) : parseFloat(r.width) : (0, c.default)(parseFloat(l), parseFloat(r.width)), s = n.config.heightUnit === X ? _t.test(h) ? parseFloat(h) : parseFloat(r.height) : (0, c.default)(parseFloat(h), parseFloat(r.height)), {
+                    widthValue: o,
+                    heightValue: s
+                };
             case st:
+            case lt:
+            case ht:
                 return function(t) {
                     var e = t.element,
                         r = t.actionTypeId,
                         n = t.computedStyle,
                         i = t.getStyle,
-                        a = ut[r],
+                        a = pt[r],
                         o = i(e, a),
-                        s = wt.test(o) ? o : n[a],
+                        s = Ot.test(o) ? o : n[a],
                         l = function(t, e) {
                             var r = t.exec(e);
                             return r ? r[1] : ""
-                        }(Pt, s).split(X);
+                        }(kt, s).split(W);
                     return {
                         rValue: (0, c.default)(parseInt(l[0], 10), 255),
                         gValue: (0, c.default)(parseInt(l[1], 10), 255),
@@ -15153,16 +15157,16 @@
                     }
                 }({
                     element: t,
-                    actionTypeId: a,
+                    actionTypeId: n.actionTypeId,
                     computedStyle: r,
                     getStyle: i
                 });
-            case lt:
+            case ct:
                 return {
-                    value: (0, c.default)(i(t, j), r.display)
+                    value: (0, c.default)(i(t, z), r.display)
                 };
-            case ht:
-                return e[a] || {
+            case ut:
+                return e[n.actionTypeId] || {
                     value: 0
                 };
             default:
@@ -15171,79 +15175,80 @@
     }, e.getDestinationValues = function(t) {
         var e = t.element,
             r = t.actionItem,
-            n = t.elementApi,
-            i = r.actionTypeId;
-        if ((0, y.isPluginType)(i)) return (0, y.getPluginDestination)(i)(r.config);
-        switch (i) {
-            case Z:
+            n = t.elementApi;
+        if ((0, y.isPluginType)(r.actionTypeId)) return (0, y.getPluginDestination)(r.actionTypeId)(r.config);
+        switch (r.actionTypeId) {
             case J:
             case tt:
             case et:
-                var a = r.config,
-                    o = a.xValue,
-                    s = a.yValue,
-                    l = a.zValue;
+            case rt:
+                var i = r.config,
+                    a = i.xValue,
+                    o = i.yValue,
+                    s = i.zValue;
                 return {
-                    xValue: o,
-                    yValue: s,
-                    zValue: l
+                    xValue: a,
+                    yValue: o,
+                    zValue: s
+                };
+            case ot:
+                var l = n.getStyle,
+                    h = n.setStyle,
+                    c = n.getProperty,
+                    u = r.config,
+                    f = u.widthUnit,
+                    p = u.heightUnit,
+                    d = r.config,
+                    m = d.widthValue,
+                    v = d.heightValue;
+                if (!g.IS_BROWSER_ENV) return {
+                    widthValue: m,
+                    heightValue: v
+                };
+                if (f === X) {
+                    var E = l(e, k);
+                    h(e, k, ""), m = c(e, "offsetWidth"), h(e, k, E)
+                }
+                if (p === X) {
+                    var b = l(e, F);
+                    h(e, F, ""), v = c(e, "offsetHeight"), h(e, F, b)
+                }
+                return {
+                    widthValue: m,
+                    heightValue: v
+                };
+            case st:
+            case lt:
+            case ht:
+                var _ = r.config,
+                    x = _.rValue,
+                    S = _.gValue,
+                    T = _.bValue,
+                    A = _.aValue;
+                return {
+                    rValue: x,
+                    gValue: S,
+                    bValue: T,
+                    aValue: A
                 };
             case it:
-                var h = n.getStyle,
-                    c = n.setStyle,
-                    u = n.getProperty,
-                    f = r.config,
-                    p = f.widthUnit,
-                    d = f.heightUnit,
-                    m = r.config,
-                    v = m.widthValue,
-                    E = m.heightValue;
-                if (!g.IS_BROWSER_ENV) return {
-                    widthValue: v,
-                    heightValue: E
-                };
-                if (p === H) {
-                    var b = h(e, O);
-                    c(e, O, ""), v = u(e, "offsetWidth"), c(e, O, b)
-                }
-                if (d === H) {
-                    var _ = h(e, k);
-                    c(e, k, ""), E = u(e, "offsetHeight"), c(e, k, _)
-                }
-                return {
-                    widthValue: v,
-                    heightValue: E
-                };
+                return r.config.filters.reduce(Tt, {});
             case at:
-            case ot:
-            case st:
-                var x = r.config,
-                    S = x.rValue,
-                    A = x.gValue,
-                    T = x.bValue,
-                    I = x.aValue;
-                return {
-                    rValue: S,
-                    gValue: A,
-                    bValue: T,
-                    aValue: I
-                };
-            case nt:
-                return r.config.filters.reduce(_t, {});
+                return r.config.fontVariations.reduce(At, {});
             default:
-                var w = r.config.value;
+                var I = r.config.value;
                 return {
-                    value: w
+                    value: I
                 }
         }
-    }, e.getRenderType = xt, e.getStyleProp = function(t, e) {
-        return t === K ? e.replace("STYLE_", "").toLowerCase() : null
+    }, e.getRenderType = It, e.getStyleProp = function(t, e) {
+        return t === Q ? e.replace("STYLE_", "").toLowerCase() : null
     }, e.renderHTMLElement = function(t, e, r, n, i, a, o, s, l) {
         switch (s) {
-            case q:
+            case Y:
                 return function(t, e, r, n, i) {
-                    var a = It.map(function(t) {
-                            var r = St[t],
+                    var a = Mt.map(function(t) {
+                            var r = Pt[t],
                                 n = e[t] || {},
                                 i = n.xValue,
                                 a = void 0 === i ? r.xValue : i,
@@ -15258,73 +15263,80 @@
                                 d = n.zUnit,
                                 m = void 0 === d ? "" : d;
                             switch (t) {
-                                case Z:
-                                    return "".concat(x, "(").concat(a).concat(u, ", ").concat(s).concat(p, ", ").concat(h).concat(m, ")");
                                 case J:
-                                    return "".concat(S, "(").concat(a).concat(u, ", ").concat(s).concat(p, ", ").concat(h).concat(m, ")");
+                                    return "".concat(x, "(").concat(a).concat(u, ", ").concat(s).concat(p, ", ").concat(h).concat(m, ")");
                                 case tt:
-                                    return "".concat(A, "(").concat(a).concat(u, ") ").concat(T, "(").concat(s).concat(p, ") ").concat(I, "(").concat(h).concat(m, ")");
+                                    return "".concat(S, "(").concat(a).concat(u, ", ").concat(s).concat(p, ", ").concat(h).concat(m, ")");
                                 case et:
-                                    return "".concat(w, "(").concat(a).concat(u, ", ").concat(s).concat(p, ")");
+                                    return "".concat(T, "(").concat(a).concat(u, ") ").concat(A, "(").concat(s).concat(p, ") ").concat(I, "(").concat(h).concat(m, ")");
+                                case rt:
+                                    return "".concat(P, "(").concat(a).concat(u, ", ").concat(s).concat(p, ")");
                                 default:
                                     return ""
                             }
                         }).join(" "),
                         o = i.setStyle;
-                    Ct(t, g.TRANSFORM_PREFIXED, i), o(t, g.TRANSFORM_PREFIXED, a), s = n, l = r, h = s.actionTypeId, c = l.xValue, u = l.yValue, f = l.zValue, (h === Z && void 0 !== f || h === J && void 0 !== f || h === tt && (void 0 !== c || void 0 !== u)) && o(t, g.TRANSFORM_STYLE_PREFIXED, P);
+                    Ft(t, g.TRANSFORM_PREFIXED, i), o(t, g.TRANSFORM_PREFIXED, a), s = n, l = r, h = s.actionTypeId, c = l.xValue, u = l.yValue, f = l.zValue, (h === J && void 0 !== f || h === tt && void 0 !== f || h === et && (void 0 !== c || void 0 !== u)) && o(t, g.TRANSFORM_STYLE_PREFIXED, w);
                     var s, l, h, c, u, f
                 }(t, e, r, i, o);
-            case K:
+            case Q:
                 return function(t, e, r, n, i, a) {
-                    var o = a.setStyle,
-                        s = n.actionTypeId,
-                        l = n.config;
-                    switch (s) {
-                        case it:
-                            var h = n.config,
-                                c = h.widthUnit,
+                    var o = a.setStyle;
+                    switch (n.actionTypeId) {
+                        case ot:
+                            var s = n.config,
+                                l = s.widthUnit,
+                                h = void 0 === l ? "" : l,
+                                c = s.heightUnit,
                                 f = void 0 === c ? "" : c,
-                                p = h.heightUnit,
-                                d = void 0 === p ? "" : p,
-                                m = r.widthValue,
-                                v = r.heightValue;
-                            void 0 !== m && (f === H && (f = "px"), Ct(t, O, a), o(t, O, m + f)), void 0 !== v && (d === H && (d = "px"), Ct(t, k, a), o(t, k, v + d));
+                                p = r.widthValue,
+                                d = r.heightValue;
+                            void 0 !== p && (h === X && (h = "px"), Ft(t, k, a), o(t, k, p + h)), void 0 !== d && (f === X && (f = "px"), Ft(t, F, a), o(t, F, d + f));
                             break;
-                        case nt:
+                        case it:
                             ! function(t, e, r, n) {
                                 var i = (0, u.default)(e, function(t, e, n) {
-                                        return "".concat(t, " ").concat(n, "(").concat(e).concat(Tt(n, r), ")")
+                                        return "".concat(t, " ").concat(n, "(").concat(e).concat(Dt(n, r), ")")
                                     }, ""),
                                     a = n.setStyle;
-                                Ct(t, M, n), a(t, M, i)
-                            }(t, r, l, a);
+                                Ft(t, M, n), a(t, M, i)
+                            }(t, r, n.config, a);
                             break;
                         case at:
-                        case ot:
+                            ! function(t, e, r, n) {
+                                var i = (0, u.default)(e, function(t, e, r) {
+                                        return t.push('"'.concat(r, '" ').concat(e)), t
+                                    }, []).join(", "),
+                                    a = n.setStyle;
+                                Ft(t, O, n), a(t, O, i)
+                            }(t, r, n.config, a);
+                            break;
                         case st:
-                            var y = ut[s],
-                                g = Math.round(r.rValue),
-                                E = Math.round(r.gValue),
-                                b = Math.round(r.bValue),
-                                _ = r.aValue;
-                            Ct(t, y, a), o(t, y, _ >= 1 ? "rgb(".concat(g, ",").concat(E, ",").concat(b, ")") : "rgba(".concat(g, ",").concat(E, ",").concat(b, ",").concat(_, ")"));
+                        case lt:
+                        case ht:
+                            var m = pt[n.actionTypeId],
+                                v = Math.round(r.rValue),
+                                y = Math.round(r.gValue),
+                                g = Math.round(r.bValue),
+                                E = r.aValue;
+                            Ft(t, m, a), o(t, m, E >= 1 ? "rgb(".concat(v, ",").concat(y, ",").concat(g, ")") : "rgba(".concat(v, ",").concat(y, ",").concat(g, ",").concat(E, ")"));
                             break;
                         default:
-                            var x = l.unit,
-                                S = void 0 === x ? "" : x;
-                            Ct(t, i, a), o(t, i, r.value + S)
+                            var b = n.config.unit,
+                                _ = void 0 === b ? "" : b;
+                            Ft(t, i, a), o(t, i, r.value + _)
                     }
                 }(t, 0, r, i, a, o);
-            case Y:
+            case K:
                 return function(t, e, r) {
                     var n = r.setStyle;
                     switch (e.actionTypeId) {
-                        case lt:
+                        case ct:
                             var i = e.config.value;
-                            return void(i === C && g.IS_BROWSER_ENV ? n(t, j, g.FLEX_PREFIXED) : n(t, j, i))
+                            return void(i === C && g.IS_BROWSER_ENV ? n(t, z, g.FLEX_PREFIXED) : n(t, z, i))
                     }
                 }(t, i, o);
-            case Q:
+            case $:
                 var h = i.actionTypeId;
                 if ((0, y.isPluginType)(h)) return (0, y.renderPlugin)(h)(l, e, i)
         }
@@ -15341,13 +15353,13 @@
                 n = e.action.config,
                 i = n.actionListId,
                 o = s[i];
-            o && Mt({
+            o && Lt({
                 actionList: o,
                 event: e,
                 elementApi: r
             })
         }), Object.keys(s).forEach(function(t) {
-            Mt({
+            Lt({
                 actionList: s[t],
                 elementApi: r
             })
@@ -15356,16 +15368,16 @@
         var n = r.setStyle,
             i = r.getStyle,
             a = e.actionTypeId;
-        if (a === it) {
+        if (a === ot) {
             var o = e.config;
-            o.widthUnit === H && n(t, O, ""), o.heightUnit === H && n(t, k, "")
+            o.widthUnit === X && n(t, k, ""), o.heightUnit === X && n(t, F, "")
         }
-        i(t, z) && kt({
-            effect: Dt,
+        i(t, H) && Vt({
+            effect: Rt,
             actionTypeId: a,
             elementApi: r
         })(t)
-    }, e.getMaxDurationItemIndex = Ft, e.getActionListProgress = function(t, e) {
+    }, e.getMaxDurationItemIndex = Gt, e.getActionListProgress = function(t, e) {
         var r = t.actionItemGroups,
             n = t.useFirstGroupAsInitialState,
             i = e.actionItem,
@@ -15376,11 +15388,11 @@
         return r.forEach(function(t, e) {
             if (!n || 0 !== e) {
                 var r = t.actionItems,
-                    a = r[Ft(r)],
+                    a = r[Gt(r)],
                     h = a.config,
                     c = a.actionTypeId;
                 i.id === a.id && (l = s + o);
-                var u = xt(c) === Y ? 0 : h.duration;
+                var u = It(c) === K ? 0 : h.duration;
                 s += h.delay + u
             }
         }), s > 0 ? (0, v.optimizeFloat)(l / s) : 0
@@ -15413,7 +15425,7 @@
         var r = e.basedOn;
         return t === d.EventTypeConsts.SCROLLING_IN_VIEW && (r === d.EventBasedOn.ELEMENT || null == r) || t === d.EventTypeConsts.MOUSE_MOVE && r === d.EventBasedOn.ELEMENT
     }, e.getNamespacedParameterId = function(t, e) {
-        return t + W + e
+        return t + U + e
     }, e.shouldAllowMediaQuery = function(t, e) {
         if (null == e) return !0;
         return -1 !== t.indexOf(e)
@@ -15426,7 +15438,7 @@
             n = t.selector,
             i = void 0 === n ? "" : n,
             a = t.useEventTarget;
-        return r + U + i + U + (void 0 === a ? "" : a)
+        return r + q + i + q + (void 0 === a ? "" : a)
     }, Object.defineProperty(e, "shallowEqual", {
         enumerable: !0,
         get: function() {
@@ -15447,59 +15459,61 @@
         _ = E.TRANSFORM,
         x = E.TRANSLATE_3D,
         S = E.SCALE_3D,
-        A = E.ROTATE_X,
-        T = E.ROTATE_Y,
+        T = E.ROTATE_X,
+        A = E.ROTATE_Y,
         I = E.ROTATE_Z,
-        w = E.SKEW,
-        P = E.PRESERVE_3D,
+        P = E.SKEW,
+        w = E.PRESERVE_3D,
         C = E.FLEX,
         D = E.OPACITY,
         M = E.FILTER,
-        O = E.WIDTH,
-        k = E.HEIGHT,
+        O = E.FONT_VARIATION_SETTINGS,
+        k = E.WIDTH,
+        F = E.HEIGHT,
         R = E.BACKGROUND_COLOR,
-        F = E.BORDER_COLOR,
-        L = E.COLOR,
-        N = E.CHILDREN,
-        V = E.IMMEDIATE_CHILDREN,
-        B = E.SIBLINGS,
-        G = E.PARENT,
-        j = E.DISPLAY,
-        z = E.WILL_CHANGE,
-        H = E.AUTO,
-        X = E.COMMA_DELIMITER,
-        W = E.COLON_DELIMITER,
-        U = E.BAR_DELIMITER,
-        q = E.RENDER_TRANSFORM,
-        Y = E.RENDER_GENERAL,
-        K = E.RENDER_STYLE,
-        Q = E.RENDER_PLUGIN,
-        $ = d.ActionTypeConsts,
-        Z = $.TRANSFORM_MOVE,
-        J = $.TRANSFORM_SCALE,
-        tt = $.TRANSFORM_ROTATE,
-        et = $.TRANSFORM_SKEW,
-        rt = $.STYLE_OPACITY,
-        nt = $.STYLE_FILTER,
-        it = $.STYLE_SIZE,
-        at = $.STYLE_BACKGROUND_COLOR,
-        ot = $.STYLE_BORDER,
-        st = $.STYLE_TEXT_COLOR,
-        lt = $.GENERAL_DISPLAY,
-        ht = "OBJECT_VALUE",
-        ct = function(t) {
+        L = E.BORDER_COLOR,
+        N = E.COLOR,
+        V = E.CHILDREN,
+        B = E.IMMEDIATE_CHILDREN,
+        G = E.SIBLINGS,
+        j = E.PARENT,
+        z = E.DISPLAY,
+        H = E.WILL_CHANGE,
+        X = E.AUTO,
+        W = E.COMMA_DELIMITER,
+        U = E.COLON_DELIMITER,
+        q = E.BAR_DELIMITER,
+        Y = E.RENDER_TRANSFORM,
+        K = E.RENDER_GENERAL,
+        Q = E.RENDER_STYLE,
+        $ = E.RENDER_PLUGIN,
+        Z = d.ActionTypeConsts,
+        J = Z.TRANSFORM_MOVE,
+        tt = Z.TRANSFORM_SCALE,
+        et = Z.TRANSFORM_ROTATE,
+        rt = Z.TRANSFORM_SKEW,
+        nt = Z.STYLE_OPACITY,
+        it = Z.STYLE_FILTER,
+        at = Z.STYLE_FONT_VARIATION,
+        ot = Z.STYLE_SIZE,
+        st = Z.STYLE_BACKGROUND_COLOR,
+        lt = Z.STYLE_BORDER,
+        ht = Z.STYLE_TEXT_COLOR,
+        ct = Z.GENERAL_DISPLAY,
+        ut = "OBJECT_VALUE",
+        ft = function(t) {
             return t.trim()
         },
-        ut = Object.freeze((n = {}, (0, l.default)(n, at, R), (0, l.default)(n, ot, F), (0, l.default)(n, st, L), n)),
-        ft = Object.freeze((i = {}, (0, l.default)(i, g.TRANSFORM_PREFIXED, _), (0, l.default)(i, R, b), (0, l.default)(i, D, D), (0, l.default)(i, M, M), (0, l.default)(i, O, O), (0, l.default)(i, k, k), i)),
-        pt = {},
-        dt = 1;
-    var mt = 1;
-    var vt = function(t, e) {
+        pt = Object.freeze((n = {}, (0, l.default)(n, st, R), (0, l.default)(n, lt, L), (0, l.default)(n, ht, N), n)),
+        dt = Object.freeze((i = {}, (0, l.default)(i, g.TRANSFORM_PREFIXED, _), (0, l.default)(i, R, b), (0, l.default)(i, D, D), (0, l.default)(i, M, M), (0, l.default)(i, k, k), (0, l.default)(i, F, F), (0, l.default)(i, O, O), i)),
+        mt = {},
+        vt = 1;
+    var yt = 1;
+    var gt = function(t, e) {
         return t === e
     };
 
-    function yt(t) {
+    function Et(t) {
         var e = (0, s.default)(t);
         return "string" === e ? {
             id: t
@@ -15513,7 +15527,7 @@
         } : {}
     }
 
-    function gt(t) {
+    function bt(t) {
         var e, r, n, i = t.config,
             a = t.event,
             o = t.eventTarget,
@@ -15522,7 +15536,7 @@
         if (!l) throw new Error("IX2 missing elementApi");
         var h = i.targets;
         if (Array.isArray(h) && h.length > 0) return h.reduce(function(t, e) {
-            return t.concat(gt({
+            return t.concat(bt({
                 config: {
                     target: e
                 },
@@ -15542,92 +15556,105 @@
             E = l.isSiblingNode,
             b = i.target;
         if (!b) return [];
-        var _ = yt(b),
+        var _ = Et(b),
             x = _.id,
             S = _.objectId,
-            A = _.selector,
-            T = _.selectorGuids,
+            T = _.selector,
+            A = _.selectorGuids,
             I = _.appliesTo,
-            w = _.useEventTarget;
-        if (S) return [pt[S] || (pt[S] = {})];
+            P = _.useEventTarget;
+        if (S) return [mt[S] || (mt[S] = {})];
         if (I === d.EventAppliesTo.PAGE) {
-            var P = c(x);
-            return P ? [P] : []
+            var w = c(x);
+            return w ? [w] : []
         }
-        var C, D, M, O = (null !== (e = null == a ? void 0 : null === (r = a.action) || void 0 === r ? void 0 : null === (n = r.config) || void 0 === n ? void 0 : n.affectedElements) && void 0 !== e ? e : {})[x || A] || {},
+        var C, D, M, O = (null !== (e = null == a ? void 0 : null === (r = a.action) || void 0 === r ? void 0 : null === (n = r.config) || void 0 === n ? void 0 : n.affectedElements) && void 0 !== e ? e : {})[x || T] || {},
             k = Boolean(O.id || O.selector),
-            R = a && u(yt(a.target));
-        if (k ? (C = O.limitAffectedElements, D = R, M = u(O)) : D = M = u({
+            F = a && u(Et(a.target));
+        if (k ? (C = O.limitAffectedElements, D = F, M = u(O)) : D = M = u({
                 id: x,
-                selector: A,
-                selectorGuids: T
-            }), a && w) {
-            var F = o && (M || !0 === w) ? [o] : f(R);
+                selector: T,
+                selectorGuids: A
+            }), a && P) {
+            var R = o && (M || !0 === P) ? [o] : f(F);
             if (M) {
-                if (w === G) return f(M).filter(function(t) {
-                    return F.some(function(e) {
+                if (P === j) return f(M).filter(function(t) {
+                    return R.some(function(e) {
                         return y(t, e)
                     })
                 });
-                if (w === N) return f(M).filter(function(t) {
-                    return F.some(function(e) {
+                if (P === V) return f(M).filter(function(t) {
+                    return R.some(function(e) {
                         return y(e, t)
                     })
                 });
-                if (w === B) return f(M).filter(function(t) {
-                    return F.some(function(e) {
+                if (P === G) return f(M).filter(function(t) {
+                    return R.some(function(e) {
                         return E(e, t)
                     })
                 })
             }
-            return F
+            return R
         }
         return null == D || null == M ? [] : g.IS_BROWSER_ENV && s ? f(M).filter(function(t) {
             return s.contains(t)
-        }) : C === N ? f(D, M) : C === V ? p(f(D)).filter(v(M)) : C === B ? m(f(D)).filter(v(M)) : f(M)
+        }) : C === V ? f(D, M) : C === B ? p(f(D)).filter(v(M)) : C === G ? m(f(D)).filter(v(M)) : f(M)
     }
-    var Et = /px/,
-        bt = function(t, e) {
+    var _t = /px/,
+        xt = function(t, e) {
             return e.reduce(function(t, e) {
-                return null == t[e.type] && (t[e.type] = At[e.type]), t
+                return null == t[e.type] && (t[e.type] = wt[e.type]), t
+            }, t || {})
+        },
+        St = function(t, e) {
+            return e.reduce(function(t, e) {
+                return null == t[e.type] && (t[e.type] = Ct[e.type] || e.defaultValue || 0), t
             }, t || {})
         };
-    var _t = function(t, e) {
-        return e && (t[e.type] = e.value || 0), t
-    };
+    var Tt = function(t, e) {
+            return e && (t[e.type] = e.value || 0), t
+        },
+        At = function(t, e) {
+            return e && (t[e.type] = e.value || 0), t
+        };
 
-    function xt(t) {
-        return /^TRANSFORM_/.test(t) ? q : /^STYLE_/.test(t) ? K : /^GENERAL_/.test(t) ? Y : /^PLUGIN_/.test(t) ? Q : void 0
+    function It(t) {
+        return /^TRANSFORM_/.test(t) ? Y : /^STYLE_/.test(t) ? Q : /^GENERAL_/.test(t) ? K : /^PLUGIN_/.test(t) ? $ : void 0
     }
     e.getItemConfigByKey = function(t, e, r) {
         if ((0, y.isPluginType)(t)) return (0, y.getPluginConfig)(t)(r, e);
         switch (t) {
-            case nt:
+            case it:
                 var n = (0, f.default)(r.filters, function(t) {
                     return t.type === e
                 });
                 return n ? n.value : 0;
+            case at:
+                var i = (0, f.default)(r.fontVariations, function(t) {
+                    return t.type === e
+                });
+                return i ? i.value : 0;
             default:
                 return r[e]
         }
     };
-    var St = (a = {}, (0, l.default)(a, Z, Object.freeze({
+    var Pt = (a = {}, (0, l.default)(a, J, Object.freeze({
             xValue: 0,
             yValue: 0,
             zValue: 0
-        })), (0, l.default)(a, J, Object.freeze({
+        })), (0, l.default)(a, tt, Object.freeze({
             xValue: 1,
             yValue: 1,
             zValue: 1
-        })), (0, l.default)(a, tt, Object.freeze({
+        })), (0, l.default)(a, et, Object.freeze({
             xValue: 0,
             yValue: 0,
             zValue: 0
-        })), (0, l.default)(a, et, Object.freeze({
+        })), (0, l.default)(a, rt, Object.freeze({
             xValue: 0,
             yValue: 0
         })), a),
-        At = Object.freeze({
+        wt = Object.freeze({
             blur: 0,
             "hue-rotate": 0,
             invert: 0,
@@ -15637,7 +15664,13 @@
             contrast: 100,
             brightness: 100
         }),
-        Tt = function(t, e) {
+        Ct = Object.freeze({
+            wght: 0,
+            opsz: 0,
+            wdth: 0,
+            slnt: 0
+        }),
+        Dt = function(t, e) {
             var r = (0, f.default)(e.filters, function(e) {
                 return e.type === t
             });
@@ -15651,39 +15684,39 @@
                     return "%"
             }
         },
-        It = Object.keys(St);
-    var wt = /^rgb/,
-        Pt = RegExp("rgba?".concat("\\(([^)]+)\\)"));
+        Mt = Object.keys(Pt);
+    var Ot = /^rgb/,
+        kt = RegExp("rgba?".concat("\\(([^)]+)\\)"));
 
-    function Ct(t, e, r) {
+    function Ft(t, e, r) {
         if (g.IS_BROWSER_ENV) {
-            var n = ft[e];
+            var n = dt[e];
             if (n) {
                 var i = r.getStyle,
                     a = r.setStyle,
-                    o = i(t, z);
+                    o = i(t, H);
                 if (o) {
-                    var s = o.split(X).map(ct); - 1 === s.indexOf(n) && a(t, z, s.concat(n).join(X))
-                } else a(t, z, n)
+                    var s = o.split(W).map(ft); - 1 === s.indexOf(n) && a(t, H, s.concat(n).join(W))
+                } else a(t, H, n)
             }
         }
     }
 
-    function Dt(t, e, r) {
+    function Rt(t, e, r) {
         if (g.IS_BROWSER_ENV) {
-            var n = ft[e];
+            var n = dt[e];
             if (n) {
                 var i = r.getStyle,
                     a = r.setStyle,
-                    o = i(t, z);
-                o && -1 !== o.indexOf(n) && a(t, z, o.split(X).map(ct).filter(function(t) {
+                    o = i(t, H);
+                o && -1 !== o.indexOf(n) && a(t, H, o.split(W).map(ft).filter(function(t) {
                     return t !== n
-                }).join(X))
+                }).join(W))
             }
         }
     }
 
-    function Mt(t) {
+    function Lt(t) {
         var e = t.actionList,
             r = void 0 === e ? {} : e,
             n = t.event,
@@ -15691,14 +15724,14 @@
             a = r.actionItemGroups,
             o = r.continuousParameterGroups;
         a && a.forEach(function(t) {
-            Ot({
+            Nt({
                 actionGroup: t,
                 event: n,
                 elementApi: i
             })
         }), o && o.forEach(function(t) {
             t.continuousActionGroups.forEach(function(t) {
-                Ot({
+                Nt({
                     actionGroup: t,
                     event: n,
                     elementApi: i
@@ -15707,62 +15740,65 @@
         })
     }
 
-    function Ot(t) {
+    function Nt(t) {
         var e = t.actionGroup,
             r = t.event,
             n = t.elementApi;
         e.actionItems.forEach(function(t) {
             var e, i = t.actionTypeId,
                 a = t.config;
-            e = (0, y.isPluginType)(i) ? (0, y.clearPlugin)(i) : kt({
-                effect: Rt,
+            e = (0, y.isPluginType)(i) ? (0, y.clearPlugin)(i) : Vt({
+                effect: Bt,
                 actionTypeId: i,
                 elementApi: n
-            }), gt({
+            }), bt({
                 config: a,
                 event: r,
                 elementApi: n
             }).forEach(e)
         })
     }
-    var kt = function(t) {
+    var Vt = function(t) {
         var e = t.effect,
             r = t.actionTypeId,
             n = t.elementApi;
         return function(t) {
             switch (r) {
-                case Z:
                 case J:
                 case tt:
                 case et:
+                case rt:
                     e(t, g.TRANSFORM_PREFIXED, n);
                     break;
-                case nt:
+                case it:
                     e(t, M, n);
                     break;
-                case rt:
+                case at:
+                    e(t, O, n);
+                    break;
+                case nt:
                     e(t, D, n);
                     break;
-                case it:
-                    e(t, O, n), e(t, k, n);
-                    break;
-                case at:
                 case ot:
-                case st:
-                    e(t, ut[r], n);
+                    e(t, k, n), e(t, F, n);
                     break;
+                case st:
                 case lt:
-                    e(t, j, n)
+                case ht:
+                    e(t, pt[r], n);
+                    break;
+                case ct:
+                    e(t, z, n)
             }
         }
     };
 
-    function Rt(t, e, r) {
+    function Bt(t, e, r) {
         var n = r.setStyle;
-        Dt(t, e, r), n(t, e, ""), e === g.TRANSFORM_PREFIXED && n(t, g.TRANSFORM_STYLE_PREFIXED, "")
+        Rt(t, e, r), n(t, e, ""), e === g.TRANSFORM_PREFIXED && n(t, g.TRANSFORM_STYLE_PREFIXED, "")
     }
 
-    function Ft(t) {
+    function Gt(t) {
         var e = 0,
             r = 0;
         return t.forEach(function(t, n) {
@@ -15900,36 +15936,36 @@
                 y = p[n];
             null == y && (v = 1, y = l);
             var g, b, _, x, S = Math.max(y, 0) || 0,
-                A = d(S - r),
-                T = u ? f : d(r + A * v),
-                I = 100 * T;
-            if (T === r && t.current) return t;
-            for (var w = 0, P = i.length; w < P; w++) {
-                var C = i[w],
+                T = d(S - r),
+                A = u ? f : d(r + T * v),
+                I = 100 * A;
+            if (A === r && t.current) return t;
+            for (var P = 0, w = i.length; P < w; P++) {
+                var C = i[P],
                     D = C.keyframe,
                     M = C.actionItems;
-                if (0 === w && (g = M[0]), I >= D) {
+                if (0 === P && (g = M[0]), I >= D) {
                     g = M[0];
-                    var O = i[w + 1],
+                    var O = i[P + 1],
                         k = O && I !== D;
                     b = k ? O.actionItems[0] : null, k && (_ = D / 100, x = (O.keyframe - D) / 100)
                 }
             }
-            var R = {};
+            var F = {};
             if (g && !b)
-                for (var F = 0, L = o.length; F < L; F++) {
-                    var N = o[F];
-                    R[N] = E(h, N, g.config)
+                for (var R = 0, L = o.length; R < L; R++) {
+                    var N = o[R];
+                    F[N] = E(h, N, g.config)
                 } else if (g && b && void 0 !== _ && void 0 !== x)
-                    for (var V = (T - _) / x, B = g.config.easing, G = m(B, V, c), j = 0, z = o.length; j < z; j++) {
+                    for (var V = (A - _) / x, B = g.config.easing, G = m(B, V, c), j = 0, z = o.length; j < z; j++) {
                         var H = o[j],
                             X = E(h, H, g.config),
                             W = (E(h, H, b.config) - X) * G + X;
-                        R[H] = W
+                        F[H] = W
                     }
             return (0, a.merge)(t, {
-                position: T,
-                current: R
+                position: A,
+                current: F
             })
         },
         S = function(t, e) {
@@ -15952,17 +15988,17 @@
                 x = _.duration,
                 S = _.delay;
             null != p && (x = p), S = null != v ? v : S, l === y ? x = 0 : (s || E) && (x = S = 0);
-            var A = e.payload.now;
+            var T = e.payload.now;
             if (n && i) {
-                var T = A - (o + S);
+                var A = T - (o + S);
                 if (h) {
-                    var I = A - o,
-                        w = x + S,
-                        P = d(Math.min(Math.max(0, I / w), 1));
-                    t = (0, a.set)(t, "verboseTimeElapsed", w * P)
+                    var I = T - o,
+                        P = x + S,
+                        w = d(Math.min(Math.max(0, I / P), 1));
+                    t = (0, a.set)(t, "verboseTimeElapsed", P * w)
                 }
-                if (T < 0) return t;
-                var C = d(Math.min(Math.max(0, T / x), 1)),
+                if (A < 0) return t;
+                var C = d(Math.min(Math.max(0, A / x), 1)),
                     D = m(b, C, g),
                     M = {},
                     O = null;
@@ -15994,25 +16030,25 @@
                     y = r.actionListId,
                     g = r.groupIndex,
                     E = r.isCarrier,
-                    A = r.origin,
-                    T = r.destination,
+                    T = r.origin,
+                    A = r.destination,
                     I = r.immediate,
-                    w = r.verbose,
-                    P = r.continuous,
+                    P = r.verbose,
+                    w = r.continuous,
                     C = r.parameterId,
                     D = r.actionGroups,
                     M = r.smoothing,
                     O = r.restingValue,
                     k = r.pluginInstance,
-                    R = r.pluginDuration,
-                    F = r.instanceDelay,
+                    F = r.pluginDuration,
+                    R = r.instanceDelay,
                     L = r.skipMotion,
                     N = r.skipToValue,
                     V = o.actionTypeId,
                     B = b(V),
                     G = _(B, V),
-                    j = Object.keys(T).filter(function(t) {
-                        return null != T[t]
+                    j = Object.keys(A).filter(function(t) {
+                        return null != A[t]
                     }),
                     z = o.config.easing;
                 return (0, a.set)(t, n, {
@@ -16021,11 +16057,11 @@
                     active: !1,
                     position: 0,
                     start: 0,
-                    origin: A,
-                    destination: T,
+                    origin: T,
+                    destination: A,
                     destinationKeys: j,
                     immediate: I,
-                    verbose: w,
+                    verbose: P,
                     current: null,
                     actionItem: o,
                     actionTypeId: V,
@@ -16037,14 +16073,14 @@
                     renderType: B,
                     isCarrier: E,
                     styleProp: G,
-                    continuous: P,
+                    continuous: w,
                     parameterId: C,
                     actionGroups: D,
                     smoothing: M,
                     restingValue: O,
                     pluginInstance: k,
-                    pluginDuration: R,
-                    instanceDelay: F,
+                    pluginDuration: F,
+                    instanceDelay: R,
                     skipMotion: L,
                     skipToValue: N,
                     customEasingFn: Array.isArray(z) && 4 === z.length ? v(z) : void 0
@@ -16113,8 +16149,8 @@
         return i
     }
 }, function(t, e, r) {
-    var n = r(88),
-        i = r(90),
+    var n = r(87),
+        i = r(89),
         a = r(39),
         o = r(413),
         s = r(414),
@@ -16205,7 +16241,7 @@
         })
     }
 }, function(t, e, r) {
-    var n = r(92),
+    var n = r(91),
         i = r(422),
         a = r(65);
     t.exports = function(t, e, r) {
@@ -16219,7 +16255,7 @@
 }, function(t, e, r) {
     var n = r(423),
         i = r(65),
-        a = r(85),
+        a = r(84),
         o = r(23),
         s = r(48);
     t.exports = function(t, e, r, l) {
@@ -16238,7 +16274,7 @@
     }
 }, function(t, e, r) {
     var n = r(186),
-        i = r(80),
+        i = r(79),
         a = Object.prototype.hasOwnProperty;
     t.exports = function(t, e, r) {
         var o = t[e];
@@ -16252,7 +16288,7 @@
         return n(t, a, i)
     }
 }, function(t, e, r) {
-    var n = r(83),
+    var n = r(82),
         i = r(426),
         a = r(135),
         o = r(136),
@@ -16273,7 +16309,7 @@
     }
 }, function(t, e, r) {
     var n = r(23),
-        i = r(89),
+        i = r(88),
         a = r(429),
         o = Object.prototype.hasOwnProperty;
     t.exports = function(t) {
@@ -16291,14 +16327,14 @@
         return e
     }
 }, function(t, e, r) {
-    var n = r(88),
-        i = r(90),
+    var n = r(87),
+        i = r(89),
         a = r(64),
         o = r(10),
         s = r(39),
-        l = r(84),
-        h = r(89),
-        c = r(86),
+        l = r(83),
+        h = r(88),
+        c = r(85),
         u = "[object Map]",
         f = "[object Set]",
         p = Object.prototype.hasOwnProperty;
@@ -16336,7 +16372,7 @@
         return t
     }
 }, function(t, e, r) {
-    var n = r(94);
+    var n = r(93);
     t.exports = function(t) {
         return "function" == typeof t ? t : n
     }
@@ -16357,7 +16393,7 @@
 }, function(t, e, r) {
     var n = r(23),
         i = r(437),
-        a = r(95),
+        a = r(94),
         o = "Expected a function",
         s = Math.max,
         l = Math.min;
@@ -16503,7 +16539,7 @@
     }), e.default = void 0;
     var l, h, c, u = s(r(46)),
         f = s(r(440)),
-        p = s(r(91)),
+        p = s(r(90)),
         d = s(r(459)),
         m = r(14),
         v = r(185),
@@ -16514,18 +16550,18 @@
         _ = E.MOUSE_SECOND_CLICK,
         x = E.MOUSE_DOWN,
         S = E.MOUSE_UP,
-        A = E.MOUSE_OVER,
-        T = E.MOUSE_OUT,
+        T = E.MOUSE_OVER,
+        A = E.MOUSE_OUT,
         I = E.DROPDOWN_CLOSE,
-        w = E.DROPDOWN_OPEN,
-        P = E.SLIDER_ACTIVE,
+        P = E.DROPDOWN_OPEN,
+        w = E.SLIDER_ACTIVE,
         C = E.SLIDER_INACTIVE,
         D = E.TAB_ACTIVE,
         M = E.TAB_INACTIVE,
         O = E.NAVBAR_CLOSE,
         k = E.NAVBAR_OPEN,
-        R = E.MOUSE_MOVE,
-        F = E.PAGE_SCROLL_DOWN,
+        F = E.MOUSE_MOVE,
+        R = E.PAGE_SCROLL_DOWN,
         L = E.SCROLL_INTO_VIEW,
         N = E.SCROLL_OUT_OF_VIEW,
         V = E.PAGE_SCROLL_UP,
@@ -16693,7 +16729,7 @@
                 var m, v, y = (f ? c : o * (c || 0) / 100) / p,
                     g = 0;
                 r && (m = d > r.percentTop, g = (v = r.scrollingDown !== m) ? d : r.anchorTop);
-                var E = h === F ? d >= g + y : d <= g - y,
+                var E = h === R ? d >= g + y : d <= g - y,
                     b = (0, u.default)({}, r, {
                         percentTop: d,
                         inBounds: E,
@@ -16744,7 +16780,7 @@
                 return (e ? r.elementVisible !== e.elementVisible : r.elementVisible) && c(t, r) || r
             })
         }),
-        yt = (n = {}, (0, a.default)(n, P, dt()), (0, a.default)(n, C, mt()), (0, a.default)(n, w, dt()), (0, a.default)(n, I, mt()), (0, a.default)(n, k, dt(!1)), (0, a.default)(n, O, mt(!1)), (0, a.default)(n, D, dt()), (0, a.default)(n, M, mt()), (0, a.default)(n, z, {
+        yt = (n = {}, (0, a.default)(n, w, dt()), (0, a.default)(n, C, mt()), (0, a.default)(n, P, dt()), (0, a.default)(n, I, mt()), (0, a.default)(n, k, dt(!1)), (0, a.default)(n, O, mt(!1)), (0, a.default)(n, D, dt()), (0, a.default)(n, M, mt()), (0, a.default)(n, z, {
             types: "ecommerce-cart-open",
             handler: et(Z, tt)
         }), (0, a.default)(n, j, {
@@ -16765,17 +16801,17 @@
             types: "mousedown"
         })), (0, a.default)(n, S, (0, u.default)({}, rt, {
             types: "mouseup"
-        })), (0, a.default)(n, A, {
+        })), (0, a.default)(n, T, {
             types: "mouseover mouseout",
             handler: et(Z, ut(function(t, e) {
                 e.elementHovered && tt(t)
             }))
-        }), (0, a.default)(n, T, {
+        }), (0, a.default)(n, A, {
             types: "mouseover mouseout",
             handler: et(Z, ut(function(t, e) {
                 e.elementHovered || tt(t)
             }))
-        }), (0, a.default)(n, R, {
+        }), (0, a.default)(n, F, {
             types: "mousemove mouseout scroll",
             handler: function(t) {
                 var e = t.store,
@@ -16804,21 +16840,21 @@
                     _ = i.pageY,
                     x = void 0 === _ ? o.pageY : _,
                     S = "X_AXIS" === l,
-                    A = "mouseout" === i.type,
-                    T = f / 100,
+                    T = "mouseout" === i.type,
+                    A = f / 100,
                     I = h,
-                    w = !1;
+                    P = !1;
                 switch (s) {
                     case m.EventBasedOn.VIEWPORT:
-                        T = S ? Math.min(d, window.innerWidth) / window.innerWidth : Math.min(g, window.innerHeight) / window.innerHeight;
+                        A = S ? Math.min(d, window.innerWidth) / window.innerWidth : Math.min(g, window.innerHeight) / window.innerHeight;
                         break;
                     case m.EventBasedOn.PAGE:
-                        var P = st(),
-                            C = P.scrollLeft,
-                            D = P.scrollTop,
-                            M = P.scrollWidth,
-                            O = P.scrollHeight;
-                        T = S ? Math.min(C + b, M) / M : Math.min(D + x, O) / O;
+                        var w = st(),
+                            C = w.scrollLeft,
+                            D = w.scrollTop,
+                            M = w.scrollWidth,
+                            O = w.scrollHeight;
+                        A = S ? Math.min(C + b, M) / M : Math.min(D + x, O) / O;
                         break;
                     case m.EventBasedOn.ELEMENT:
                     default:
@@ -16828,21 +16864,21 @@
                                 element: r,
                                 nativeEvent: i
                             })) break;
-                        var R = r.getBoundingClientRect(),
-                            F = R.left,
-                            L = R.top,
-                            N = R.width,
-                            V = R.height;
+                        var F = r.getBoundingClientRect(),
+                            R = F.left,
+                            L = F.top,
+                            N = F.width,
+                            V = F.height;
                         if (!k && ! function(t, e) {
                                 return t.left > e.left && t.left < e.right && t.top > e.top && t.top < e.bottom
                             }({
                                 left: d,
                                 top: g
-                            }, R)) break;
-                        w = !0, T = S ? (d - F) / N : (g - L) / V
+                            }, F)) break;
+                        P = !0, A = S ? (d - R) / N : (g - L) / V
                 }
-                return A && (T > .95 || T < .05) && (T = Math.round(T)), (s !== m.EventBasedOn.ELEMENT || w || w !== o.elementHovered) && (T = c ? 1 - T : T, e.dispatch((0, y.parameterChanged)(I, T))), {
-                    elementHovered: w,
+                return T && (A > .95 || A < .05) && (A = Math.round(A)), (s !== m.EventBasedOn.ELEMENT || P || P !== o.elementHovered) && (A = c ? 1 - A : A, e.dispatch((0, y.parameterChanged)(I, A))), {
+                    elementHovered: P,
                     clientX: d,
                     clientY: g,
                     pageX: b,
@@ -16886,28 +16922,28 @@
                     _ = n.addOffsetValue,
                     x = void 0 === _ ? 0 : _,
                     S = n.endOffsetValue,
-                    A = void 0 === S ? 0 : S,
-                    T = "X_AXIS" === p;
+                    T = void 0 === S ? 0 : S,
+                    A = "X_AXIS" === p;
                 if (f === m.EventBasedOn.VIEWPORT) {
-                    var I = T ? s / h : l / c;
+                    var I = A ? s / h : l / c;
                     return I !== a.scrollPercent && r.dispatch((0, y.parameterChanged)(d, I)), {
                         scrollPercent: I
                     }
                 }
-                var w = Y(i, d),
-                    P = e.getBoundingClientRect(),
+                var P = Y(i, d),
+                    w = e.getBoundingClientRect(),
                     C = (b ? x : 0) / 100,
-                    D = (E ? A : 0) / 100;
+                    D = (E ? T : 0) / 100;
                 C = v ? C : 1 - C, D = g ? D : 1 - D;
-                var M = P.top + Math.min(P.height * C, u),
-                    O = P.top + P.height * D - M,
+                var M = w.top + Math.min(w.height * C, u),
+                    O = w.top + w.height * D - M,
                     k = Math.min(u + O, c),
-                    R = Math.min(Math.max(0, u - M), k) / k;
-                return R !== a.scrollPercent && r.dispatch((0, y.parameterChanged)(w, R)), {
-                    scrollPercent: R
+                    F = Math.min(Math.max(0, u - M), k) / k;
+                return F !== a.scrollPercent && r.dispatch((0, y.parameterChanged)(P, F)), {
+                    scrollPercent: F
                 }
             }
-        }), (0, a.default)(n, L, vt), (0, a.default)(n, N, vt), (0, a.default)(n, F, (0, u.default)({}, at, {
+        }), (0, a.default)(n, L, vt), (0, a.default)(n, N, vt), (0, a.default)(n, R, (0, u.default)({}, at, {
             handler: ft(function(t, e) {
                 e.scrollingDown && tt(t)
             })
@@ -16989,7 +17025,7 @@
         return null != t && t.length ? n(t, 1) : []
     }
 }, function(t, e, r) {
-    var n = r(83),
+    var n = r(82),
         i = r(445);
     t.exports = function t(e, r, a, o, s) {
         var l = -1,
@@ -17041,7 +17077,7 @@
 }, function(t, e, r) {
     var n = r(450),
         i = r(187),
-        a = r(94),
+        a = r(93),
         o = i ? function(t, e) {
             return i(t, "toString", {
                 configurable: !0,
@@ -17129,7 +17165,7 @@
     }
 }, function(t, e, r) {
     var n = r(460),
-        i = r(95);
+        i = r(94);
     t.exports = function(t, e, r) {
         return void 0 === r && (r = e, e = void 0), void 0 !== r && (r = (r = i(r)) == r ? r : 0), void 0 !== e && (e = (e = i(e)) == e ? e : 0), n(i(t), e, r)
     }
@@ -17139,7 +17175,7 @@
     }
 }, function(t, e, r) {
     "use strict";
-    var n = r(11);
+    var n = r(12);
     n.define("links", t.exports = function(t, e) {
         var r, i, a, o = {},
             s = t(window),
@@ -17195,7 +17231,7 @@
     })
 }, function(t, e, r) {
     "use strict";
-    var n = r(11);
+    var n = r(12);
     n.define("scroll", t.exports = function(t) {
         var e = {
                 WF_CLICK_EMPTY: "click.wf-empty-link",
@@ -17301,7 +17337,7 @@
     })
 }, function(t, e, r) {
     "use strict";
-    r(11).define("touch", t.exports = function(t) {
+    r(12).define("touch", t.exports = function(t) {
         var e = {},
             r = window.getSelection;
 
@@ -17353,7 +17389,7 @@
 }, function(t, e, r) {
     "use strict";
     var n = r(3)(r(465)),
-        i = r(11);
+        i = r(12);
     i.define("forms", t.exports = function(t, e) {
         var r, a, o, s, l, h = {},
             c = t(document),
@@ -17394,9 +17430,10 @@
                         g = p.attr("data-w-size-error"),
                         E = p.attr("data-w-type-error"),
                         b = p.attr("data-w-generic-error");
-                    if (u.on("click keydown", function(t) {
-                            "keydown" === t.type && 13 !== t.which && 32 !== t.which || (t.preventDefault(), c.click())
-                        }), u.find(".w-icon-file-upload-icon").attr("aria-hidden", "true"), m.find(".w-icon-file-upload-remove").attr("aria-hidden", "true"), y) c.on("click", function(t) {
+                    y || u.on("click keydown", function(t) {
+                        "keydown" === t.type && 13 !== t.which && 32 !== t.which || (t.preventDefault(), c.click())
+                    });
+                    if (u.find(".w-icon-file-upload-icon").attr("aria-hidden", "true"), m.find(".w-icon-file-upload-remove").attr("aria-hidden", "true"), y) c.on("click", function(t) {
                         t.preventDefault()
                     }), u.on("click", function(t) {
                         t.preventDefault()
@@ -17411,36 +17448,34 @@
                             }
                             c.removeAttr("data-value"), c.val(""), v.html(""), a.toggle(!0), s.toggle(!1), u.focus()
                         }), c.on("change", function(i) {
-                            (n = i.target && i.target.files && i.target.files[0]) && (a.toggle(!1), h.toggle(!1), o.toggle(!0), o.focus(), v.text(n.name), w() || x(r), r.fileUploads[e].uploading = !0, function(e, r) {
-                                var n = {
+                            (n = i.target && i.target.files && i.target.files[0]) && (a.toggle(!1), h.toggle(!1), o.toggle(!0), o.focus(), v.text(n.name), P() || x(r), r.fileUploads[e].uploading = !0, function(e, r) {
+                                var n = new URLSearchParams({
                                     name: e.name,
                                     size: e.size
-                                };
+                                });
                                 t.ajax({
-                                    type: "POST",
-                                    url: l,
-                                    data: n,
-                                    dataType: "json",
+                                    type: "GET",
+                                    url: "".concat(l, "?").concat(n),
                                     crossDomain: !0
                                 }).done(function(t) {
                                     r(null, t)
                                 }).fail(function(t) {
                                     r(t)
                                 })
-                            }(n, T))
+                            }(n, A))
                         });
                         var S = u.outerHeight();
                         c.height(S), c.width(1)
                     }
 
-                    function A(t) {
+                    function T(t) {
                         var n = t.responseJSON && t.responseJSON.msg,
                             i = b;
-                        "string" == typeof n && 0 === n.indexOf("InvalidFileTypeError") ? i = E : "string" == typeof n && 0 === n.indexOf("MaxFileSizeError") && (i = g), p.text(i), c.removeAttr("data-value"), c.val(""), o.toggle(!1), a.toggle(!0), h.toggle(!0), h.focus(), r.fileUploads[e].uploading = !1, w() || _(r)
+                        "string" == typeof n && 0 === n.indexOf("InvalidFileTypeError") ? i = E : "string" == typeof n && 0 === n.indexOf("MaxFileSizeError") && (i = g), p.text(i), c.removeAttr("data-value"), c.val(""), o.toggle(!1), a.toggle(!0), h.toggle(!0), h.focus(), r.fileUploads[e].uploading = !1, P() || _(r)
                     }
 
-                    function T(e, r) {
-                        if (e) return A(e);
+                    function A(e, r) {
+                        if (e) return T(e);
                         var i = r.fileName,
                             a = r.postData,
                             o = r.fileId,
@@ -17464,11 +17499,11 @@
                     }
 
                     function I(t) {
-                        if (t) return A(t);
-                        o.toggle(!1), s.css("display", "inline-block"), s.focus(), r.fileUploads[e].uploading = !1, w() || _(r)
+                        if (t) return T(t);
+                        o.toggle(!1), s.css("display", "inline-block"), s.focus(), r.fileUploads[e].uploading = !1, P() || _(r)
                     }
 
-                    function w() {
+                    function P() {
                         var t = r.fileUploads && r.fileUploads.toArray() || [];
                         return t.some(function(t) {
                             return t.uploading
@@ -17479,7 +17514,7 @@
             var s = i.form.attr("aria-label") || i.form.attr("data-name") || "Form";
             i.done.attr("aria-label") || i.form.attr("aria-label", s), i.done.attr("tabindex", "-1"), i.done.attr("role", "region"), i.done.attr("aria-label") || i.done.attr("aria-label", s + " success"), i.fail.attr("tabindex", "-1"), i.fail.attr("role", "region"), i.fail.attr("aria-label") || i.fail.attr("aria-label", s + " failure");
             var h = i.action = n.attr("action");
-            i.handler = null, i.redirect = n.attr("data-redirect"), g.test(h) ? i.handler = I : h || (a ? i.handler = T : E())
+            i.handler = null, i.redirect = n.attr("data-redirect"), g.test(h) ? i.handler = I : h || (a ? i.handler = A : E())
         }
 
         function _(t) {
@@ -17514,7 +17549,7 @@
         }
         h.ready = h.design = h.preview = function() {
             ! function() {
-                a = t("html").attr("data-wf-site"), s = "https://webflow.com/api/v1/form/" + a, f && s.indexOf("https://webflow.com") >= 0 && (s = s.replace("https://webflow.com", "http://formdata.webflow.com"));
+                a = t("html").attr("data-wf-site"), s = "https://webflow.com/api/v1/form/" + a, f && s.indexOf("https://webflow.com") >= 0 && (s = s.replace("https://webflow.com", "https://formdata.webflow.com"));
                 if (l = "".concat(s, "/signFile"), !(r = t(p + " form")).length) return;
                 r.each(b)
             }(), y || o || function() {
@@ -17546,11 +17581,11 @@
                 })
             }()
         };
-        var A = {
+        var T = {
             _mkto_trk: "marketo"
         };
 
-        function T(e) {
+        function A(e) {
             _(e);
             var r = e.form,
                 n = {
@@ -17563,8 +17598,8 @@
                     trackingCookies: document.cookie.split("; ").reduce(function(t, e) {
                         var r = e.split("="),
                             n = r[0];
-                        if (n in A) {
-                            var i = A[n],
+                        if (n in T) {
+                            var i = T[n],
                                 a = r.slice(1).join("=");
                             t[i] = a
                         }
@@ -17572,7 +17607,7 @@
                     }, {})
                 },
                 o = r.attr("data-wf-flow");
-            o && (n.wfFlow = o), P(e);
+            o && (n.wfFlow = o), w(e);
             var l = S(r, n.fields);
             if (l) return v(l);
             n.fileUploads = function(e) {
@@ -17590,10 +17625,10 @@
                 dataType: "json",
                 crossDomain: !0
             }).done(function(t) {
-                t && 200 === t.code && (e.success = !0), w(e)
+                t && 200 === t.code && (e.success = !0), P(e)
             }).fail(function() {
-                w(e)
-            }) : w(e)
+                P(e)
+            }) : P(e)
         }
 
         function I(r) {
@@ -17601,7 +17636,7 @@
             var n = r.form,
                 i = {};
             if (!/^https/.test(u.href) || /^https/.test(r.action)) {
-                P(r);
+                w(r);
                 var a, o = S(n, i);
                 if (o) return v(o);
                 x(r), e.each(i, function(t, e) {
@@ -17616,21 +17651,21 @@
                     data: i,
                     dataType: "jsonp"
                 }).done(function(t) {
-                    r.success = "success" === t.result || /already/.test(t.msg), r.success || console.info("MailChimp error: " + t.msg), w(r)
+                    r.success = "success" === t.result || /already/.test(t.msg), r.success || console.info("MailChimp error: " + t.msg), P(r)
                 }).fail(function() {
-                    w(r)
+                    P(r)
                 })
             } else n.attr("method", "post")
         }
 
-        function w(t) {
+        function P(t) {
             var e = t.form,
                 r = t.redirect,
                 n = t.success;
             n && r ? i.location(r) : (t.done.toggle(n), t.fail.toggle(!n), n ? t.done.focus() : t.fail.focus(), e.toggle(!n), _(t))
         }
 
-        function P(t) {
+        function w(t) {
             t.evt && t.evt.preventDefault(), t.evt = null
         }
         return h
@@ -17671,8 +17706,8 @@
     }
 }, function(t, e, r) {
     "use strict";
-    var n = r(11),
-        i = r(79),
+    var n = r(12),
+        i = r(117),
         a = {
             ARROW_LEFT: 37,
             ARROW_UP: 38,
@@ -17701,12 +17736,12 @@
             x = i.triggers,
             S = t();
 
-        function A() {
-            n.resize.off(T)
+        function T() {
+            n.resize.off(A)
         }
 
-        function T() {
-            o.each(F)
+        function A() {
+            o.each(R)
         }
 
         function I(r, n) {
@@ -17721,11 +17756,11 @@
                 e.outside && f.off("click" + v, e.outside);
                 return function(r) {
                     var n = t(r.target);
-                    l && n.closest(".w-editor-bem-EditorOverlay").length || R(e, n)
+                    l && n.closest(".w-editor-bem-EditorOverlay").length || F(e, n)
                 }
             }(o);
             var h = i.find(".w-nav-brand");
-            h && "/" === h.attr("href") && null == h.attr("aria-label") && h.attr("aria-label", "home"), o.button.attr("style", "-webkit-user-select: text;"), null == o.button.attr("aria-label") && o.button.attr("aria-label", "menu"), o.button.attr("role", "button"), o.button.attr("tabindex", "0"), o.button.attr("aria-controls", o.overlayContainerId), o.button.attr("aria-haspopup", "menu"), o.button.attr("aria-expanded", "false"), o.el.off(v), o.button.off(v), o.menu.off(v), C(o), s ? (P(o), o.el.on("setting" + v, function(t) {
+            h && "/" === h.attr("href") && null == h.attr("aria-label") && h.attr("aria-label", "home"), o.button.attr("style", "-webkit-user-select: text;"), null == o.button.attr("aria-label") && o.button.attr("aria-label", "menu"), o.button.attr("role", "button"), o.button.attr("tabindex", "0"), o.button.attr("aria-controls", o.overlayContainerId), o.button.attr("aria-haspopup", "menu"), o.button.attr("aria-expanded", "false"), o.el.off(v), o.button.off(v), o.menu.off(v), C(o), s ? (w(o), o.el.on("setting" + v, function(t) {
                 return function(r, n) {
                     n = n || {};
                     var i = u.width();
@@ -17767,15 +17802,15 @@
                             return t.selectedIdx = Math.min(t.links.length - 1, t.selectedIdx + 1), D(t), e.preventDefault(), e.stopPropagation()
                     }
                 }
-            }(o))), F(r, n)
+            }(o))), R(r, n)
         }
 
-        function w(e, r) {
+        function P(e, r) {
             var n = t.data(r, v);
-            n && (P(n), t.removeData(r, v))
+            n && (w(n), t.removeData(r, v))
         }
 
-        function P(t) {
+        function w(t) {
             t.overlay && (j(t, !0), t.overlay.remove(), t.overlay = null)
         }
 
@@ -17813,18 +17848,18 @@
         }
         h.ready = h.design = h.preview = function() {
             if (s = d && n.env("design"), l = n.env("editor"), r = t(document.body), !(o = f.find(v)).length) return;
-            o.each(I), A(), n.resize.on(T)
+            o.each(I), T(), n.resize.on(A)
         }, h.destroy = function() {
-            S = t(), A(), o && o.length && o.each(w)
+            S = t(), T(), o && o.length && o.each(P)
         };
-        var R = p(function(t, e) {
+        var F = p(function(t, e) {
             if (t.open) {
                 var r = e.closest(".w-nav-menu");
                 t.menu.is(r) || j(t)
             }
         });
 
-        function F(e, r) {
+        function R(e, r) {
             var n = t.data(r, v),
                 i = n.collapsed = "none" !== n.button.css("display");
             if (!n.open || i || s || j(n, !0), n.container.length) {
@@ -17859,7 +17894,7 @@
                     o = t.menu.outerWidth(!0),
                     l = t.el.height(),
                     h = t.el[0];
-                if (F(0, h), x.intro(0, h), n.redraw.up(), s || f.on("click" + v, t.outside), e) d();
+                if (R(0, h), x.intro(0, h), n.redraw.up(), s || f.on("click" + v, t.outside), e) d();
                 else {
                     var u = "transform " + r.duration + "ms " + r.easing;
                     if (t.overlay && (S = t.menu.prev(), t.overlay.show().append(t.menu)), r.animOver) return c(t.menu).add(u).set({
@@ -17919,357 +17954,8 @@
     })
 }, function(t, e, r) {
     "use strict";
-    var n = r(11),
-        i = r(79),
-        a = {
-            ARROW_LEFT: 37,
-            ARROW_UP: 38,
-            ARROW_RIGHT: 39,
-            ARROW_DOWN: 40,
-            SPACE: 32,
-            ENTER: 13,
-            HOME: 36,
-            END: 35
-        },
-        o = 'a[href], area[href], [role="button"], input, select, textarea, button, iframe, object, embed, *[tabindex], *[contenteditable]';
-    n.define("slider", t.exports = function(t, e) {
-        var r, s, l, h = {},
-            c = t.tram,
-            u = t(document),
-            f = n.env(),
-            p = ".w-slider",
-            d = '<div class="w-slider-dot" data-wf-ignore />',
-            m = '<div aria-live="off" aria-atomic="true" class="w-slider-aria-label" data-wf-ignore />',
-            v = "w-slider-force-show",
-            y = i.triggers,
-            g = !1;
-
-        function E() {
-            (r = u.find(p)).length && (r.each(x), l || (b(), n.resize.on(_), n.redraw.on(h.redraw)))
-        }
-
-        function b() {
-            n.resize.off(_), n.redraw.off(h.redraw)
-        }
-
-        function _() {
-            r.filter(":visible").each(R)
-        }
-
-        function x(e, r) {
-            var n = t(r),
-                i = t.data(r, p);
-            i || (i = t.data(r, p, {
-                index: 0,
-                depth: 1,
-                hasFocus: {
-                    keyboard: !1,
-                    mouse: !1
-                },
-                el: n,
-                config: {}
-            })), i.mask = n.children(".w-slider-mask"), i.left = n.children(".w-slider-arrow-left"), i.right = n.children(".w-slider-arrow-right"), i.nav = n.children(".w-slider-nav"), i.slides = i.mask.children(".w-slide"), i.slides.each(y.reset), g && (i.maskWidth = 0), void 0 === n.attr("role") && n.attr("role", "region"), void 0 === n.attr("aria-label") && n.attr("aria-label", "carousel");
-            var a = i.mask.attr("id");
-            if (a || (a = "w-slider-mask-" + e, i.mask.attr("id", a)), s || i.ariaLiveLabel || (i.ariaLiveLabel = t(m).appendTo(i.mask)), i.left.attr("role", "button"), i.left.attr("tabindex", "0"), i.left.attr("aria-controls", a), void 0 === i.left.attr("aria-label") && i.left.attr("aria-label", "previous slide"), i.right.attr("role", "button"), i.right.attr("tabindex", "0"), i.right.attr("aria-controls", a), void 0 === i.right.attr("aria-label") && i.right.attr("aria-label", "next slide"), !c.support.transform) return i.left.hide(), i.right.hide(), i.nav.hide(), void(l = !0);
-            i.el.off(p), i.left.off(p), i.right.off(p), i.nav.off(p), S(i), s ? (i.el.on("setting" + p, M(i)), D(i), i.hasTimer = !1) : (i.el.on("swipe" + p, M(i)), i.left.on("click" + p, w(i)), i.right.on("click" + p, P(i)), i.left.on("keydown" + p, I(i, w)), i.right.on("keydown" + p, I(i, P)), i.nav.on("keydown" + p, "> div", M(i)), i.config.autoplay && !i.hasTimer && (i.hasTimer = !0, i.timerCount = 1, C(i)), i.el.on("mouseenter" + p, T(i, !0, "mouse")), i.el.on("focusin" + p, T(i, !0, "keyboard")), i.el.on("mouseleave" + p, T(i, !1, "mouse")), i.el.on("focusout" + p, T(i, !1, "keyboard"))), i.nav.on("click" + p, "> div", M(i)), f || i.mask.contents().filter(function() {
-                return 3 === this.nodeType
-            }).remove();
-            var o = n.filter(":hidden");
-            o.addClass(v);
-            var h = n.parents(":hidden");
-            h.addClass(v), g || R(e, r), o.removeClass(v), h.removeClass(v)
-        }
-
-        function S(t) {
-            var e = {
-                crossOver: 0
-            };
-            e.animation = t.el.attr("data-animation") || "slide", "outin" === e.animation && (e.animation = "cross", e.crossOver = .5), e.easing = t.el.attr("data-easing") || "ease";
-            var r = t.el.attr("data-duration");
-            if (e.duration = null != r ? parseInt(r, 10) : 500, A(t.el.attr("data-infinite")) && (e.infinite = !0), A(t.el.attr("data-disable-swipe")) && (e.disableSwipe = !0), A(t.el.attr("data-hide-arrows")) ? e.hideArrows = !0 : t.config.hideArrows && (t.left.show(), t.right.show()), A(t.el.attr("data-autoplay"))) {
-                e.autoplay = !0, e.delay = parseInt(t.el.attr("data-delay"), 10) || 2e3, e.timerMax = parseInt(t.el.attr("data-autoplay-limit"), 10);
-                var n = "mousedown" + p + " touchstart" + p;
-                s || t.el.off(n).one(n, function() {
-                    D(t)
-                })
-            }
-            var i = t.right.width();
-            e.edge = i ? i + 40 : 100, t.config = e
-        }
-
-        function A(t) {
-            return "1" === t || "true" === t
-        }
-
-        function T(e, r, n) {
-            return function(i) {
-                if (r) e.hasFocus[n] = r;
-                else {
-                    if (t.contains(e.el.get(0), i.relatedTarget)) return;
-                    if (e.hasFocus[n] = r, e.hasFocus.mouse && "keyboard" === n || e.hasFocus.keyboard && "mouse" === n) return
-                }
-                r ? (e.ariaLiveLabel.attr("aria-live", "polite"), e.hasTimer && D(e)) : (e.ariaLiveLabel.attr("aria-live", "off"), e.hasTimer && C(e))
-            }
-        }
-
-        function I(t, e) {
-            return function(r) {
-                switch (r.keyCode) {
-                    case a.SPACE:
-                    case a.ENTER:
-                        return e(t)(), r.preventDefault(), r.stopPropagation()
-                }
-            }
-        }
-
-        function w(t) {
-            return function() {
-                k(t, {
-                    index: t.index - 1,
-                    vector: -1
-                })
-            }
-        }
-
-        function P(t) {
-            return function() {
-                k(t, {
-                    index: t.index + 1,
-                    vector: 1
-                })
-            }
-        }
-
-        function C(t) {
-            D(t);
-            var e = t.config,
-                r = e.timerMax;
-            r && t.timerCount++ > r || (t.timerId = window.setTimeout(function() {
-                null == t.timerId || s || (P(t)(), C(t))
-            }, e.delay))
-        }
-
-        function D(t) {
-            window.clearTimeout(t.timerId), t.timerId = null
-        }
-
-        function M(r) {
-            return function(i, o) {
-                o = o || {};
-                var l = r.config;
-                if (s && "setting" === i.type) {
-                    if ("prev" === o.select) return w(r)();
-                    if ("next" === o.select) return P(r)();
-                    if (S(r), F(r), null == o.select) return;
-                    ! function(r, n) {
-                        var i = null;
-                        n === r.slides.length && (E(), F(r)), e.each(r.anchors, function(e, r) {
-                            t(e.els).each(function(e, a) {
-                                t(a).index() === n && (i = r)
-                            })
-                        }), null != i && k(r, {
-                            index: i,
-                            immediate: !0
-                        })
-                    }(r, o.select)
-                } else {
-                    if ("swipe" === i.type) {
-                        if (l.disableSwipe) return;
-                        if (n.env("editor")) return;
-                        return "left" === o.direction ? P(r)() : "right" === o.direction ? w(r)() : void 0
-                    }
-                    if (r.nav.has(i.target).length) {
-                        var h = t(i.target).index();
-                        if ("click" === i.type && k(r, {
-                                index: h
-                            }), "keydown" === i.type) switch (i.keyCode) {
-                            case a.ENTER:
-                            case a.SPACE:
-                                k(r, {
-                                    index: h
-                                }), i.preventDefault();
-                                break;
-                            case a.ARROW_LEFT:
-                            case a.ARROW_UP:
-                                O(r.nav, Math.max(h - 1, 0)), i.preventDefault();
-                                break;
-                            case a.ARROW_RIGHT:
-                            case a.ARROW_DOWN:
-                                O(r.nav, Math.min(h + 1, r.pages)), i.preventDefault();
-                                break;
-                            case a.HOME:
-                                O(r.nav, 0), i.preventDefault();
-                                break;
-                            case a.END:
-                                O(r.nav, r.pages), i.preventDefault();
-                                break;
-                            default:
-                                return
-                        }
-                    }
-                }
-            }
-        }
-
-        function O(t, e) {
-            var r = t.children().eq(e).focus();
-            t.children().not(r)
-        }
-
-        function k(e, r) {
-            r = r || {};
-            var n = e.config,
-                i = e.anchors;
-            e.previous = e.index;
-            var a = r.index,
-                l = {};
-            a < 0 ? (a = i.length - 1, n.infinite && (l.x = -e.endX, l.from = 0, l.to = i[0].width)) : a >= i.length && (a = 0, n.infinite && (l.x = i[i.length - 1].width, l.from = -i[i.length - 1].x, l.to = l.from - l.x)), e.index = a;
-            var h = e.nav.children().eq(a).addClass("w-active").attr("aria-pressed", "true").attr("tabindex", "0");
-            e.nav.children().not(h).removeClass("w-active").attr("aria-pressed", "false").attr("tabindex", "-1"), n.hideArrows && (e.index === i.length - 1 ? e.right.hide() : e.right.show(), 0 === e.index ? e.left.hide() : e.left.show());
-            var u = e.offsetX || 0,
-                f = e.offsetX = -i[e.index].x,
-                p = {
-                    x: f,
-                    opacity: 1,
-                    visibility: ""
-                },
-                d = t(i[e.index].els),
-                m = t(i[e.previous] && i[e.previous].els),
-                v = e.slides.not(d),
-                E = n.animation,
-                b = n.easing,
-                _ = Math.round(n.duration),
-                x = r.vector || (e.index > e.previous ? 1 : -1),
-                S = "opacity " + _ + "ms " + b,
-                A = "transform " + _ + "ms " + b;
-            if (d.find(o).removeAttr("tabindex"), d.removeAttr("aria-hidden"), d.find("*").removeAttr("aria-hidden"), v.find(o).attr("tabindex", "-1"), v.attr("aria-hidden", "true"), v.find("*").attr("aria-hidden", "true"), s || (d.each(y.intro), v.each(y.outro)), r.immediate && !g) return c(d).set(p), void w();
-            if (e.index !== e.previous) {
-                if (s || e.ariaLiveLabel.text("Slide ".concat(a + 1, " of ").concat(i.length, ".")), "cross" === E) {
-                    var T = Math.round(_ - _ * n.crossOver),
-                        I = Math.round(_ - T);
-                    return S = "opacity " + T + "ms " + b, c(m).set({
-                        visibility: ""
-                    }).add(S).start({
-                        opacity: 0
-                    }), void c(d).set({
-                        visibility: "",
-                        x: f,
-                        opacity: 0,
-                        zIndex: e.depth++
-                    }).add(S).wait(I).then({
-                        opacity: 1
-                    }).then(w)
-                }
-                if ("fade" === E) return c(m).set({
-                    visibility: ""
-                }).stop(), void c(d).set({
-                    visibility: "",
-                    x: f,
-                    opacity: 0,
-                    zIndex: e.depth++
-                }).add(S).start({
-                    opacity: 1
-                }).then(w);
-                if ("over" === E) return p = {
-                    x: e.endX
-                }, c(m).set({
-                    visibility: ""
-                }).stop(), void c(d).set({
-                    visibility: "",
-                    zIndex: e.depth++,
-                    x: f + i[e.index].width * x
-                }).add(A).start({
-                    x: f
-                }).then(w);
-                n.infinite && l.x ? (c(e.slides.not(m)).set({
-                    visibility: "",
-                    x: l.x
-                }).add(A).start({
-                    x: f
-                }), c(m).set({
-                    visibility: "",
-                    x: l.from
-                }).add(A).start({
-                    x: l.to
-                }), e.shifted = m) : (n.infinite && e.shifted && (c(e.shifted).set({
-                    visibility: "",
-                    x: u
-                }), e.shifted = null), c(e.slides).set({
-                    visibility: ""
-                }).add(A).start({
-                    x: f
-                }))
-            }
-
-            function w() {
-                d = t(i[e.index].els), v = e.slides.not(d), "slide" !== E && (p.visibility = "hidden"), c(v).set(p)
-            }
-        }
-
-        function R(e, r) {
-            var n = t.data(r, p);
-            if (n) return function(t) {
-                var e = t.mask.width();
-                if (t.maskWidth !== e) return t.maskWidth = e, !0;
-                return !1
-            }(n) ? F(n) : void(s && function(e) {
-                var r = 0;
-                if (e.slides.each(function(e, n) {
-                        r += t(n).outerWidth(!0)
-                    }), e.slidesWidth !== r) return e.slidesWidth = r, !0;
-                return !1
-            }(n) && F(n))
-        }
-
-        function F(e) {
-            var r = 1,
-                n = 0,
-                i = 0,
-                a = 0,
-                o = e.maskWidth,
-                l = o - e.config.edge;
-            l < 0 && (l = 0), e.anchors = [{
-                els: [],
-                x: 0,
-                width: 0
-            }], e.slides.each(function(s, h) {
-                i - n > l && (r++, n += o, e.anchors[r - 1] = {
-                    els: [],
-                    x: i,
-                    width: 0
-                }), a = t(h).outerWidth(!0), i += a, e.anchors[r - 1].width += a, e.anchors[r - 1].els.push(h);
-                var c = s + 1 + " of " + e.slides.length;
-                t(h).attr("aria-label", c), t(h).attr("role", "group")
-            }), e.endX = i, s && (e.pages = null), e.nav.length && e.pages !== r && (e.pages = r, function(e) {
-                var r, n = [],
-                    i = e.el.attr("data-nav-spacing");
-                i && (i = parseFloat(i) + "px");
-                for (var a = 0, o = e.pages; a < o; a++)(r = t(d)).attr("aria-label", "Show slide " + (a + 1) + " of " + o).attr("aria-pressed", "false").attr("role", "button").attr("tabindex", "-1"), e.nav.hasClass("w-num") && r.text(a + 1), null != i && r.css({
-                    "margin-left": i,
-                    "margin-right": i
-                }), n.push(r);
-                e.nav.empty().append(n)
-            }(e));
-            var h = e.index;
-            h >= r && (h = r - 1), k(e, {
-                immediate: !0,
-                index: h
-            })
-        }
-        return h.ready = function() {
-            s = n.env("design"), E()
-        }, h.design = function() {
-            s = !0, setTimeout(E, 1e3)
-        }, h.preview = function() {
-            s = !1, E()
-        }, h.redraw = function() {
-            g = !0, E(), g = !1
-        }, h.destroy = b, h
-    })
-}, function(t, e, r) {
-    "use strict";
-    var n = r(11),
-        i = r(79);
+    var n = r(12),
+        i = r(117);
     n.define("tabs", t.exports = function(t) {
         var e, r, a = {},
             o = t.tram,
@@ -18444,18 +18130,18 @@ Webflow.require('ix2').init({
                     "actionListId": "a",
                     "affectedElements": {},
                     "playInReverse": false,
-                    "autoStopEventId": "e-80"
+                    "autoStopEventId": "e-40"
                 }
             },
             "mediaQueries": ["main"],
             "target": {
                 "selector": ".link-block.animation-01",
-                "originalId": "6214ba060d63cfcba516518a|8ed1b952-23ff-bc0f-8964-7935e1d755b9",
+                "originalId": "6358e86f2749b8f14effed73|8ed1b952-23ff-bc0f-8964-7935e1d755b9",
                 "appliesTo": "CLASS"
             },
             "targets": [{
                 "selector": ".link-block.animation-01",
-                "originalId": "6214ba060d63cfcba516518a|8ed1b952-23ff-bc0f-8964-7935e1d755b9",
+                "originalId": "6358e86f2749b8f14effed73|8ed1b952-23ff-bc0f-8964-7935e1d755b9",
                 "appliesTo": "CLASS"
             }],
             "config": {
@@ -18484,18 +18170,18 @@ Webflow.require('ix2').init({
                     "actionListId": "a-2",
                     "affectedElements": {},
                     "playInReverse": false,
-                    "autoStopEventId": "e-79"
+                    "autoStopEventId": "e-45"
                 }
             },
             "mediaQueries": ["main"],
             "target": {
                 "selector": ".link-block.animation-01",
-                "originalId": "6214ba060d63cfcba516518a|8ed1b952-23ff-bc0f-8964-7935e1d755b9",
+                "originalId": "6358e86f2749b8f14effed73|8ed1b952-23ff-bc0f-8964-7935e1d755b9",
                 "appliesTo": "CLASS"
             },
             "targets": [{
                 "selector": ".link-block.animation-01",
-                "originalId": "6214ba060d63cfcba516518a|8ed1b952-23ff-bc0f-8964-7935e1d755b9",
+                "originalId": "6358e86f2749b8f14effed73|8ed1b952-23ff-bc0f-8964-7935e1d755b9",
                 "appliesTo": "CLASS"
             }],
             "config": {
@@ -18524,18 +18210,18 @@ Webflow.require('ix2').init({
                     "actionListId": "a-3",
                     "affectedElements": {},
                     "playInReverse": false,
-                    "autoStopEventId": "e-4"
+                    "autoStopEventId": "e-47"
                 }
             },
             "mediaQueries": ["main"],
             "target": {
                 "selector": ".link-block.animation-02",
-                "originalId": "6214ba060d63cfcba516518a|eb8dec28-6d4f-c86f-c68f-8ba9fc65946e",
+                "originalId": "6358e86f2749b8f14effed73|eb8dec28-6d4f-c86f-c68f-8ba9fc65946e",
                 "appliesTo": "CLASS"
             },
             "targets": [{
                 "selector": ".link-block.animation-02",
-                "originalId": "6214ba060d63cfcba516518a|eb8dec28-6d4f-c86f-c68f-8ba9fc65946e",
+                "originalId": "6358e86f2749b8f14effed73|eb8dec28-6d4f-c86f-c68f-8ba9fc65946e",
                 "appliesTo": "CLASS"
             }],
             "config": {
@@ -18564,18 +18250,18 @@ Webflow.require('ix2').init({
                     "actionListId": "a-4",
                     "affectedElements": {},
                     "playInReverse": false,
-                    "autoStopEventId": "e-3"
+                    "autoStopEventId": "e-49"
                 }
             },
             "mediaQueries": ["main"],
             "target": {
                 "selector": ".link-block.animation-02",
-                "originalId": "6214ba060d63cfcba516518a|eb8dec28-6d4f-c86f-c68f-8ba9fc65946e",
+                "originalId": "6358e86f2749b8f14effed73|eb8dec28-6d4f-c86f-c68f-8ba9fc65946e",
                 "appliesTo": "CLASS"
             },
             "targets": [{
                 "selector": ".link-block.animation-02",
-                "originalId": "6214ba060d63cfcba516518a|eb8dec28-6d4f-c86f-c68f-8ba9fc65946e",
+                "originalId": "6358e86f2749b8f14effed73|eb8dec28-6d4f-c86f-c68f-8ba9fc65946e",
                 "appliesTo": "CLASS"
             }],
             "config": {
@@ -18588,86 +18274,6 @@ Webflow.require('ix2').init({
                 "effectIn": null
             },
             "createdOn": 1638368817552
-        },
-        "e-5": {
-            "id": "e-5",
-            "name": "",
-            "animationType": "preset",
-            "eventTypeId": "MOUSE_OVER",
-            "action": {
-                "id": "",
-                "actionTypeId": "GENERAL_START_ACTION",
-                "config": {
-                    "delay": 0,
-                    "easing": "",
-                    "duration": 0,
-                    "actionListId": "a-5",
-                    "affectedElements": {},
-                    "playInReverse": false,
-                    "autoStopEventId": "e-6"
-                }
-            },
-            "mediaQueries": ["main"],
-            "target": {
-                "selector": ".link-block.animation-03",
-                "originalId": "6214ba060d63cfcba516518a|babb1a74-1ca8-4e3b-31b3-e12d0db617be",
-                "appliesTo": "CLASS"
-            },
-            "targets": [{
-                "selector": ".link-block.animation-03",
-                "originalId": "6214ba060d63cfcba516518a|babb1a74-1ca8-4e3b-31b3-e12d0db617be",
-                "appliesTo": "CLASS"
-            }],
-            "config": {
-                "loop": false,
-                "playInReverse": false,
-                "scrollOffsetValue": null,
-                "scrollOffsetUnit": null,
-                "delay": null,
-                "direction": null,
-                "effectIn": null
-            },
-            "createdOn": 1638368990971
-        },
-        "e-6": {
-            "id": "e-6",
-            "name": "",
-            "animationType": "preset",
-            "eventTypeId": "MOUSE_OUT",
-            "action": {
-                "id": "",
-                "actionTypeId": "GENERAL_START_ACTION",
-                "config": {
-                    "delay": 0,
-                    "easing": "",
-                    "duration": 0,
-                    "actionListId": "a-6",
-                    "affectedElements": {},
-                    "playInReverse": false,
-                    "autoStopEventId": "e-5"
-                }
-            },
-            "mediaQueries": ["main"],
-            "target": {
-                "selector": ".link-block.animation-03",
-                "originalId": "6214ba060d63cfcba516518a|babb1a74-1ca8-4e3b-31b3-e12d0db617be",
-                "appliesTo": "CLASS"
-            },
-            "targets": [{
-                "selector": ".link-block.animation-03",
-                "originalId": "6214ba060d63cfcba516518a|babb1a74-1ca8-4e3b-31b3-e12d0db617be",
-                "appliesTo": "CLASS"
-            }],
-            "config": {
-                "loop": false,
-                "playInReverse": false,
-                "scrollOffsetValue": null,
-                "scrollOffsetUnit": null,
-                "delay": null,
-                "direction": null,
-                "effectIn": null
-            },
-            "createdOn": 1638368990971
         },
         "e-7": {
             "id": "e-7",
@@ -18684,18 +18290,18 @@ Webflow.require('ix2').init({
                     "actionListId": "a-7",
                     "affectedElements": {},
                     "playInReverse": false,
-                    "autoStopEventId": "e-8"
+                    "autoStopEventId": "e-44"
                 }
             },
             "mediaQueries": ["main"],
             "target": {
                 "selector": ".link-block.animation-04",
-                "originalId": "6214ba060d63cfcba516518a|bdac6aad-ea46-de38-5682-bb015f0792db",
+                "originalId": "6358e86f2749b8f14effed73|bdac6aad-ea46-de38-5682-bb015f0792db",
                 "appliesTo": "CLASS"
             },
             "targets": [{
                 "selector": ".link-block.animation-04",
-                "originalId": "6214ba060d63cfcba516518a|bdac6aad-ea46-de38-5682-bb015f0792db",
+                "originalId": "6358e86f2749b8f14effed73|bdac6aad-ea46-de38-5682-bb015f0792db",
                 "appliesTo": "CLASS"
             }],
             "config": {
@@ -18724,18 +18330,18 @@ Webflow.require('ix2').init({
                     "actionListId": "a-8",
                     "affectedElements": {},
                     "playInReverse": false,
-                    "autoStopEventId": "e-7"
+                    "autoStopEventId": "e-38"
                 }
             },
             "mediaQueries": ["main"],
             "target": {
                 "selector": ".link-block.animation-04",
-                "originalId": "6214ba060d63cfcba516518a|bdac6aad-ea46-de38-5682-bb015f0792db",
+                "originalId": "6358e86f2749b8f14effed73|bdac6aad-ea46-de38-5682-bb015f0792db",
                 "appliesTo": "CLASS"
             },
             "targets": [{
                 "selector": ".link-block.animation-04",
-                "originalId": "6214ba060d63cfcba516518a|bdac6aad-ea46-de38-5682-bb015f0792db",
+                "originalId": "6358e86f2749b8f14effed73|bdac6aad-ea46-de38-5682-bb015f0792db",
                 "appliesTo": "CLASS"
             }],
             "config": {
@@ -18770,12 +18376,12 @@ Webflow.require('ix2').init({
             "mediaQueries": ["main"],
             "target": {
                 "selector": ".link-block.animation-05",
-                "originalId": "6214ba060d63cfcba516518a|eb817875-6024-a502-e779-eda35e78cc94",
+                "originalId": "6358e86f2749b8f14effed73|eb817875-6024-a502-e779-eda35e78cc94",
                 "appliesTo": "CLASS"
             },
             "targets": [{
                 "selector": ".link-block.animation-05",
-                "originalId": "6214ba060d63cfcba516518a|eb817875-6024-a502-e779-eda35e78cc94",
+                "originalId": "6358e86f2749b8f14effed73|eb817875-6024-a502-e779-eda35e78cc94",
                 "appliesTo": "CLASS"
             }],
             "config": {
@@ -18810,12 +18416,12 @@ Webflow.require('ix2').init({
             "mediaQueries": ["main"],
             "target": {
                 "selector": ".link-block.animation-05",
-                "originalId": "6214ba060d63cfcba516518a|eb817875-6024-a502-e779-eda35e78cc94",
+                "originalId": "6358e86f2749b8f14effed73|eb817875-6024-a502-e779-eda35e78cc94",
                 "appliesTo": "CLASS"
             },
             "targets": [{
                 "selector": ".link-block.animation-05",
-                "originalId": "6214ba060d63cfcba516518a|eb817875-6024-a502-e779-eda35e78cc94",
+                "originalId": "6358e86f2749b8f14effed73|eb817875-6024-a502-e779-eda35e78cc94",
                 "appliesTo": "CLASS"
             }],
             "config": {
@@ -18850,12 +18456,12 @@ Webflow.require('ix2').init({
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
                 "selector": ".fade-in-on-scroll",
-                "originalId": "6214ba060d63cfcba516518a|48a7b1d3-b07a-497b-d5ee-44049694be04",
+                "originalId": "6358e86f2749b8f14effed73|48a7b1d3-b07a-497b-d5ee-44049694be04",
                 "appliesTo": "CLASS"
             },
             "targets": [{
                 "selector": ".fade-in-on-scroll",
-                "originalId": "6214ba060d63cfcba516518a|48a7b1d3-b07a-497b-d5ee-44049694be04",
+                "originalId": "6358e86f2749b8f14effed73|48a7b1d3-b07a-497b-d5ee-44049694be04",
                 "appliesTo": "CLASS"
             }],
             "config": {
@@ -18890,12 +18496,12 @@ Webflow.require('ix2').init({
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
                 "selector": ".fade-in-move-on-scroll",
-                "originalId": "6214ba060d63cfcba516518a|d153327e-0b89-53f6-8af6-bfb408d9df35",
+                "originalId": "6358e86f2749b8f14effed73|d153327e-0b89-53f6-8af6-bfb408d9df35",
                 "appliesTo": "CLASS"
             },
             "targets": [{
                 "selector": ".fade-in-move-on-scroll",
-                "originalId": "6214ba060d63cfcba516518a|d153327e-0b89-53f6-8af6-bfb408d9df35",
+                "originalId": "6358e86f2749b8f14effed73|d153327e-0b89-53f6-8af6-bfb408d9df35",
                 "appliesTo": "CLASS"
             }],
             "config": {
@@ -18930,12 +18536,12 @@ Webflow.require('ix2').init({
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
                 "selector": ".fade-in-slace-on-scroll",
-                "originalId": "6214ba060d63cfcba516518a|b40307ba-5bc6-bd78-6e19-712b5713de87",
+                "originalId": "6358e86f2749b8f14effed73|b40307ba-5bc6-bd78-6e19-712b5713de87",
                 "appliesTo": "CLASS"
             },
             "targets": [{
                 "selector": ".fade-in-slace-on-scroll",
-                "originalId": "6214ba060d63cfcba516518a|b40307ba-5bc6-bd78-6e19-712b5713de87",
+                "originalId": "6358e86f2749b8f14effed73|b40307ba-5bc6-bd78-6e19-712b5713de87",
                 "appliesTo": "CLASS"
             }],
             "config": {
@@ -18970,12 +18576,12 @@ Webflow.require('ix2').init({
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
                 "selector": ".fade-in-blur-on-scroll",
-                "originalId": "6214ba060d63cfcba516518a|548a5b34-b2c2-5a0b-7e8c-aacb07ebb25f",
+                "originalId": "6358e86f2749b8f14effed73|548a5b34-b2c2-5a0b-7e8c-aacb07ebb25f",
                 "appliesTo": "CLASS"
             },
             "targets": [{
                 "selector": ".fade-in-blur-on-scroll",
-                "originalId": "6214ba060d63cfcba516518a|548a5b34-b2c2-5a0b-7e8c-aacb07ebb25f",
+                "originalId": "6358e86f2749b8f14effed73|548a5b34-b2c2-5a0b-7e8c-aacb07ebb25f",
                 "appliesTo": "CLASS"
             }],
             "config": {
@@ -18988,86 +18594,6 @@ Webflow.require('ix2').init({
                 "effectIn": null
             },
             "createdOn": 1639044269084
-        },
-        "e-19": {
-            "id": "e-19",
-            "name": "",
-            "animationType": "custom",
-            "eventTypeId": "PAGE_START",
-            "action": {
-                "id": "",
-                "actionTypeId": "GENERAL_START_ACTION",
-                "config": {
-                    "delay": 0,
-                    "easing": "",
-                    "duration": 0,
-                    "actionListId": "a-15",
-                    "affectedElements": {},
-                    "playInReverse": false,
-                    "autoStopEventId": "e-20"
-                }
-            },
-            "mediaQueries": ["main", "medium", "small"],
-            "target": {
-                "id": "6214ba060d63cf142716517f",
-                "appliesTo": "PAGE",
-                "styleBlockIds": []
-            },
-            "targets": [{
-                "id": "6214ba060d63cf142716517f",
-                "appliesTo": "PAGE",
-                "styleBlockIds": []
-            }],
-            "config": {
-                "loop": false,
-                "playInReverse": false,
-                "scrollOffsetValue": null,
-                "scrollOffsetUnit": null,
-                "delay": null,
-                "direction": null,
-                "effectIn": null
-            },
-            "createdOn": 1639044628728
-        },
-        "e-20": {
-            "id": "e-20",
-            "name": "",
-            "animationType": "custom",
-            "eventTypeId": "PAGE_FINISH",
-            "action": {
-                "id": "",
-                "actionTypeId": "GENERAL_START_ACTION",
-                "config": {
-                    "delay": 0,
-                    "easing": "",
-                    "duration": 0,
-                    "actionListId": "a-25",
-                    "affectedElements": {},
-                    "playInReverse": false,
-                    "autoStopEventId": "e-19"
-                }
-            },
-            "mediaQueries": ["main", "medium", "small"],
-            "target": {
-                "id": "6214ba060d63cf142716517f",
-                "appliesTo": "PAGE",
-                "styleBlockIds": []
-            },
-            "targets": [{
-                "id": "6214ba060d63cf142716517f",
-                "appliesTo": "PAGE",
-                "styleBlockIds": []
-            }],
-            "config": {
-                "loop": true,
-                "playInReverse": false,
-                "scrollOffsetValue": null,
-                "scrollOffsetUnit": null,
-                "delay": null,
-                "direction": null,
-                "effectIn": null
-            },
-            "createdOn": 1639044628729
         },
         "e-23": {
             "id": "e-23",
@@ -19090,12 +18616,12 @@ Webflow.require('ix2').init({
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
                 "selector": ".template-container",
-                "originalId": "6214ba060d63cf175c165186|c32ddce7-9ecb-b557-b599-6de1d8239110",
+                "originalId": "6358e86f2749b89de7ffed6f|c32ddce7-9ecb-b557-b599-6de1d8239110",
                 "appliesTo": "CLASS"
             },
             "targets": [{
                 "selector": ".template-container",
-                "originalId": "6214ba060d63cf175c165186|c32ddce7-9ecb-b557-b599-6de1d8239110",
+                "originalId": "6358e86f2749b89de7ffed6f|c32ddce7-9ecb-b557-b599-6de1d8239110",
                 "appliesTo": "CLASS"
             }],
             "config": {
@@ -19130,12 +18656,12 @@ Webflow.require('ix2').init({
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
                 "selector": ".template-container",
-                "originalId": "6214ba060d63cf175c165186|c32ddce7-9ecb-b557-b599-6de1d8239110",
+                "originalId": "6358e86f2749b89de7ffed6f|c32ddce7-9ecb-b557-b599-6de1d8239110",
                 "appliesTo": "CLASS"
             },
             "targets": [{
                 "selector": ".template-container",
-                "originalId": "6214ba060d63cf175c165186|c32ddce7-9ecb-b557-b599-6de1d8239110",
+                "originalId": "6358e86f2749b89de7ffed6f|c32ddce7-9ecb-b557-b599-6de1d8239110",
                 "appliesTo": "CLASS"
             }],
             "config": {
@@ -19149,11 +18675,11 @@ Webflow.require('ix2').init({
             },
             "createdOn": 1639400886770
         },
-        "e-38": {
-            "id": "e-38",
+        "e-31": {
+            "id": "e-31",
             "name": "",
             "animationType": "custom",
-            "eventTypeId": "MOUSE_OVER",
+            "eventTypeId": "PAGE_START",
             "action": {
                 "id": "",
                 "actionTypeId": "GENERAL_START_ACTION",
@@ -19161,22 +18687,22 @@ Webflow.require('ix2').init({
                     "delay": 0,
                     "easing": "",
                     "duration": 0,
-                    "actionListId": "a",
+                    "actionListId": "a-16",
                     "affectedElements": {},
                     "playInReverse": false,
-                    "autoStopEventId": "e-39"
+                    "autoStopEventId": "e-32"
                 }
             },
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
-                "selector": ".nav-link-button",
-                "originalId": "8c81de9a-363a-68ad-cc13-a5f80e4dce80",
-                "appliesTo": "CLASS"
+                "id": "6358e86f2749b89977ffed70",
+                "appliesTo": "PAGE",
+                "styleBlockIds": []
             },
             "targets": [{
-                "selector": ".nav-link-button",
-                "originalId": "8c81de9a-363a-68ad-cc13-a5f80e4dce80",
-                "appliesTo": "CLASS"
+                "id": "6358e86f2749b89977ffed70",
+                "appliesTo": "PAGE",
+                "styleBlockIds": []
             }],
             "config": {
                 "loop": false,
@@ -19187,7 +18713,87 @@ Webflow.require('ix2').init({
                 "direction": null,
                 "effectIn": null
             },
-            "createdOn": 1645535986519
+            "createdOn": 1639405959723
+        },
+        "e-33": {
+            "id": "e-33",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "PAGE_START",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-16",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-34"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b8184effed71",
+                "appliesTo": "PAGE",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b8184effed71",
+                "appliesTo": "PAGE",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1639405976045
+        },
+        "e-35": {
+            "id": "e-35",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "PAGE_START",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-16",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-36"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b82a5fffed6c",
+                "appliesTo": "PAGE",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b82a5fffed6c",
+                "appliesTo": "PAGE",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1639406178290
         },
         "e-39": {
             "id": "e-39",
@@ -19201,21 +18807,21 @@ Webflow.require('ix2').init({
                     "delay": 0,
                     "easing": "",
                     "duration": 0,
-                    "actionListId": "a-2",
+                    "actionListId": "a-22",
                     "affectedElements": {},
                     "playInReverse": false,
-                    "autoStopEventId": "e-38"
+                    "autoStopEventId": "e-46"
                 }
             },
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
-                "selector": ".nav-link-button",
-                "originalId": "8c81de9a-363a-68ad-cc13-a5f80e4dce80",
+                "selector": ".button-2",
+                "originalId": "62e39d1f126f588edfe4b5c8|183927b3-82e6-bdab-7199-4e547274e63a",
                 "appliesTo": "CLASS"
             },
             "targets": [{
-                "selector": ".nav-link-button",
-                "originalId": "8c81de9a-363a-68ad-cc13-a5f80e4dce80",
+                "selector": ".button-2",
+                "originalId": "62e39d1f126f588edfe4b5c8|183927b3-82e6-bdab-7199-4e547274e63a",
                 "appliesTo": "CLASS"
             }],
             "config": {
@@ -19227,13 +18833,13 @@ Webflow.require('ix2').init({
                 "direction": null,
                 "effectIn": null
             },
-            "createdOn": 1645535986521
+            "createdOn": 1659528389486
         },
-        "e-40": {
-            "id": "e-40",
+        "e-41": {
+            "id": "e-41",
             "name": "",
             "animationType": "custom",
-            "eventTypeId": "SCROLL_INTO_VIEW",
+            "eventTypeId": "MOUSE_OUT",
             "action": {
                 "id": "",
                 "actionTypeId": "GENERAL_START_ACTION",
@@ -19241,207 +18847,7 @@ Webflow.require('ix2').init({
                     "delay": 0,
                     "easing": "",
                     "duration": 0,
-                    "actionListId": "a-12",
-                    "affectedElements": {},
-                    "playInReverse": false,
-                    "autoStopEventId": "e-41"
-                }
-            },
-            "mediaQueries": ["main", "medium", "small", "tiny"],
-            "target": {
-                "id": "6214ba060d63cf142716517f|2bab71c3-be45-39cf-8c42-f1f6dbead9bb",
-                "appliesTo": "ELEMENT",
-                "styleBlockIds": []
-            },
-            "targets": [{
-                "id": "6214ba060d63cf142716517f|2bab71c3-be45-39cf-8c42-f1f6dbead9bb",
-                "appliesTo": "ELEMENT",
-                "styleBlockIds": []
-            }],
-            "config": {
-                "loop": false,
-                "playInReverse": false,
-                "scrollOffsetValue": 0,
-                "scrollOffsetUnit": "%",
-                "delay": null,
-                "direction": null,
-                "effectIn": null
-            },
-            "createdOn": 1645541183514
-        },
-        "e-42": {
-            "id": "e-42",
-            "name": "",
-            "animationType": "preset",
-            "eventTypeId": "SCROLL_INTO_VIEW",
-            "action": {
-                "id": "",
-                "actionTypeId": "GENERAL_START_ACTION",
-                "config": {
-                    "delay": 0,
-                    "easing": "",
-                    "duration": 0,
-                    "actionListId": "a-12",
-                    "affectedElements": {},
-                    "playInReverse": false,
-                    "autoStopEventId": "e-43"
-                }
-            },
-            "mediaQueries": ["main", "medium", "small", "tiny"],
-            "target": {
-                "id": "6214ba060d63cf142716517f|2bfc8680-ed5e-5c81-a81a-c95721b7b6d9",
-                "appliesTo": "ELEMENT",
-                "styleBlockIds": []
-            },
-            "targets": [{
-                "id": "6214ba060d63cf142716517f|2bfc8680-ed5e-5c81-a81a-c95721b7b6d9",
-                "appliesTo": "ELEMENT",
-                "styleBlockIds": []
-            }],
-            "config": {
-                "loop": false,
-                "playInReverse": false,
-                "scrollOffsetValue": 0,
-                "scrollOffsetUnit": "%",
-                "delay": null,
-                "direction": null,
-                "effectIn": null
-            },
-            "createdOn": 1645541194039
-        },
-        "e-44": {
-            "id": "e-44",
-            "name": "",
-            "animationType": "preset",
-            "eventTypeId": "SCROLL_INTO_VIEW",
-            "action": {
-                "id": "",
-                "actionTypeId": "GENERAL_START_ACTION",
-                "config": {
-                    "delay": 0,
-                    "easing": "",
-                    "duration": 0,
-                    "actionListId": "a-12",
-                    "affectedElements": {},
-                    "playInReverse": false,
-                    "autoStopEventId": "e-45"
-                }
-            },
-            "mediaQueries": ["main", "medium", "small", "tiny"],
-            "target": {
-                "id": "6214ba060d63cf142716517f|b282f249-20cc-bf1a-95ba-49b12d930627",
-                "appliesTo": "ELEMENT",
-                "styleBlockIds": []
-            },
-            "targets": [{
-                "id": "6214ba060d63cf142716517f|b282f249-20cc-bf1a-95ba-49b12d930627",
-                "appliesTo": "ELEMENT",
-                "styleBlockIds": []
-            }],
-            "config": {
-                "loop": false,
-                "playInReverse": false,
-                "scrollOffsetValue": 0,
-                "scrollOffsetUnit": "%",
-                "delay": null,
-                "direction": null,
-                "effectIn": null
-            },
-            "createdOn": 1645541194409
-        },
-        "e-46": {
-            "id": "e-46",
-            "name": "",
-            "animationType": "preset",
-            "eventTypeId": "SCROLL_INTO_VIEW",
-            "action": {
-                "id": "",
-                "actionTypeId": "GENERAL_START_ACTION",
-                "config": {
-                    "delay": 0,
-                    "easing": "",
-                    "duration": 0,
-                    "actionListId": "a-12",
-                    "affectedElements": {},
-                    "playInReverse": false,
-                    "autoStopEventId": "e-47"
-                }
-            },
-            "mediaQueries": ["main", "medium", "small", "tiny"],
-            "target": {
-                "id": "6214ba060d63cf142716517f|1da693aa-b718-db99-5772-91baf5cb635c",
-                "appliesTo": "ELEMENT",
-                "styleBlockIds": []
-            },
-            "targets": [{
-                "id": "6214ba060d63cf142716517f|1da693aa-b718-db99-5772-91baf5cb635c",
-                "appliesTo": "ELEMENT",
-                "styleBlockIds": []
-            }],
-            "config": {
-                "loop": false,
-                "playInReverse": false,
-                "scrollOffsetValue": 0,
-                "scrollOffsetUnit": "%",
-                "delay": null,
-                "direction": null,
-                "effectIn": null
-            },
-            "createdOn": 1645541194604
-        },
-        "e-48": {
-            "id": "e-48",
-            "name": "",
-            "animationType": "preset",
-            "eventTypeId": "SCROLL_INTO_VIEW",
-            "action": {
-                "id": "",
-                "actionTypeId": "GENERAL_START_ACTION",
-                "config": {
-                    "delay": 0,
-                    "easing": "",
-                    "duration": 0,
-                    "actionListId": "a-12",
-                    "affectedElements": {},
-                    "playInReverse": false,
-                    "autoStopEventId": "e-49"
-                }
-            },
-            "mediaQueries": ["main", "medium", "small", "tiny"],
-            "target": {
-                "id": "6214ba060d63cf142716517f|c86b1740-c51f-0076-c824-f245603861a1",
-                "appliesTo": "ELEMENT",
-                "styleBlockIds": []
-            },
-            "targets": [{
-                "id": "6214ba060d63cf142716517f|c86b1740-c51f-0076-c824-f245603861a1",
-                "appliesTo": "ELEMENT",
-                "styleBlockIds": []
-            }],
-            "config": {
-                "loop": false,
-                "playInReverse": false,
-                "scrollOffsetValue": 0,
-                "scrollOffsetUnit": "%",
-                "delay": null,
-                "direction": null,
-                "effectIn": null
-            },
-            "createdOn": 1645541194787
-        },
-        "e-50": {
-            "id": "e-50",
-            "name": "",
-            "animationType": "preset",
-            "eventTypeId": "SCROLL_INTO_VIEW",
-            "action": {
-                "id": "",
-                "actionTypeId": "GENERAL_START_ACTION",
-                "config": {
-                    "delay": 0,
-                    "easing": "",
-                    "duration": 0,
-                    "actionListId": "a-12",
+                    "actionListId": "a-22",
                     "affectedElements": {},
                     "playInReverse": false,
                     "autoStopEventId": "e-51"
@@ -19449,31 +18855,31 @@ Webflow.require('ix2').init({
             },
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
-                "id": "6214ba060d63cf142716517f|6176105e-d760-bd63-e95e-89d93fb7d9fb",
-                "appliesTo": "ELEMENT",
-                "styleBlockIds": []
+                "selector": ".subscribe-field-text",
+                "originalId": "62ea2f329d12251b48ea50cb|6fbf96fd-708a-56bf-c7d3-029c12d50c11",
+                "appliesTo": "CLASS"
             },
             "targets": [{
-                "id": "6214ba060d63cf142716517f|6176105e-d760-bd63-e95e-89d93fb7d9fb",
-                "appliesTo": "ELEMENT",
-                "styleBlockIds": []
+                "selector": ".subscribe-field-text",
+                "originalId": "62ea2f329d12251b48ea50cb|6fbf96fd-708a-56bf-c7d3-029c12d50c11",
+                "appliesTo": "CLASS"
             }],
             "config": {
                 "loop": false,
                 "playInReverse": false,
-                "scrollOffsetValue": 0,
-                "scrollOffsetUnit": "%",
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
                 "delay": null,
                 "direction": null,
                 "effectIn": null
             },
-            "createdOn": 1645541195010
+            "createdOn": 1659534008993
         },
-        "e-52": {
-            "id": "e-52",
+        "e-43": {
+            "id": "e-43",
             "name": "",
-            "animationType": "preset",
-            "eventTypeId": "SCROLL_INTO_VIEW",
+            "animationType": "custom",
+            "eventTypeId": "MOUSE_OVER",
             "action": {
                 "id": "",
                 "actionTypeId": "GENERAL_START_ACTION",
@@ -19481,39 +18887,39 @@ Webflow.require('ix2').init({
                     "delay": 0,
                     "easing": "",
                     "duration": 0,
-                    "actionListId": "a-12",
+                    "actionListId": "a-21",
                     "affectedElements": {},
                     "playInReverse": false,
-                    "autoStopEventId": "e-53"
+                    "autoStopEventId": "e-48"
                 }
             },
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
-                "id": "6214ba060d63cf142716517f|bd816ae7-671b-2bbc-4898-c2ac9cdfe487",
-                "appliesTo": "ELEMENT",
-                "styleBlockIds": []
+                "selector": ".contact-field-text",
+                "originalId": "62e39d1f126f588edfe4b5c8|183927b3-82e6-bdab-7199-4e547274e639",
+                "appliesTo": "CLASS"
             },
             "targets": [{
-                "id": "6214ba060d63cf142716517f|bd816ae7-671b-2bbc-4898-c2ac9cdfe487",
-                "appliesTo": "ELEMENT",
-                "styleBlockIds": []
+                "selector": ".contact-field-text",
+                "originalId": "62e39d1f126f588edfe4b5c8|183927b3-82e6-bdab-7199-4e547274e639",
+                "appliesTo": "CLASS"
             }],
             "config": {
                 "loop": false,
                 "playInReverse": false,
-                "scrollOffsetValue": 0,
-                "scrollOffsetUnit": "%",
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
                 "delay": null,
                 "direction": null,
                 "effectIn": null
             },
-            "createdOn": 1645541195239
+            "createdOn": 1659528051150
         },
-        "e-54": {
-            "id": "e-54",
+        "e-46": {
+            "id": "e-46",
             "name": "",
-            "animationType": "preset",
-            "eventTypeId": "SCROLL_INTO_VIEW",
+            "animationType": "custom",
+            "eventTypeId": "MOUSE_OVER",
             "action": {
                 "id": "",
                 "actionTypeId": "GENERAL_START_ACTION",
@@ -19521,7 +18927,127 @@ Webflow.require('ix2').init({
                     "delay": 0,
                     "easing": "",
                     "duration": 0,
-                    "actionListId": "a-12",
+                    "actionListId": "a-21",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-39"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "selector": ".button-2",
+                "originalId": "62e39d1f126f588edfe4b5c8|183927b3-82e6-bdab-7199-4e547274e63a",
+                "appliesTo": "CLASS"
+            },
+            "targets": [{
+                "selector": ".button-2",
+                "originalId": "62e39d1f126f588edfe4b5c8|183927b3-82e6-bdab-7199-4e547274e63a",
+                "appliesTo": "CLASS"
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1659528389485
+        },
+        "e-48": {
+            "id": "e-48",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "MOUSE_OUT",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-22",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-43"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "selector": ".contact-field-text",
+                "originalId": "62e39d1f126f588edfe4b5c8|183927b3-82e6-bdab-7199-4e547274e639",
+                "appliesTo": "CLASS"
+            },
+            "targets": [{
+                "selector": ".contact-field-text",
+                "originalId": "62e39d1f126f588edfe4b5c8|183927b3-82e6-bdab-7199-4e547274e639",
+                "appliesTo": "CLASS"
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1659528051152
+        },
+        "e-51": {
+            "id": "e-51",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "MOUSE_OVER",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-21",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-41"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "selector": ".subscribe-field-text",
+                "originalId": "62ea2f329d12251b48ea50cb|6fbf96fd-708a-56bf-c7d3-029c12d50c11",
+                "appliesTo": "CLASS"
+            },
+            "targets": [{
+                "selector": ".subscribe-field-text",
+                "originalId": "62ea2f329d12251b48ea50cb|6fbf96fd-708a-56bf-c7d3-029c12d50c11",
+                "appliesTo": "CLASS"
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1659534008991
+        },
+        "e-54": {
+            "id": "e-54",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "MOUSE_OVER",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a",
                     "affectedElements": {},
                     "playInReverse": false,
                     "autoStopEventId": "e-55"
@@ -19529,30 +19055,70 @@ Webflow.require('ix2').init({
             },
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
-                "id": "6214ba060d63cf142716517f|def60b62-548f-b23c-732a-81612bfc3536",
-                "appliesTo": "ELEMENT",
-                "styleBlockIds": []
+                "selector": ".link",
+                "originalId": "734991f0-5548-0f85-35f5-24dff2725cd7",
+                "appliesTo": "CLASS"
             },
             "targets": [{
-                "id": "6214ba060d63cf142716517f|def60b62-548f-b23c-732a-81612bfc3536",
-                "appliesTo": "ELEMENT",
-                "styleBlockIds": []
+                "selector": ".link",
+                "originalId": "734991f0-5548-0f85-35f5-24dff2725cd7",
+                "appliesTo": "CLASS"
             }],
             "config": {
                 "loop": false,
                 "playInReverse": false,
-                "scrollOffsetValue": 0,
-                "scrollOffsetUnit": "%",
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
                 "delay": null,
                 "direction": null,
                 "effectIn": null
             },
-            "createdOn": 1645541195407
+            "createdOn": 1664283804710
+        },
+        "e-55": {
+            "id": "e-55",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "MOUSE_OUT",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-2",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-54"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "selector": ".link",
+                "originalId": "734991f0-5548-0f85-35f5-24dff2725cd7",
+                "appliesTo": "CLASS"
+            },
+            "targets": [{
+                "selector": ".link",
+                "originalId": "734991f0-5548-0f85-35f5-24dff2725cd7",
+                "appliesTo": "CLASS"
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1664283804711
         },
         "e-56": {
             "id": "e-56",
             "name": "",
-            "animationType": "preset",
+            "animationType": "custom",
             "eventTypeId": "SCROLL_INTO_VIEW",
             "action": {
                 "id": "",
@@ -19569,14 +19135,14 @@ Webflow.require('ix2').init({
             },
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
-                "id": "6214ba060d63cf142716517f|56cb3115-4629-4db1-d79c-a8cebee0627e",
-                "appliesTo": "ELEMENT",
-                "styleBlockIds": []
+                "selector": ".feature-tabel-header.bottom-line",
+                "originalId": "6358e86f2749b89214ffed65|6d7a995e-e404-cc32-ec91-7f8511d4f387",
+                "appliesTo": "CLASS"
             },
             "targets": [{
-                "id": "6214ba060d63cf142716517f|56cb3115-4629-4db1-d79c-a8cebee0627e",
-                "appliesTo": "ELEMENT",
-                "styleBlockIds": []
+                "selector": ".feature-tabel-header.bottom-line",
+                "originalId": "6358e86f2749b89214ffed65|6d7a995e-e404-cc32-ec91-7f8511d4f387",
+                "appliesTo": "CLASS"
             }],
             "config": {
                 "loop": false,
@@ -19587,12 +19153,12 @@ Webflow.require('ix2').init({
                 "direction": null,
                 "effectIn": null
             },
-            "createdOn": 1645541195562
+            "createdOn": 1664957375127
         },
         "e-58": {
             "id": "e-58",
             "name": "",
-            "animationType": "preset",
+            "animationType": "custom",
             "eventTypeId": "SCROLL_INTO_VIEW",
             "action": {
                 "id": "",
@@ -19609,14 +19175,14 @@ Webflow.require('ix2').init({
             },
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
-                "id": "6214ba060d63cf142716517f|f599c668-e89e-a0db-5aec-1a1203674ed4",
-                "appliesTo": "ELEMENT",
-                "styleBlockIds": []
+                "selector": ".feature-tabel-header",
+                "originalId": "6358e86f2749b89214ffed65|017359f2-8d30-d34e-d666-224754f0f778",
+                "appliesTo": "CLASS"
             },
             "targets": [{
-                "id": "6214ba060d63cf142716517f|f599c668-e89e-a0db-5aec-1a1203674ed4",
-                "appliesTo": "ELEMENT",
-                "styleBlockIds": []
+                "selector": ".feature-tabel-header",
+                "originalId": "6358e86f2749b89214ffed65|017359f2-8d30-d34e-d666-224754f0f778",
+                "appliesTo": "CLASS"
             }],
             "config": {
                 "loop": false,
@@ -19627,170 +19193,10 @@ Webflow.require('ix2').init({
                 "direction": null,
                 "effectIn": null
             },
-            "createdOn": 1645541195726
+            "createdOn": 1664957404048
         },
         "e-60": {
             "id": "e-60",
-            "name": "",
-            "animationType": "custom",
-            "eventTypeId": "TAB_ACTIVE",
-            "action": {
-                "id": "",
-                "actionTypeId": "GENERAL_START_ACTION",
-                "config": {
-                    "delay": 0,
-                    "easing": "",
-                    "duration": 0,
-                    "actionListId": "a-20",
-                    "affectedElements": {},
-                    "playInReverse": false,
-                    "autoStopEventId": "e-61"
-                }
-            },
-            "mediaQueries": ["main", "medium", "small", "tiny"],
-            "target": {
-                "selector": ".tab-link-button",
-                "originalId": "6214ba060d63cf142716517f|689a607b-71f1-090b-c091-238d9343aca3",
-                "appliesTo": "CLASS"
-            },
-            "targets": [{
-                "selector": ".tab-link-button",
-                "originalId": "6214ba060d63cf142716517f|689a607b-71f1-090b-c091-238d9343aca3",
-                "appliesTo": "CLASS"
-            }],
-            "config": {
-                "loop": false,
-                "playInReverse": false,
-                "scrollOffsetValue": null,
-                "scrollOffsetUnit": null,
-                "delay": null,
-                "direction": null,
-                "effectIn": null
-            },
-            "createdOn": 1645543367764
-        },
-        "e-61": {
-            "id": "e-61",
-            "name": "",
-            "animationType": "custom",
-            "eventTypeId": "TAB_INACTIVE",
-            "action": {
-                "id": "",
-                "actionTypeId": "GENERAL_START_ACTION",
-                "config": {
-                    "delay": 0,
-                    "easing": "",
-                    "duration": 0,
-                    "actionListId": "a-21",
-                    "affectedElements": {},
-                    "playInReverse": false,
-                    "autoStopEventId": "e-60"
-                }
-            },
-            "mediaQueries": ["main", "medium", "small", "tiny"],
-            "target": {
-                "selector": ".tab-link-button",
-                "originalId": "6214ba060d63cf142716517f|689a607b-71f1-090b-c091-238d9343aca3",
-                "appliesTo": "CLASS"
-            },
-            "targets": [{
-                "selector": ".tab-link-button",
-                "originalId": "6214ba060d63cf142716517f|689a607b-71f1-090b-c091-238d9343aca3",
-                "appliesTo": "CLASS"
-            }],
-            "config": {
-                "loop": false,
-                "playInReverse": false,
-                "scrollOffsetValue": null,
-                "scrollOffsetUnit": null,
-                "delay": null,
-                "direction": null,
-                "effectIn": null
-            },
-            "createdOn": 1645543367765
-        },
-        "e-62": {
-            "id": "e-62",
-            "name": "",
-            "animationType": "custom",
-            "eventTypeId": "SLIDER_ACTIVE",
-            "action": {
-                "id": "",
-                "actionTypeId": "GENERAL_START_ACTION",
-                "config": {
-                    "delay": 0,
-                    "easing": "",
-                    "duration": 0,
-                    "actionListId": "a-22",
-                    "affectedElements": {},
-                    "playInReverse": false,
-                    "autoStopEventId": "e-63"
-                }
-            },
-            "mediaQueries": ["main", "medium", "small", "tiny"],
-            "target": {
-                "selector": ".slide",
-                "originalId": "6214ba060d63cf142716517f|9f1f940c-05af-264a-6b3b-677fba199089",
-                "appliesTo": "CLASS"
-            },
-            "targets": [{
-                "selector": ".slide",
-                "originalId": "6214ba060d63cf142716517f|9f1f940c-05af-264a-6b3b-677fba199089",
-                "appliesTo": "CLASS"
-            }],
-            "config": {
-                "loop": false,
-                "playInReverse": false,
-                "scrollOffsetValue": null,
-                "scrollOffsetUnit": null,
-                "delay": null,
-                "direction": null,
-                "effectIn": null
-            },
-            "createdOn": 1645607567799
-        },
-        "e-63": {
-            "id": "e-63",
-            "name": "",
-            "animationType": "custom",
-            "eventTypeId": "SLIDER_INACTIVE",
-            "action": {
-                "id": "",
-                "actionTypeId": "GENERAL_START_ACTION",
-                "config": {
-                    "delay": 0,
-                    "easing": "",
-                    "duration": 0,
-                    "actionListId": "a-23",
-                    "affectedElements": {},
-                    "playInReverse": false,
-                    "autoStopEventId": "e-62"
-                }
-            },
-            "mediaQueries": ["main", "medium", "small", "tiny"],
-            "target": {
-                "selector": ".slide",
-                "originalId": "6214ba060d63cf142716517f|9f1f940c-05af-264a-6b3b-677fba199089",
-                "appliesTo": "CLASS"
-            },
-            "targets": [{
-                "selector": ".slide",
-                "originalId": "6214ba060d63cf142716517f|9f1f940c-05af-264a-6b3b-677fba199089",
-                "appliesTo": "CLASS"
-            }],
-            "config": {
-                "loop": false,
-                "playInReverse": false,
-                "scrollOffsetValue": null,
-                "scrollOffsetUnit": null,
-                "delay": null,
-                "direction": null,
-                "effectIn": null
-            },
-            "createdOn": 1645607567801
-        },
-        "e-64": {
-            "id": "e-64",
             "name": "",
             "animationType": "custom",
             "eventTypeId": "SCROLL_INTO_VIEW",
@@ -19804,19 +19210,19 @@ Webflow.require('ix2').init({
                     "actionListId": "a-12",
                     "affectedElements": {},
                     "playInReverse": false,
-                    "autoStopEventId": "e-65"
+                    "autoStopEventId": "e-61"
                 }
             },
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
-                "selector": ".white-card",
-                "originalId": "6214ba060d63cf142716517f|196746dd-c717-d465-29eb-dac1286c14b5",
-                "appliesTo": "CLASS"
+                "id": "6358e86f2749b89214ffed65|119beeaf-0d7d-b9ed-dcd9-36894e95f50d",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
             },
             "targets": [{
-                "selector": ".white-card",
-                "originalId": "6214ba060d63cf142716517f|196746dd-c717-d465-29eb-dac1286c14b5",
-                "appliesTo": "CLASS"
+                "id": "6358e86f2749b89214ffed65|119beeaf-0d7d-b9ed-dcd9-36894e95f50d",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
             }],
             "config": {
                 "loop": false,
@@ -19827,47 +19233,10 @@ Webflow.require('ix2').init({
                 "direction": null,
                 "effectIn": null
             },
-            "createdOn": 1645608332701
+            "createdOn": 1664960852307
         },
-        "e-66": {
-            "id": "e-66",
-            "name": "",
-            "animationType": "custom",
-            "eventTypeId": "SCROLLING_IN_VIEW",
-            "action": {
-                "id": "",
-                "actionTypeId": "GENERAL_CONTINUOUS_ACTION",
-                "config": {
-                    "actionListId": "a-24",
-                    "affectedElements": {},
-                    "duration": 0
-                }
-            },
-            "mediaQueries": ["main", "medium", "small", "tiny"],
-            "target": {
-                "selector": ".section",
-                "originalId": "6214ba060d63cf142716517f|b3a49366-67ac-8120-c9e5-3a6334e2ae8e",
-                "appliesTo": "CLASS"
-            },
-            "targets": [{
-                "selector": ".section",
-                "originalId": "6214ba060d63cf142716517f|b3a49366-67ac-8120-c9e5-3a6334e2ae8e",
-                "appliesTo": "CLASS"
-            }],
-            "config": [{
-                "continuousParameterGroupId": "a-24-p",
-                "smoothing": 94,
-                "startsEntering": false,
-                "addStartOffset": false,
-                "addOffsetValue": 50,
-                "startsExiting": true,
-                "addEndOffset": true,
-                "endOffsetValue": 85
-            }],
-            "createdOn": 1645625366238
-        },
-        "e-67": {
-            "id": "e-67",
+        "e-62": {
+            "id": "e-62",
             "name": "",
             "animationType": "custom",
             "eventTypeId": "SCROLL_INTO_VIEW",
@@ -19878,118 +19247,474 @@ Webflow.require('ix2').init({
                     "delay": 0,
                     "easing": "",
                     "duration": 0,
-                    "actionListId": "a-11",
+                    "actionListId": "a-12",
                     "affectedElements": {},
                     "playInReverse": false,
-                    "autoStopEventId": "e-68"
+                    "autoStopEventId": "e-63"
                 }
             },
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
-                "selector": ".ticked-list",
-                "originalId": "6214ba060d63cf142716517f|2dd8748e-ad0f-ae3b-99df-d5c29ec6bee7",
-                "appliesTo": "CLASS"
+                "id": "6358e86f2749b89214ffed65|66c66a6c-4db0-3be0-fe36-4386f9d422eb",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
             },
             "targets": [{
-                "selector": ".ticked-list",
-                "originalId": "6214ba060d63cf142716517f|2dd8748e-ad0f-ae3b-99df-d5c29ec6bee7",
-                "appliesTo": "CLASS"
+                "id": "6358e86f2749b89214ffed65|66c66a6c-4db0-3be0-fe36-4386f9d422eb",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
             }],
             "config": {
                 "loop": false,
                 "playInReverse": false,
                 "scrollOffsetValue": 0,
                 "scrollOffsetUnit": "%",
-                "delay": 0,
-                "direction": null,
-                "effectIn": null
-            },
-            "createdOn": 1645707839298
-        },
-        "e-69": {
-            "id": "e-69",
-            "name": "",
-            "animationType": "custom",
-            "eventTypeId": "MOUSE_OVER",
-            "action": {
-                "id": "",
-                "actionTypeId": "GENERAL_START_ACTION",
-                "config": {
-                    "delay": 0,
-                    "easing": "",
-                    "duration": 0,
-                    "actionListId": "a-29",
-                    "affectedElements": {},
-                    "playInReverse": false,
-                    "autoStopEventId": "e-70"
-                }
-            },
-            "mediaQueries": ["main", "medium", "small", "tiny"],
-            "target": {
-                "selector": ".social-media-link.twitter",
-                "originalId": "4dba5b41-833c-16b4-5421-f80ee787545c",
-                "appliesTo": "CLASS"
-            },
-            "targets": [{
-                "selector": ".social-media-link.twitter",
-                "originalId": "4dba5b41-833c-16b4-5421-f80ee787545c",
-                "appliesTo": "CLASS"
-            }],
-            "config": {
-                "loop": false,
-                "playInReverse": false,
-                "scrollOffsetValue": null,
-                "scrollOffsetUnit": null,
                 "delay": null,
                 "direction": null,
                 "effectIn": null
             },
-            "createdOn": 1645709398093
+            "createdOn": 1664961041707
         },
-        "e-70": {
-            "id": "e-70",
+        "e-66": {
+            "id": "e-66",
             "name": "",
-            "animationType": "custom",
-            "eventTypeId": "MOUSE_OUT",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
             "action": {
                 "id": "",
-                "actionTypeId": "GENERAL_START_ACTION",
+                "actionTypeId": "SLIDE_EFFECT",
+                "instant": false,
                 "config": {
-                    "delay": 0,
-                    "easing": "",
-                    "duration": 0,
-                    "actionListId": "a-27",
-                    "affectedElements": {},
-                    "playInReverse": false,
+                    "actionListId": "slideInRight",
+                    "autoStopEventId": "e-67"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|26c91f29-dcfc-50ae-be95-e323e8f9c9b5",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|26c91f29-dcfc-50ae-be95-e323e8f9c9b5",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 300,
+                "direction": "RIGHT",
+                "effectIn": true
+            },
+            "createdOn": 1664978073106
+        },
+        "e-68": {
+            "id": "e-68",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "SLIDE_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "slideInBottom",
                     "autoStopEventId": "e-69"
                 }
             },
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
-                "selector": ".social-media-link.twitter",
-                "originalId": "4dba5b41-833c-16b4-5421-f80ee787545c",
-                "appliesTo": "CLASS"
+                "id": "6358e86f2749b89214ffed65|26c91f29-dcfc-50ae-be95-e323e8f9c9bc",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
             },
             "targets": [{
-                "selector": ".social-media-link.twitter",
-                "originalId": "4dba5b41-833c-16b4-5421-f80ee787545c",
-                "appliesTo": "CLASS"
+                "id": "6358e86f2749b89214ffed65|26c91f29-dcfc-50ae-be95-e323e8f9c9bc",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
             }],
             "config": {
                 "loop": false,
                 "playInReverse": false,
-                "scrollOffsetValue": null,
-                "scrollOffsetUnit": null,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 200,
+                "direction": "BOTTOM",
+                "effectIn": true
+            },
+            "createdOn": 1664978106185
+        },
+        "e-70": {
+            "id": "e-70",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "SLIDE_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "slideInBottom",
+                    "autoStopEventId": "e-71"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|4d956e76-cd68-0fd8-91cb-8de5c921d177",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|4d956e76-cd68-0fd8-91cb-8de5c921d177",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 550,
+                "direction": "BOTTOM",
+                "effectIn": true
+            },
+            "createdOn": 1664981322240
+        },
+        "e-76": {
+            "id": "e-76",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "SLIDE_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "slideInRight",
+                    "autoStopEventId": "e-77"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|3833784e-da58-104f-a79c-401b3f0e4678",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|3833784e-da58-104f-a79c-401b3f0e4678",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 300,
+                "direction": "RIGHT",
+                "effectIn": true
+            },
+            "createdOn": 1664981632101
+        },
+        "e-80": {
+            "id": "e-80",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-12",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-81"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|16d1bddb-9ad7-3dcf-3fe1-e666f2b8ceca",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|16d1bddb-9ad7-3dcf-3fe1-e666f2b8ceca",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
                 "delay": null,
                 "direction": null,
                 "effectIn": null
             },
-            "createdOn": 1645709398094
+            "createdOn": 1665044307501
         },
-        "e-71": {
-            "id": "e-71",
+        "e-88": {
+            "id": "e-88",
             "name": "",
-            "animationType": "custom",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "SLIDE_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "slideInBottom",
+                    "autoStopEventId": "e-89"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|7c3739d4-9248-25d4-bd48-dd1c7a6279fe",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|7c3739d4-9248-25d4-bd48-dd1c7a6279fe",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 400,
+                "direction": "BOTTOM",
+                "effectIn": true
+            },
+            "createdOn": 1665058565905
+        },
+        "e-91": {
+            "id": "e-91",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growIn",
+                    "autoStopEventId": "e-92"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|0149be4d-059f-ca92-23cf-7a44e064ab57",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|0149be4d-059f-ca92-23cf-7a44e064ab57",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 400,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1665131442567
+        },
+        "e-93": {
+            "id": "e-93",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growIn",
+                    "autoStopEventId": "e-94"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|a9a59587-afae-63a6-b9f2-75473203653c",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|a9a59587-afae-63a6-b9f2-75473203653c",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 450,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1665131956575
+        },
+        "e-95": {
+            "id": "e-95",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growIn",
+                    "autoStopEventId": "e-96"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|3d7779d9-9f43-3eb3-9d1a-8a6bffa0fb41",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|3d7779d9-9f43-3eb3-9d1a-8a6bffa0fb41",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 500,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1665131994135
+        },
+        "e-97": {
+            "id": "e-97",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growIn",
+                    "autoStopEventId": "e-98"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|a9d98170-ff7e-30c4-c81a-fe84a9fb1d71",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|a9d98170-ff7e-30c4-c81a-fe84a9fb1d71",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 550,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1665132008733
+        },
+        "e-99": {
+            "id": "e-99",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growIn",
+                    "autoStopEventId": "e-100"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|70c9d13c-542f-aff5-62c1-6e1d7ef6f7f9",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|70c9d13c-542f-aff5-62c1-6e1d7ef6f7f9",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 600,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1665132020591
+        },
+        "e-101": {
+            "id": "e-101",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growIn",
+                    "autoStopEventId": "e-102"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|7ca10c80-27d3-2f3a-2a5a-104d5c2b06ac",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|7ca10c80-27d3-2f3a-2a5a-104d5c2b06ac",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 650,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1665132033399
+        },
+        "e-125": {
+            "id": "e-125",
+            "name": "",
+            "animationType": "preset",
             "eventTypeId": "MOUSE_CLICK",
             "action": {
                 "id": "",
@@ -19998,21 +19723,21 @@ Webflow.require('ix2').init({
                     "delay": 0,
                     "easing": "",
                     "duration": 0,
-                    "actionListId": "a-28",
+                    "actionListId": "a-37",
                     "affectedElements": {},
                     "playInReverse": false,
-                    "autoStopEventId": "e-72"
+                    "autoStopEventId": "e-126"
                 }
             },
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
-                "selector": ".menu-button",
-                "originalId": "e0b516b2-bf57-08a9-1f3c-0329245b60c6",
+                "selector": ".accordion",
+                "originalId": "6358e86f2749b89214ffed65|059d958c-81b8-9424-725d-1edfde37f26d",
                 "appliesTo": "CLASS"
             },
             "targets": [{
-                "selector": ".menu-button",
-                "originalId": "e0b516b2-bf57-08a9-1f3c-0329245b60c6",
+                "selector": ".accordion",
+                "originalId": "6358e86f2749b89214ffed65|059d958c-81b8-9424-725d-1edfde37f26d",
                 "appliesTo": "CLASS"
             }],
             "config": {
@@ -20024,12 +19749,12 @@ Webflow.require('ix2').init({
                 "direction": null,
                 "effectIn": null
             },
-            "createdOn": 1645711717737
+            "createdOn": 1665150609555
         },
-        "e-72": {
-            "id": "e-72",
+        "e-126": {
+            "id": "e-126",
             "name": "",
-            "animationType": "custom",
+            "animationType": "preset",
             "eventTypeId": "MOUSE_SECOND_CLICK",
             "action": {
                 "id": "",
@@ -20038,21 +19763,21 @@ Webflow.require('ix2').init({
                     "delay": 0,
                     "easing": "",
                     "duration": 0,
-                    "actionListId": "a-27",
+                    "actionListId": "a-38",
                     "affectedElements": {},
                     "playInReverse": false,
-                    "autoStopEventId": "e-71"
+                    "autoStopEventId": "e-125"
                 }
             },
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
-                "selector": ".menu-button",
-                "originalId": "e0b516b2-bf57-08a9-1f3c-0329245b60c6",
+                "selector": ".accordion",
+                "originalId": "6358e86f2749b89214ffed65|059d958c-81b8-9424-725d-1edfde37f26d",
                 "appliesTo": "CLASS"
             },
             "targets": [{
-                "selector": ".menu-button",
-                "originalId": "e0b516b2-bf57-08a9-1f3c-0329245b60c6",
+                "selector": ".accordion",
+                "originalId": "6358e86f2749b89214ffed65|059d958c-81b8-9424-725d-1edfde37f26d",
                 "appliesTo": "CLASS"
             }],
             "config": {
@@ -20064,10 +19789,10 @@ Webflow.require('ix2').init({
                 "direction": null,
                 "effectIn": null
             },
-            "createdOn": 1645711717738
+            "createdOn": 1665150609555
         },
-        "e-73": {
-            "id": "e-73",
+        "e-127": {
+            "id": "e-127",
             "name": "",
             "animationType": "custom",
             "eventTypeId": "MOUSE_OVER",
@@ -20078,21 +19803,21 @@ Webflow.require('ix2').init({
                     "delay": 0,
                     "easing": "",
                     "duration": 0,
-                    "actionListId": "a-26",
+                    "actionListId": "a-39",
                     "affectedElements": {},
                     "playInReverse": false,
-                    "autoStopEventId": "e-74"
+                    "autoStopEventId": "e-128"
                 }
             },
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
                 "selector": ".social-media-link",
-                "originalId": "75e65e1b-cb3a-9af8-eab6-7b5e3157bf80",
+                "originalId": "c4ba7a66-caaf-54f2-f999-14d3ddc81ff3",
                 "appliesTo": "CLASS"
             },
             "targets": [{
                 "selector": ".social-media-link",
-                "originalId": "75e65e1b-cb3a-9af8-eab6-7b5e3157bf80",
+                "originalId": "c4ba7a66-caaf-54f2-f999-14d3ddc81ff3",
                 "appliesTo": "CLASS"
             }],
             "config": {
@@ -20104,10 +19829,10 @@ Webflow.require('ix2').init({
                 "direction": null,
                 "effectIn": null
             },
-            "createdOn": 1645713381581
+            "createdOn": 1665155310314
         },
-        "e-74": {
-            "id": "e-74",
+        "e-128": {
+            "id": "e-128",
             "name": "",
             "animationType": "custom",
             "eventTypeId": "MOUSE_OUT",
@@ -20118,21 +19843,21 @@ Webflow.require('ix2').init({
                     "delay": 0,
                     "easing": "",
                     "duration": 0,
-                    "actionListId": "a-27",
+                    "actionListId": "a-40",
                     "affectedElements": {},
                     "playInReverse": false,
-                    "autoStopEventId": "e-73"
+                    "autoStopEventId": "e-127"
                 }
             },
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
                 "selector": ".social-media-link",
-                "originalId": "75e65e1b-cb3a-9af8-eab6-7b5e3157bf80",
+                "originalId": "c4ba7a66-caaf-54f2-f999-14d3ddc81ff3",
                 "appliesTo": "CLASS"
             },
             "targets": [{
                 "selector": ".social-media-link",
-                "originalId": "75e65e1b-cb3a-9af8-eab6-7b5e3157bf80",
+                "originalId": "c4ba7a66-caaf-54f2-f999-14d3ddc81ff3",
                 "appliesTo": "CLASS"
             }],
             "config": {
@@ -20144,13 +19869,85 @@ Webflow.require('ix2').init({
                 "direction": null,
                 "effectIn": null
             },
-            "createdOn": 1645713381582
+            "createdOn": 1665155310316
         },
-        "e-75": {
-            "id": "e-75",
+        "e-133": {
+            "id": "e-133",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "SLIDE_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "slideInBottom",
+                    "autoStopEventId": "e-134"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|ab778637-af9a-9e06-bd67-1dc62b30e96c",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|ab778637-af9a-9e06-bd67-1dc62b30e96c",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 350,
+                "direction": "BOTTOM",
+                "effectIn": true
+            },
+            "createdOn": 1665578529499
+        },
+        "e-137": {
+            "id": "e-137",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "SLIDE_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "slideInRight",
+                    "autoStopEventId": "e-138"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|0c236a1a-900f-18af-2ba4-d5d89addb23e",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|0c236a1a-900f-18af-2ba4-d5d89addb23e",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 400,
+                "direction": "RIGHT",
+                "effectIn": true
+            },
+            "createdOn": 1666008172508
+        },
+        "e-139": {
+            "id": "e-139",
             "name": "",
             "animationType": "custom",
-            "eventTypeId": "MOUSE_OVER",
+            "eventTypeId": "SCROLL_INTO_VIEW",
             "action": {
                 "id": "",
                 "actionTypeId": "GENERAL_START_ACTION",
@@ -20158,39 +19955,147 @@ Webflow.require('ix2').init({
                     "delay": 0,
                     "easing": "",
                     "duration": 0,
-                    "actionListId": "a-29",
+                    "actionListId": "a-12",
                     "affectedElements": {},
                     "playInReverse": false,
-                    "autoStopEventId": "e-76"
+                    "autoStopEventId": "e-140"
                 }
             },
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
-                "selector": ".social-media-link-twitter",
-                "originalId": "4dba5b41-833c-16b4-5421-f80ee787545c",
-                "appliesTo": "CLASS"
+                "id": "6358e86f2749b89214ffed65|45c228e8-524e-c332-2b28-50a3ea275298",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
             },
             "targets": [{
-                "selector": ".social-media-link-twitter",
-                "originalId": "4dba5b41-833c-16b4-5421-f80ee787545c",
-                "appliesTo": "CLASS"
+                "id": "6358e86f2749b89214ffed65|45c228e8-524e-c332-2b28-50a3ea275298",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
             }],
             "config": {
                 "loop": false,
                 "playInReverse": false,
-                "scrollOffsetValue": null,
-                "scrollOffsetUnit": null,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
                 "delay": null,
                 "direction": null,
                 "effectIn": null
             },
-            "createdOn": 1645713412808
+            "createdOn": 1666014647924
         },
-        "e-76": {
-            "id": "e-76",
+        "e-141": {
+            "id": "e-141",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "FLIP_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "flipInBottom",
+                    "autoStopEventId": "e-142"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|4fdfe265-d948-bf5f-8ab3-58e2f5fab429",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|4fdfe265-d948-bf5f-8ab3-58e2f5fab429",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 200,
+                "direction": "BOTTOM",
+                "effectIn": true
+            },
+            "createdOn": 1666016630793
+        },
+        "e-143": {
+            "id": "e-143",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "FLIP_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "flipInBottom",
+                    "autoStopEventId": "e-144"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|aaa42907-4e91-9291-b677-a2157b3ab56e",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|aaa42907-4e91-9291-b677-a2157b3ab56e",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 300,
+                "direction": "BOTTOM",
+                "effectIn": true
+            },
+            "createdOn": 1666016681555
+        },
+        "e-145": {
+            "id": "e-145",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "FLIP_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "flipInBottom",
+                    "autoStopEventId": "e-146"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|e9a40e69-ae72-dffa-489c-178b14e25cff",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|e9a40e69-ae72-dffa-489c-178b14e25cff",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 400,
+                "direction": "BOTTOM",
+                "effectIn": true
+            },
+            "createdOn": 1666016738731
+        },
+        "e-147": {
+            "id": "e-147",
             "name": "",
             "animationType": "custom",
-            "eventTypeId": "MOUSE_OUT",
+            "eventTypeId": "SCROLL_INTO_VIEW",
             "action": {
                 "id": "",
                 "actionTypeId": "GENERAL_START_ACTION",
@@ -20198,36 +20103,376 @@ Webflow.require('ix2').init({
                     "delay": 0,
                     "easing": "",
                     "duration": 0,
-                    "actionListId": "a-27",
+                    "actionListId": "a-12",
                     "affectedElements": {},
                     "playInReverse": false,
-                    "autoStopEventId": "e-75"
+                    "autoStopEventId": "e-148"
                 }
             },
             "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
-                "selector": ".social-media-link-twitter",
-                "originalId": "4dba5b41-833c-16b4-5421-f80ee787545c",
+                "id": "6358e86f2749b89214ffed65|4285ffdf-9926-b519-bd4d-ea11036d7963",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|4285ffdf-9926-b519-bd4d-ea11036d7963",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1666017341122
+        },
+        "e-185": {
+            "id": "e-185",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-44",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-186"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "selector": ".heading-holder._7em",
+                "originalId": "6358e86f2749b89214ffed65|c2b25ca4-501a-d1b7-c2bf-3d52769ea6fd",
                 "appliesTo": "CLASS"
             },
             "targets": [{
-                "selector": ".social-media-link-twitter",
-                "originalId": "4dba5b41-833c-16b4-5421-f80ee787545c",
+                "id": "6358e86f2749b89214ffed65|c2b25ca4-501a-d1b7-c2bf-3d52769ea6fd",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1666167025688
+        },
+        "e-197": {
+            "id": "e-197",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_BIG_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growBigIn",
+                    "autoStopEventId": "e-198"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|45c228e8-524e-c332-2b28-50a3ea2752c9",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|45c228e8-524e-c332-2b28-50a3ea2752c9",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 150,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1666181818504
+        },
+        "e-199": {
+            "id": "e-199",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_BIG_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growBigIn",
+                    "autoStopEventId": "e-200"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|45c228e8-524e-c332-2b28-50a3ea2752cb",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|45c228e8-524e-c332-2b28-50a3ea2752cb",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 200,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1666181862055
+        },
+        "e-201": {
+            "id": "e-201",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_BIG_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growBigIn",
+                    "autoStopEventId": "e-202"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|45c228e8-524e-c332-2b28-50a3ea2752cd",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|45c228e8-524e-c332-2b28-50a3ea2752cd",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 250,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1666181885937
+        },
+        "e-203": {
+            "id": "e-203",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_BIG_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growBigIn",
+                    "autoStopEventId": "e-204"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|45c228e8-524e-c332-2b28-50a3ea2752cf",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|45c228e8-524e-c332-2b28-50a3ea2752cf",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 300,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1666181904075
+        },
+        "e-205": {
+            "id": "e-205",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_BIG_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growBigIn",
+                    "autoStopEventId": "e-206"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|45c228e8-524e-c332-2b28-50a3ea2752d1",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|45c228e8-524e-c332-2b28-50a3ea2752d1",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 350,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1666181917668
+        },
+        "e-220": {
+            "id": "e-220",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-12",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-221"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|59efc4b7-9bef-6428-e00a-a8c63874bf54",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|59efc4b7-9bef-6428-e00a-a8c63874bf54",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1666789292831
+        },
+        "e-222": {
+            "id": "e-222",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-12",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-223"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|59efc4b7-9bef-6428-e00a-a8c63874bf57",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|59efc4b7-9bef-6428-e00a-a8c63874bf57",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1666789303007
+        },
+        "e-224": {
+            "id": "e-224",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-12",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-225"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "selector": ".tick-list",
+                "originalId": "6358e86f2749b89214ffed65|59efc4b7-9bef-6428-e00a-a8c63874bf5d",
+                "appliesTo": "CLASS"
+            },
+            "targets": [{
+                "selector": ".tick-list",
+                "originalId": "6358e86f2749b89214ffed65|59efc4b7-9bef-6428-e00a-a8c63874bf5d",
                 "appliesTo": "CLASS"
             }],
             "config": {
                 "loop": false,
                 "playInReverse": false,
-                "scrollOffsetValue": null,
-                "scrollOffsetUnit": null,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
                 "delay": null,
                 "direction": null,
                 "effectIn": null
             },
-            "createdOn": 1645713412809
+            "createdOn": 1666789324552
         },
-        "e-77": {
-            "id": "e-77",
+        "e-238": {
+            "id": "e-238",
             "name": "",
             "animationType": "custom",
             "eventTypeId": "PAGE_START",
@@ -20238,20 +20483,20 @@ Webflow.require('ix2').init({
                     "delay": 0,
                     "easing": "",
                     "duration": 0,
-                    "actionListId": "a-30",
+                    "actionListId": "a-52",
                     "affectedElements": {},
                     "playInReverse": false,
-                    "autoStopEventId": "e-78"
+                    "autoStopEventId": "e-239"
                 }
             },
-            "mediaQueries": ["tiny"],
+            "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
-                "id": "6214ba060d63cf142716517f",
+                "id": "6358e86f2749b89214ffed65",
                 "appliesTo": "PAGE",
                 "styleBlockIds": []
             },
             "targets": [{
-                "id": "6214ba060d63cf142716517f",
+                "id": "6358e86f2749b89214ffed65",
                 "appliesTo": "PAGE",
                 "styleBlockIds": []
             }],
@@ -20264,13 +20509,13 @@ Webflow.require('ix2').init({
                 "direction": null,
                 "effectIn": null
             },
-            "createdOn": 1645780109069
+            "createdOn": 1667293481471
         },
-        "e-78": {
-            "id": "e-78",
+        "e-240": {
+            "id": "e-240",
             "name": "",
             "animationType": "custom",
-            "eventTypeId": "PAGE_FINISH",
+            "eventTypeId": "NAVBAR_OPEN",
             "action": {
                 "id": "",
                 "actionTypeId": "GENERAL_START_ACTION",
@@ -20278,25 +20523,25 @@ Webflow.require('ix2').init({
                     "delay": 0,
                     "easing": "",
                     "duration": 0,
-                    "actionListId": "a-25",
+                    "actionListId": "a-56",
                     "affectedElements": {},
                     "playInReverse": false,
-                    "autoStopEventId": "e-77"
+                    "autoStopEventId": "e-241"
                 }
             },
-            "mediaQueries": ["tiny"],
+            "mediaQueries": ["main", "medium", "small", "tiny"],
             "target": {
-                "id": "6214ba060d63cf142716517f",
-                "appliesTo": "PAGE",
+                "id": "e00f20a6-ab39-244d-d592-7acc349e73aa",
+                "appliesTo": "ELEMENT",
                 "styleBlockIds": []
             },
             "targets": [{
-                "id": "6214ba060d63cf142716517f",
-                "appliesTo": "PAGE",
+                "id": "e00f20a6-ab39-244d-d592-7acc349e73aa",
+                "appliesTo": "ELEMENT",
                 "styleBlockIds": []
             }],
             "config": {
-                "loop": true,
+                "loop": false,
                 "playInReverse": false,
                 "scrollOffsetValue": null,
                 "scrollOffsetUnit": null,
@@ -20304,7 +20549,2404 @@ Webflow.require('ix2').init({
                 "direction": null,
                 "effectIn": null
             },
-            "createdOn": 1645780109070
+            "createdOn": 1667468460266
+        },
+        "e-241": {
+            "id": "e-241",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "NAVBAR_CLOSE",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-58",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-240"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "e00f20a6-ab39-244d-d592-7acc349e73aa",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "e00f20a6-ab39-244d-d592-7acc349e73aa",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1667468460269
+        },
+        "e-242": {
+            "id": "e-242",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-12",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-243"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|3a41fb92-6e5f-0f80-b790-3db1b1f2233e",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|3a41fb92-6e5f-0f80-b790-3db1b1f2233e",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1667480781382
+        },
+        "e-244": {
+            "id": "e-244",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-12",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-245"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|3a41fb92-6e5f-0f80-b790-3db1b1f22341",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|3a41fb92-6e5f-0f80-b790-3db1b1f22341",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1667480781382
+        },
+        "e-250": {
+            "id": "e-250",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-12",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-251"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "selector": ".footer-social-media-container",
+                "originalId": "728dcc2e-0fff-9723-a851-ec6c219b9bd4",
+                "appliesTo": "CLASS"
+            },
+            "targets": [{
+                "selector": ".footer-social-media-container",
+                "originalId": "728dcc2e-0fff-9723-a851-ec6c219b9bd4",
+                "appliesTo": "CLASS"
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1667484120381
+        },
+        "e-252": {
+            "id": "e-252",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-12",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-253"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "selector": ".footer-flex-container",
+                "originalId": "818edde0-e44d-ac22-9931-8dffd122f20a",
+                "appliesTo": "CLASS"
+            },
+            "targets": [{
+                "selector": ".footer-flex-container",
+                "originalId": "818edde0-e44d-ac22-9931-8dffd122f20a",
+                "appliesTo": "CLASS"
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1667484130700
+        },
+        "e-254": {
+            "id": "e-254",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-12",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-255"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "selector": ".pricing-card-content",
+                "originalId": "6358e86f2749b89214ffed65|0d9a49e8-35fd-2742-82a3-afed4c046ceb",
+                "appliesTo": "CLASS"
+            },
+            "targets": [{
+                "selector": ".pricing-card-content",
+                "originalId": "6358e86f2749b89214ffed65|0d9a49e8-35fd-2742-82a3-afed4c046ceb",
+                "appliesTo": "CLASS"
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1667484963648
+        },
+        "e-256": {
+            "id": "e-256",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-12",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-257"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "selector": ".accordion",
+                "originalId": "b02e5131-9008-c543-2d28-20b49de92b50",
+                "appliesTo": "CLASS"
+            },
+            "targets": [{
+                "selector": ".accordion",
+                "originalId": "b02e5131-9008-c543-2d28-20b49de92b50",
+                "appliesTo": "CLASS"
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1667484986408
+        },
+        "e-258": {
+            "id": "e-258",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-59",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-259"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "selector": ".feature-project-image",
+                "originalId": "6358e86f2749b89214ffed65|f452c9b1-cea9-12e0-3fa4-b72e920ff79d",
+                "appliesTo": "CLASS"
+            },
+            "targets": [{
+                "selector": ".feature-project-image",
+                "originalId": "6358e86f2749b89214ffed65|f452c9b1-cea9-12e0-3fa4-b72e920ff79d",
+                "appliesTo": "CLASS"
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1667568111103
+        },
+        "e-261": {
+            "id": "e-261",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLLING_IN_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_CONTINUOUS_ACTION",
+                "config": {
+                    "actionListId": "a-62",
+                    "affectedElements": {},
+                    "duration": 0
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "selector": ".image-project-holder",
+                "originalId": "6358e86f2749b89214ffed65|cc0e86f1-cf77-af1e-cd74-c8003f85affc",
+                "appliesTo": "CLASS"
+            },
+            "targets": [{
+                "selector": ".image-project-holder",
+                "originalId": "6358e86f2749b89214ffed65|cc0e86f1-cf77-af1e-cd74-c8003f85affc",
+                "appliesTo": "CLASS"
+            }],
+            "config": [{
+                "continuousParameterGroupId": "a-62-p",
+                "smoothing": 89,
+                "startsEntering": true,
+                "addStartOffset": false,
+                "addOffsetValue": 50,
+                "startsExiting": false,
+                "addEndOffset": false,
+                "endOffsetValue": 50
+            }],
+            "createdOn": 1667571535552
+        },
+        "e-262": {
+            "id": "e-262",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "PAGE_SCROLL",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_CONTINUOUS_ACTION",
+                "config": {
+                    "actionListId": "a-63",
+                    "affectedElements": {},
+                    "duration": 0
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65",
+                "appliesTo": "PAGE",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65",
+                "appliesTo": "PAGE",
+                "styleBlockIds": []
+            }],
+            "config": [{
+                "continuousParameterGroupId": "a-63-p",
+                "smoothing": 80,
+                "startsEntering": true,
+                "addStartOffset": false,
+                "addOffsetValue": 50,
+                "startsExiting": false,
+                "addEndOffset": false,
+                "endOffsetValue": 50
+            }],
+            "createdOn": 1667582286364
+        },
+        "e-263": {
+            "id": "e-263",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-12",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-264"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|c784bffd-a591-6c8a-705a-8af66cd6d36e",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|c784bffd-a591-6c8a-705a-8af66cd6d36e",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1667749171703
+        },
+        "e-265": {
+            "id": "e-265",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "MOUSE_OVER",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-64",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-266"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "cfe7e93e-f3fb-a3f5-1679-2275dc6316d0",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "cfe7e93e-f3fb-a3f5-1679-2275dc6316d0",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1667896502800
+        },
+        "e-266": {
+            "id": "e-266",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "MOUSE_OUT",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-65",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-265"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "cfe7e93e-f3fb-a3f5-1679-2275dc6316d0",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "cfe7e93e-f3fb-a3f5-1679-2275dc6316d0",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1667896502804
+        },
+        "e-267": {
+            "id": "e-267",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "MOUSE_OVER",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-64",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-268"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "c08f12cf-8dda-7a54-bd22-0ca6306572ac",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "c08f12cf-8dda-7a54-bd22-0ca6306572ac",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1667897074295
+        },
+        "e-268": {
+            "id": "e-268",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "MOUSE_OUT",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-65",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-267"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "c08f12cf-8dda-7a54-bd22-0ca6306572ac",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "c08f12cf-8dda-7a54-bd22-0ca6306572ac",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1667897074300
+        },
+        "e-269": {
+            "id": "e-269",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "MOUSE_OVER",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-270"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "selector": ".link-block.animation-03",
+                "originalId": "6358e86f2749b8184effed71|9cdc2bd5-a20c-458a-31fd-62214bc68379",
+                "appliesTo": "CLASS"
+            },
+            "targets": [{
+                "selector": ".link-block.animation-03",
+                "originalId": "6358e86f2749b8184effed71|9cdc2bd5-a20c-458a-31fd-62214bc68379",
+                "appliesTo": "CLASS"
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1667913261588
+        },
+        "e-270": {
+            "id": "e-270",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "MOUSE_OUT",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-2",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-269"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "selector": ".link-block.animation-03",
+                "originalId": "6358e86f2749b8184effed71|9cdc2bd5-a20c-458a-31fd-62214bc68379",
+                "appliesTo": "CLASS"
+            },
+            "targets": [{
+                "selector": ".link-block.animation-03",
+                "originalId": "6358e86f2749b8184effed71|9cdc2bd5-a20c-458a-31fd-62214bc68379",
+                "appliesTo": "CLASS"
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1667913261639
+        },
+        "e-271": {
+            "id": "e-271",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLLING_IN_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_CONTINUOUS_ACTION",
+                "config": {
+                    "actionListId": "a-67",
+                    "affectedElements": {},
+                    "duration": 0
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|5bdd4691-fd2e-dbdf-86b7-1723691a5bca",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|5bdd4691-fd2e-dbdf-86b7-1723691a5bca",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": [{
+                "continuousParameterGroupId": "a-67-p",
+                "smoothing": 92,
+                "startsEntering": true,
+                "addStartOffset": false,
+                "addOffsetValue": 50,
+                "startsExiting": false,
+                "addEndOffset": false,
+                "endOffsetValue": 50
+            }],
+            "createdOn": 1667984458900
+        },
+        "e-276": {
+            "id": "e-276",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-12",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-277"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "selector": ".paragraph-xl",
+                "originalId": "6358e86f2749b89214ffed65|7e728374-1518-134b-fb1f-105834842d32",
+                "appliesTo": "CLASS"
+            },
+            "targets": [{
+                "selector": ".paragraph-xl",
+                "originalId": "6358e86f2749b89214ffed65|7e728374-1518-134b-fb1f-105834842d32",
+                "appliesTo": "CLASS"
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668072171838
+        },
+        "e-278": {
+            "id": "e-278",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-12",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-279"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|87082eb2-7631-c9c0-12a5-9eccc54070e4",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|87082eb2-7631-c9c0-12a5-9eccc54070e4",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668085350902
+        },
+        "e-282": {
+            "id": "e-282",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-12",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-285"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|0de78e18-9136-09f8-4d59-3178887cfc93",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|0de78e18-9136-09f8-4d59-3178887cfc93",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1666184292033
+        },
+        "e-283": {
+            "id": "e-283",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_BIG_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growBigIn",
+                    "autoStopEventId": "e-291"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|0de78e18-9136-09f8-4d59-3178887cfc9c",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|0de78e18-9136-09f8-4d59-3178887cfc9c",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 300,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1666096365472
+        },
+        "e-286": {
+            "id": "e-286",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_BIG_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growBigIn",
+                    "autoStopEventId": "e-287"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|0de78e18-9136-09f8-4d59-3178887cfc97",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|0de78e18-9136-09f8-4d59-3178887cfc97",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 200,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1666096299283
+        },
+        "e-289": {
+            "id": "e-289",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-12",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-288"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|0de78e18-9136-09f8-4d59-3178887cfc96",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|0de78e18-9136-09f8-4d59-3178887cfc96",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1665560578530
+        },
+        "e-292": {
+            "id": "e-292",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_BIG_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growBigIn",
+                    "autoStopEventId": "e-284"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|0de78e18-9136-09f8-4d59-3178887cfca1",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|0de78e18-9136-09f8-4d59-3178887cfca1",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 400,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1666096409022
+        },
+        "e-294": {
+            "id": "e-294",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-12",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-293"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|0de78e18-9136-09f8-4d59-3178887cfc8f",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|0de78e18-9136-09f8-4d59-3178887cfc8f",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668005958901
+        },
+        "e-295": {
+            "id": "e-295",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "SLIDE_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "slideInRight",
+                    "autoStopEventId": "e-290"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|0de78e18-9136-09f8-4d59-3178887cfca7",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|0de78e18-9136-09f8-4d59-3178887cfca7",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 350,
+                "direction": "RIGHT",
+                "effectIn": true
+            },
+            "createdOn": 1665044090435
+        },
+        "e-296": {
+            "id": "e-296",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growIn",
+                    "autoStopEventId": "e-297"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|419bf26b-416e-230c-2c16-4a1e06d1d2a0",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|419bf26b-416e-230c-2c16-4a1e06d1d2a0",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 900,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1668161462561
+        },
+        "e-298": {
+            "id": "e-298",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growIn",
+                    "autoStopEventId": "e-299"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|cbcae33d-17fe-c8c5-5001-2031f1ca1d61",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|cbcae33d-17fe-c8c5-5001-2031f1ca1d61",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 1000,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1668161536065
+        },
+        "e-300": {
+            "id": "e-300",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growIn",
+                    "autoStopEventId": "e-301"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|d531546f-7606-67e6-f1ac-04c9c319f054",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|d531546f-7606-67e6-f1ac-04c9c319f054",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 900,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1668161917321
+        },
+        "e-302": {
+            "id": "e-302",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growIn",
+                    "autoStopEventId": "e-303"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|509a4af7-1bde-aa14-acd5-1f537a32163b",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|509a4af7-1bde-aa14-acd5-1f537a32163b",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 1000,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1668161949928
+        },
+        "e-304": {
+            "id": "e-304",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growIn",
+                    "autoStopEventId": "e-305"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|7066e68c-2cfb-d25f-8e90-522bde33d365",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|7066e68c-2cfb-d25f-8e90-522bde33d365",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 1000,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1668161964413
+        },
+        "e-306": {
+            "id": "e-306",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growIn",
+                    "autoStopEventId": "e-307"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|fc583eae-3019-331a-5b9e-e7e201d2c3f3",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|fc583eae-3019-331a-5b9e-e7e201d2c3f3",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 900,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1668161981193
+        },
+        "e-308": {
+            "id": "e-308",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growIn",
+                    "autoStopEventId": "e-309"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|cffd78aa-4573-549f-3130-2d0bc9793e6e",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|cffd78aa-4573-549f-3130-2d0bc9793e6e",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 1000,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1668162008079
+        },
+        "e-310": {
+            "id": "e-310",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growIn",
+                    "autoStopEventId": "e-311"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|471d5a97-3cd5-9052-5f29-bdb31d9977e3",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|471d5a97-3cd5-9052-5f29-bdb31d9977e3",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 900,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1668162024429
+        },
+        "e-312": {
+            "id": "e-312",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growIn",
+                    "autoStopEventId": "e-313"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|6fd808cc-c0e4-0947-566d-26fda6dd7c77",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|6fd808cc-c0e4-0947-566d-26fda6dd7c77",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 800,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1668162044428
+        },
+        "e-314": {
+            "id": "e-314",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growIn",
+                    "autoStopEventId": "e-315"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|7827338d-ee8b-9395-0ead-ccb6b6075733",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|7827338d-ee8b-9395-0ead-ccb6b6075733",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 950,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1668162067281
+        },
+        "e-316": {
+            "id": "e-316",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GROW_EFFECT",
+                "instant": false,
+                "config": {
+                    "actionListId": "growIn",
+                    "autoStopEventId": "e-317"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|9d3f0284-81e4-6b45-f9b3-6ff6165d974f",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|9d3f0284-81e4-6b45-f9b3-6ff6165d974f",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 10,
+                "scrollOffsetUnit": "%",
+                "delay": 900,
+                "direction": null,
+                "effectIn": true
+            },
+            "createdOn": 1668162082774
+        },
+        "e-318": {
+            "id": "e-318",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-12",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-319"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|45c228e8-524e-c332-2b28-50a3ea2752ac",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|45c228e8-524e-c332-2b28-50a3ea2752ac",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668172734180
+        },
+        "e-320": {
+            "id": "e-320",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-12",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-321"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|0de78e18-9136-09f8-4d59-3178887cfc91",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|0de78e18-9136-09f8-4d59-3178887cfc91",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668181954754
+        },
+        "e-322": {
+            "id": "e-322",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-12",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-323"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|9ccc4d0c-4aba-d5bf-1d88-5b43482589f3",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|9ccc4d0c-4aba-d5bf-1d88-5b43482589f3",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668417556694
+        },
+        "e-324": {
+            "id": "e-324",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLL_INTO_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-12",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-325"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|45c228e8-524e-c332-2b28-50a3ea27529d",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|45c228e8-524e-c332-2b28-50a3ea27529d",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668422838461
+        },
+        "e-326": {
+            "id": "e-326",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLLING_IN_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_CONTINUOUS_ACTION",
+                "config": {
+                    "actionListId": "a-70",
+                    "affectedElements": {},
+                    "duration": 0
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|6bd3f44c-6fec-3bfb-60e4-fc3d5b7e15cb",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|6bd3f44c-6fec-3bfb-60e4-fc3d5b7e15cb",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": [{
+                "continuousParameterGroupId": "a-70-p",
+                "smoothing": 80,
+                "startsEntering": true,
+                "addStartOffset": false,
+                "addOffsetValue": 50,
+                "startsExiting": false,
+                "addEndOffset": false,
+                "endOffsetValue": 50
+            }],
+            "createdOn": 1668524819883
+        },
+        "e-327": {
+            "id": "e-327",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "SCROLLING_IN_VIEW",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_CONTINUOUS_ACTION",
+                "config": {
+                    "actionListId": "a-70",
+                    "affectedElements": {},
+                    "duration": 0
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|d6ccccb6-861e-bb1c-2051-280c11ea6615",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|d6ccccb6-861e-bb1c-2051-280c11ea6615",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": [{
+                "continuousParameterGroupId": "a-70-p",
+                "smoothing": 80,
+                "startsEntering": true,
+                "addStartOffset": false,
+                "addOffsetValue": 50,
+                "startsExiting": false,
+                "addEndOffset": false,
+                "endOffsetValue": 50
+            }],
+            "createdOn": 1668525144210
+        },
+        "e-328": {
+            "id": "e-328",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "MOUSE_OVER",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-71",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-329"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|a5acb56c-5085-22ea-4f49-a5826400021e",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|a5acb56c-5085-22ea-4f49-a5826400021e",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668593313898
+        },
+        "e-329": {
+            "id": "e-329",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "MOUSE_OUT",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-72",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-328"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|a5acb56c-5085-22ea-4f49-a5826400021e",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|a5acb56c-5085-22ea-4f49-a5826400021e",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668593313902
+        },
+        "e-330": {
+            "id": "e-330",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "MOUSE_OVER",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-71",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-331"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|1f7cf24c-4c53-8766-c239-9073a7f9f5ba",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|1f7cf24c-4c53-8766-c239-9073a7f9f5ba",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668593871741
+        },
+        "e-331": {
+            "id": "e-331",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "MOUSE_OUT",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-72",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-330"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|1f7cf24c-4c53-8766-c239-9073a7f9f5ba",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|1f7cf24c-4c53-8766-c239-9073a7f9f5ba",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668593871741
+        },
+        "e-332": {
+            "id": "e-332",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "MOUSE_OVER",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-71",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-333"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|f785ccdc-e925-9082-b6b4-4416141708bf",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|f785ccdc-e925-9082-b6b4-4416141708bf",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668593945706
+        },
+        "e-333": {
+            "id": "e-333",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "MOUSE_OUT",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-72",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-332"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|f785ccdc-e925-9082-b6b4-4416141708bf",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|f785ccdc-e925-9082-b6b4-4416141708bf",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668593945706
+        },
+        "e-334": {
+            "id": "e-334",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "MOUSE_OVER",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-71",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-335"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|1ee3e757-d841-03fa-c19f-7a505b2afd40",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|1ee3e757-d841-03fa-c19f-7a505b2afd40",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668593968441
+        },
+        "e-335": {
+            "id": "e-335",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "MOUSE_OUT",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-72",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-334"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|1ee3e757-d841-03fa-c19f-7a505b2afd40",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|1ee3e757-d841-03fa-c19f-7a505b2afd40",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668593968441
+        },
+        "e-336": {
+            "id": "e-336",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "MOUSE_OVER",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-71",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-337"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|0475bd0a-79b9-dec1-a713-cd4a066d8ef5",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|0475bd0a-79b9-dec1-a713-cd4a066d8ef5",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668593975640
+        },
+        "e-337": {
+            "id": "e-337",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "MOUSE_OUT",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-72",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-336"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|0475bd0a-79b9-dec1-a713-cd4a066d8ef5",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|0475bd0a-79b9-dec1-a713-cd4a066d8ef5",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668593975640
+        },
+        "e-338": {
+            "id": "e-338",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "MOUSE_OVER",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-71",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-339"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|9380be7c-c788-2381-819c-a5acc5d02716",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|9380be7c-c788-2381-819c-a5acc5d02716",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668593988567
+        },
+        "e-339": {
+            "id": "e-339",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "MOUSE_OUT",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-72",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-338"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65|9380be7c-c788-2381-819c-a5acc5d02716",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65|9380be7c-c788-2381-819c-a5acc5d02716",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668593988567
+        },
+        "e-344": {
+            "id": "e-344",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "PAGE_SCROLL_UP",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-73",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-345"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65",
+                "appliesTo": "PAGE",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65",
+                "appliesTo": "PAGE",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668607878783
+        },
+        "e-345": {
+            "id": "e-345",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "PAGE_SCROLL_DOWN",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-74",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-344"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b89214ffed65",
+                "appliesTo": "PAGE",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b89214ffed65",
+                "appliesTo": "PAGE",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": 0,
+                "scrollOffsetUnit": "%",
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668607878790
+        },
+        "e-346": {
+            "id": "e-346",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "MOUSE_OVER",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-71",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-347"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b8f14effed73|38e41a88-e8e8-ea6a-4411-220fec5cad64",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b8f14effed73|38e41a88-e8e8-ea6a-4411-220fec5cad64",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668613210457
+        },
+        "e-347": {
+            "id": "e-347",
+            "name": "",
+            "animationType": "preset",
+            "eventTypeId": "MOUSE_OUT",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-72",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-346"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "id": "6358e86f2749b8f14effed73|38e41a88-e8e8-ea6a-4411-220fec5cad64",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            },
+            "targets": [{
+                "id": "6358e86f2749b8f14effed73|38e41a88-e8e8-ea6a-4411-220fec5cad64",
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": []
+            }],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1668613210457
+        },
+        "e-348": {
+            "id": "e-348",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "MOUSE_OVER",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-75",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-349"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": [],
+                "id": "6358e86f2749b89214ffed65|bcf8efb2-4b49-3a45-3bd3-4073a9665fe0"
+            },
+            "targets": [],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1673464418565
+        },
+        "e-349": {
+            "id": "e-349",
+            "name": "",
+            "animationType": "custom",
+            "eventTypeId": "MOUSE_OUT",
+            "action": {
+                "id": "",
+                "actionTypeId": "GENERAL_START_ACTION",
+                "config": {
+                    "delay": 0,
+                    "easing": "",
+                    "duration": 0,
+                    "actionListId": "a-76",
+                    "affectedElements": {},
+                    "playInReverse": false,
+                    "autoStopEventId": "e-348"
+                }
+            },
+            "mediaQueries": ["main", "medium", "small", "tiny"],
+            "target": {
+                "appliesTo": "ELEMENT",
+                "styleBlockIds": [],
+                "id": "6358e86f2749b89214ffed65|bcf8efb2-4b49-3a45-3bd3-4073a9665fe0"
+            },
+            "targets": [],
+            "config": {
+                "loop": false,
+                "playInReverse": false,
+                "scrollOffsetValue": null,
+                "scrollOffsetUnit": null,
+                "delay": null,
+                "direction": null,
+                "effectIn": null
+            },
+            "createdOn": 1673464418567
         }
     },
     "actionLists": {
@@ -20409,11 +23051,7 @@ Webflow.require('ix2').init({
                         "delay": 0,
                         "easing": "ease",
                         "duration": 800,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".link-block-underline._01",
-                            "selectorGuids": ["e7362ff3-1cb5-d07c-af2e-df27fc2f3066", "6855b198-a6e2-454f-4915-9a994216d84f"]
-                        },
+                        "target": {},
                         "xValue": -101,
                         "xUnit": "%",
                         "yUnit": "PX",
@@ -20426,11 +23064,7 @@ Webflow.require('ix2').init({
                         "delay": 0,
                         "easing": "ease",
                         "duration": 800,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".link-block-underline._02",
-                            "selectorGuids": ["e7362ff3-1cb5-d07c-af2e-df27fc2f3066", "16062fec-f902-8cbb-4d3a-0d9b0271f067"]
-                        },
+                        "target": {},
                         "xValue": 101,
                         "xUnit": "%",
                         "yUnit": "PX",
@@ -20445,11 +23079,7 @@ Webflow.require('ix2').init({
                         "delay": 0,
                         "easing": "ease",
                         "duration": 400,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".link-block-underline._01",
-                            "selectorGuids": ["e7362ff3-1cb5-d07c-af2e-df27fc2f3066", "6855b198-a6e2-454f-4915-9a994216d84f"]
-                        },
+                        "target": {},
                         "xValue": 0,
                         "xUnit": "%",
                         "yUnit": "PX",
@@ -20462,11 +23092,7 @@ Webflow.require('ix2').init({
                         "delay": 0,
                         "easing": "ease",
                         "duration": 400,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".link-block-underline._02",
-                            "selectorGuids": ["e7362ff3-1cb5-d07c-af2e-df27fc2f3066", "16062fec-f902-8cbb-4d3a-0d9b0271f067"]
-                        },
+                        "target": {},
                         "xValue": 0,
                         "xUnit": "%",
                         "yUnit": "PX",
@@ -20488,11 +23114,7 @@ Webflow.require('ix2').init({
                         "delay": 0,
                         "easing": "ease",
                         "duration": 400,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".link-block-underline._02",
-                            "selectorGuids": ["e7362ff3-1cb5-d07c-af2e-df27fc2f3066", "16062fec-f902-8cbb-4d3a-0d9b0271f067"]
-                        },
+                        "target": {},
                         "xValue": -101,
                         "xUnit": "%",
                         "yUnit": "PX",
@@ -20505,11 +23127,7 @@ Webflow.require('ix2').init({
                         "delay": 0,
                         "easing": "ease",
                         "duration": 400,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".link-block-underline._01",
-                            "selectorGuids": ["e7362ff3-1cb5-d07c-af2e-df27fc2f3066", "6855b198-a6e2-454f-4915-9a994216d84f"]
-                        },
+                        "target": {},
                         "xValue": 101,
                         "xUnit": "%",
                         "yUnit": "PX",
@@ -20524,11 +23142,7 @@ Webflow.require('ix2').init({
                         "delay": 0,
                         "easing": "ease",
                         "duration": 0,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".link-block-underline._02",
-                            "selectorGuids": ["e7362ff3-1cb5-d07c-af2e-df27fc2f3066", "16062fec-f902-8cbb-4d3a-0d9b0271f067"]
-                        },
+                        "target": {},
                         "xValue": 101,
                         "xUnit": "%",
                         "yUnit": "PX",
@@ -20541,11 +23155,7 @@ Webflow.require('ix2').init({
                         "delay": 0,
                         "easing": "ease",
                         "duration": 0,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".link-block-underline._01",
-                            "selectorGuids": ["e7362ff3-1cb5-d07c-af2e-df27fc2f3066", "6855b198-a6e2-454f-4915-9a994216d84f"]
-                        },
+                        "target": {},
                         "xValue": -101,
                         "xUnit": "%",
                         "yUnit": "PX",
@@ -20555,164 +23165,6 @@ Webflow.require('ix2').init({
             }],
             "useFirstGroupAsInitialState": false,
             "createdOn": 1638368821040
-        },
-        "a-5": {
-            "id": "a-5",
-            "title": "👆 Link Block Animation 03 -> Hover In",
-            "actionItemGroups": [{
-                "actionItems": [{
-                    "id": "a-5-n",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "ease",
-                        "duration": 400,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".link-block-underline._01._2px",
-                            "selectorGuids": ["e7362ff3-1cb5-d07c-af2e-df27fc2f3066", "6855b198-a6e2-454f-4915-9a994216d84f", "e7abe27c-a570-5adc-2e4d-b75994bfe748"]
-                        },
-                        "xValue": -101,
-                        "xUnit": "%",
-                        "yUnit": "PX",
-                        "zUnit": "PX"
-                    }
-                }, {
-                    "id": "a-5-n-2",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "ease",
-                        "duration": 400,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".link-block-underline._02",
-                            "selectorGuids": ["e7362ff3-1cb5-d07c-af2e-df27fc2f3066", "16062fec-f902-8cbb-4d3a-0d9b0271f067"]
-                        },
-                        "xValue": -150,
-                        "xUnit": "%",
-                        "yUnit": "PX",
-                        "zUnit": "PX"
-                    }
-                }]
-            }, {
-                "actionItems": [{
-                    "id": "a-5-n-3",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "ease",
-                        "duration": 600,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".link-block-underline._01._2px",
-                            "selectorGuids": ["e7362ff3-1cb5-d07c-af2e-df27fc2f3066", "6855b198-a6e2-454f-4915-9a994216d84f", "e7abe27c-a570-5adc-2e4d-b75994bfe748"]
-                        },
-                        "xValue": 0,
-                        "xUnit": "%",
-                        "yUnit": "PX",
-                        "zUnit": "PX"
-                    }
-                }, {
-                    "id": "a-5-n-4",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "ease",
-                        "duration": 600,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".link-block-underline._02",
-                            "selectorGuids": ["e7362ff3-1cb5-d07c-af2e-df27fc2f3066", "16062fec-f902-8cbb-4d3a-0d9b0271f067"]
-                        },
-                        "xValue": 0,
-                        "xUnit": "%",
-                        "yUnit": "PX",
-                        "zUnit": "PX"
-                    }
-                }]
-            }],
-            "useFirstGroupAsInitialState": true,
-            "createdOn": 1638369025313
-        },
-        "a-6": {
-            "id": "a-6",
-            "title": "👆 Link Block Animation 03 -> Hover Out",
-            "actionItemGroups": [{
-                "actionItems": [{
-                    "id": "a-6-n",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "ease",
-                        "duration": 400,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".link-block-underline._01._2px",
-                            "selectorGuids": ["e7362ff3-1cb5-d07c-af2e-df27fc2f3066", "6855b198-a6e2-454f-4915-9a994216d84f", "e7abe27c-a570-5adc-2e4d-b75994bfe748"]
-                        },
-                        "xValue": 101,
-                        "xUnit": "%",
-                        "yUnit": "PX",
-                        "zUnit": "PX"
-                    }
-                }, {
-                    "id": "a-6-n-2",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "ease",
-                        "duration": 400,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".link-block-underline._02",
-                            "selectorGuids": ["e7362ff3-1cb5-d07c-af2e-df27fc2f3066", "16062fec-f902-8cbb-4d3a-0d9b0271f067"]
-                        },
-                        "xValue": 150,
-                        "xUnit": "%",
-                        "yUnit": "PX",
-                        "zUnit": "PX"
-                    }
-                }]
-            }, {
-                "actionItems": [{
-                    "id": "a-6-n-3",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "ease",
-                        "duration": 0,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".link-block-underline._01._2px",
-                            "selectorGuids": ["e7362ff3-1cb5-d07c-af2e-df27fc2f3066", "6855b198-a6e2-454f-4915-9a994216d84f", "e7abe27c-a570-5adc-2e4d-b75994bfe748"]
-                        },
-                        "xValue": -101,
-                        "xUnit": "%",
-                        "yUnit": "PX",
-                        "zUnit": "PX"
-                    }
-                }, {
-                    "id": "a-6-n-4",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "ease",
-                        "duration": 0,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".link-block-underline._02",
-                            "selectorGuids": ["e7362ff3-1cb5-d07c-af2e-df27fc2f3066", "16062fec-f902-8cbb-4d3a-0d9b0271f067"]
-                        },
-                        "xValue": -150,
-                        "xUnit": "%",
-                        "yUnit": "PX",
-                        "zUnit": "PX"
-                    }
-                }]
-            }],
-            "useFirstGroupAsInitialState": false,
-            "createdOn": 1638369025313
         },
         "a-7": {
             "id": "a-7",
@@ -20725,11 +23177,7 @@ Webflow.require('ix2').init({
                         "delay": 0,
                         "easing": "ease",
                         "duration": 400,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".left-underline",
-                            "selectorGuids": ["73e93e11-0197-2383-3c04-a7b338cf2ca3"]
-                        },
+                        "target": {},
                         "xValue": -101,
                         "xUnit": "%",
                         "yUnit": "PX",
@@ -20742,11 +23190,7 @@ Webflow.require('ix2').init({
                         "delay": 0,
                         "easing": "ease",
                         "duration": 400,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".right-underline",
-                            "selectorGuids": ["0fff96b0-ac58-95fc-0b6a-ff240a64afba"]
-                        },
+                        "target": {},
                         "xValue": 101,
                         "xUnit": "%",
                         "yUnit": "PX",
@@ -20761,11 +23205,7 @@ Webflow.require('ix2').init({
                         "delay": 0,
                         "easing": "ease",
                         "duration": 700,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".left-underline",
-                            "selectorGuids": ["73e93e11-0197-2383-3c04-a7b338cf2ca3"]
-                        },
+                        "target": {},
                         "xValue": 0,
                         "xUnit": "%",
                         "yUnit": "PX",
@@ -20778,11 +23218,7 @@ Webflow.require('ix2').init({
                         "delay": 0,
                         "easing": "ease",
                         "duration": 700,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".right-underline",
-                            "selectorGuids": ["0fff96b0-ac58-95fc-0b6a-ff240a64afba"]
-                        },
+                        "target": {},
                         "xValue": 0,
                         "xUnit": "%",
                         "yUnit": "PX",
@@ -20804,11 +23240,7 @@ Webflow.require('ix2').init({
                         "delay": 0,
                         "easing": "ease",
                         "duration": 600,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".left-underline",
-                            "selectorGuids": ["73e93e11-0197-2383-3c04-a7b338cf2ca3"]
-                        },
+                        "target": {},
                         "xValue": -101,
                         "xUnit": "%",
                         "yUnit": "PX",
@@ -20821,11 +23253,7 @@ Webflow.require('ix2').init({
                         "delay": 0,
                         "easing": "ease",
                         "duration": 600,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".right-underline",
-                            "selectorGuids": ["0fff96b0-ac58-95fc-0b6a-ff240a64afba"]
-                        },
+                        "target": {},
                         "xValue": 101,
                         "xUnit": "%",
                         "yUnit": "PX",
@@ -21018,7 +23446,7 @@ Webflow.require('ix2').init({
                         "duration": 500,
                         "target": {
                             "useEventTarget": true,
-                            "id": "6214ba060d63cfcba516518a|48a7b1d3-b07a-497b-d5ee-44049694be04"
+                            "id": "6358e86f2749b8f14effed73|48a7b1d3-b07a-497b-d5ee-44049694be04"
                         },
                         "value": 0,
                         "unit": ""
@@ -21034,7 +23462,7 @@ Webflow.require('ix2').init({
                         "duration": 1000,
                         "target": {
                             "useEventTarget": true,
-                            "id": "6214ba060d63cfcba516518a|48a7b1d3-b07a-497b-d5ee-44049694be04"
+                            "id": "6358e86f2749b8f14effed73|48a7b1d3-b07a-497b-d5ee-44049694be04"
                         },
                         "value": 1,
                         "unit": ""
@@ -21057,7 +23485,7 @@ Webflow.require('ix2').init({
                         "duration": 500,
                         "target": {
                             "useEventTarget": true,
-                            "id": "6214ba060d63cfcba516518a|48a7b1d3-b07a-497b-d5ee-44049694be04"
+                            "id": "6358e86f2749b8f14effed73|48a7b1d3-b07a-497b-d5ee-44049694be04"
                         },
                         "value": 0,
                         "unit": ""
@@ -21071,7 +23499,7 @@ Webflow.require('ix2').init({
                         "duration": 500,
                         "target": {
                             "useEventTarget": true,
-                            "id": "6214ba060d63cfcba516518a|48a7b1d3-b07a-497b-d5ee-44049694be04"
+                            "id": "6358e86f2749b8f14effed73|48a7b1d3-b07a-497b-d5ee-44049694be04"
                         },
                         "yValue": 25,
                         "xUnit": "PX",
@@ -21089,7 +23517,7 @@ Webflow.require('ix2').init({
                         "duration": 1000,
                         "target": {
                             "useEventTarget": true,
-                            "id": "6214ba060d63cfcba516518a|48a7b1d3-b07a-497b-d5ee-44049694be04"
+                            "id": "6358e86f2749b8f14effed73|48a7b1d3-b07a-497b-d5ee-44049694be04"
                         },
                         "value": 1,
                         "unit": ""
@@ -21103,7 +23531,7 @@ Webflow.require('ix2').init({
                         "duration": 1000,
                         "target": {
                             "useEventTarget": true,
-                            "id": "6214ba060d63cfcba516518a|48a7b1d3-b07a-497b-d5ee-44049694be04"
+                            "id": "6358e86f2749b8f14effed73|48a7b1d3-b07a-497b-d5ee-44049694be04"
                         },
                         "yValue": 0,
                         "xUnit": "PX",
@@ -21128,7 +23556,7 @@ Webflow.require('ix2').init({
                         "duration": 500,
                         "target": {
                             "useEventTarget": true,
-                            "id": "6214ba060d63cfcba516518a|48a7b1d3-b07a-497b-d5ee-44049694be04"
+                            "id": "6358e86f2749b8f14effed73|48a7b1d3-b07a-497b-d5ee-44049694be04"
                         },
                         "value": 0,
                         "unit": ""
@@ -21142,7 +23570,7 @@ Webflow.require('ix2').init({
                         "duration": 500,
                         "target": {
                             "useEventTarget": true,
-                            "id": "6214ba060d63cfcba516518a|48a7b1d3-b07a-497b-d5ee-44049694be04"
+                            "id": "6358e86f2749b8f14effed73|48a7b1d3-b07a-497b-d5ee-44049694be04"
                         },
                         "xValue": 1.1,
                         "yValue": 1.1,
@@ -21159,7 +23587,7 @@ Webflow.require('ix2').init({
                         "duration": 1000,
                         "target": {
                             "useEventTarget": true,
-                            "id": "6214ba060d63cfcba516518a|48a7b1d3-b07a-497b-d5ee-44049694be04"
+                            "id": "6358e86f2749b8f14effed73|48a7b1d3-b07a-497b-d5ee-44049694be04"
                         },
                         "value": 1,
                         "unit": ""
@@ -21173,7 +23601,7 @@ Webflow.require('ix2').init({
                         "duration": 1000,
                         "target": {
                             "useEventTarget": true,
-                            "id": "6214ba060d63cfcba516518a|48a7b1d3-b07a-497b-d5ee-44049694be04"
+                            "id": "6358e86f2749b8f14effed73|48a7b1d3-b07a-497b-d5ee-44049694be04"
                         },
                         "xValue": 1,
                         "yValue": 1,
@@ -21197,7 +23625,7 @@ Webflow.require('ix2').init({
                         "duration": 500,
                         "target": {
                             "useEventTarget": true,
-                            "id": "6214ba060d63cfcba516518a|48a7b1d3-b07a-497b-d5ee-44049694be04"
+                            "id": "6358e86f2749b8f14effed73|48a7b1d3-b07a-497b-d5ee-44049694be04"
                         },
                         "value": 0,
                         "unit": ""
@@ -21211,7 +23639,7 @@ Webflow.require('ix2').init({
                         "duration": 500,
                         "target": {
                             "useEventTarget": true,
-                            "id": "6214ba060d63cfcba516518a|48a7b1d3-b07a-497b-d5ee-44049694be04"
+                            "id": "6358e86f2749b8f14effed73|48a7b1d3-b07a-497b-d5ee-44049694be04"
                         },
                         "filters": [{
                             "type": "blur",
@@ -21231,7 +23659,7 @@ Webflow.require('ix2').init({
                         "duration": 1000,
                         "target": {
                             "useEventTarget": true,
-                            "id": "6214ba060d63cfcba516518a|48a7b1d3-b07a-497b-d5ee-44049694be04"
+                            "id": "6358e86f2749b8f14effed73|48a7b1d3-b07a-497b-d5ee-44049694be04"
                         },
                         "value": 1,
                         "unit": ""
@@ -21245,7 +23673,7 @@ Webflow.require('ix2').init({
                         "duration": 1000,
                         "target": {
                             "useEventTarget": true,
-                            "id": "6214ba060d63cfcba516518a|48a7b1d3-b07a-497b-d5ee-44049694be04"
+                            "id": "6358e86f2749b8f14effed73|48a7b1d3-b07a-497b-d5ee-44049694be04"
                         },
                         "filters": [{
                             "type": "blur",
@@ -21259,450 +23687,6 @@ Webflow.require('ix2').init({
             "useFirstGroupAsInitialState": true,
             "createdOn": 1639044101700
         },
-        "a-15": {
-            "id": "a-15",
-            "title": "⏱ Page On Load Animation",
-            "actionItemGroups": [{
-                "actionItems": [{
-                    "id": "a-15-n",
-                    "actionTypeId": "STYLE_SIZE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "selector": ".hero-logo",
-                            "selectorGuids": ["f6ab9cf2-cbde-8d8b-54e1-a184196e9ddf"]
-                        },
-                        "widthValue": 500,
-                        "heightValue": 500,
-                        "widthUnit": "px",
-                        "heightUnit": "px",
-                        "locked": false
-                    }
-                }, {
-                    "id": "a-15-n-29",
-                    "actionTypeId": "STYLE_OPACITY",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "selector": ".animate-on-load-4rd",
-                            "selectorGuids": ["e2d0c4d2-a6a8-93de-7c82-4c7bde3751e1"]
-                        },
-                        "value": 0,
-                        "unit": ""
-                    }
-                }, {
-                    "id": "a-15-n-27",
-                    "actionTypeId": "STYLE_OPACITY",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "selector": ".navbar",
-                            "selectorGuids": ["e120672f-745f-faa1-71e7-c904666db13c"]
-                        },
-                        "value": 0,
-                        "unit": ""
-                    }
-                }, {
-                    "id": "a-15-n-5",
-                    "actionTypeId": "STYLE_OPACITY",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "selector": ".animate-on-load-1st",
-                            "selectorGuids": ["b4248ab5-c0d7-7366-a104-1a5259d22f2d"]
-                        },
-                        "value": 0,
-                        "unit": ""
-                    }
-                }, {
-                    "id": "a-15-n-2",
-                    "actionTypeId": "STYLE_OPACITY",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "selector": ".hero-logo",
-                            "selectorGuids": ["f6ab9cf2-cbde-8d8b-54e1-a184196e9ddf"]
-                        },
-                        "value": 0,
-                        "unit": ""
-                    }
-                }, {
-                    "id": "a-15-n-11",
-                    "actionTypeId": "STYLE_OPACITY",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "selector": ".animate-on-load-2st",
-                            "selectorGuids": ["bf097afd-afb2-4d87-957a-2f00e0e7488c"]
-                        },
-                        "value": 0,
-                        "unit": ""
-                    }
-                }, {
-                    "id": "a-15-n-12",
-                    "actionTypeId": "STYLE_OPACITY",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "selector": ".animate-on-load-3rd",
-                            "selectorGuids": ["6d398c37-5e23-365a-4393-64e79f0cf52c"]
-                        },
-                        "value": 0,
-                        "unit": ""
-                    }
-                }, {
-                    "id": "a-15-n-15",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "selector": ".iphone-container._01",
-                            "selectorGuids": ["2d4fff1e-b224-598c-e71a-ceb4bb01fa6c", "be1f419b-6c36-ca11-7d3e-27bb1467ce75"]
-                        },
-                        "xValue": -60,
-                        "yValue": 10,
-                        "xUnit": "%",
-                        "yUnit": "%",
-                        "zUnit": "PX"
-                    }
-                }, {
-                    "id": "a-15-n-16",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "selector": ".iphone-container._02",
-                            "selectorGuids": ["2d4fff1e-b224-598c-e71a-ceb4bb01fa6c", "7475c385-7180-8927-9d9e-1a0d83ed1343"]
-                        },
-                        "xValue": -40,
-                        "yValue": 0,
-                        "xUnit": "%",
-                        "yUnit": "%",
-                        "zUnit": "PX"
-                    }
-                }, {
-                    "id": "a-15-n-17",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "selector": ".iphone-container._03",
-                            "selectorGuids": ["2d4fff1e-b224-598c-e71a-ceb4bb01fa6c", "4234499f-9fec-7be7-c12a-9d5d77bf66f7"]
-                        },
-                        "xValue": 0,
-                        "yValue": -10,
-                        "xUnit": "%",
-                        "yUnit": "%",
-                        "zUnit": "PX"
-                    }
-                }, {
-                    "id": "a-15-n-18",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "selector": ".iphone-container._04",
-                            "selectorGuids": ["2d4fff1e-b224-598c-e71a-ceb4bb01fa6c", "53db14c5-c1b1-11e1-80d9-c85bb26ffabb"]
-                        },
-                        "xValue": 30,
-                        "yValue": 0,
-                        "xUnit": "%",
-                        "yUnit": "%",
-                        "zUnit": "PX"
-                    }
-                }, {
-                    "id": "a-15-n-19",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "selector": ".iphone-container._06",
-                            "selectorGuids": ["2d4fff1e-b224-598c-e71a-ceb4bb01fa6c", "ff4b85c2-173d-4403-5841-46842d2d83ff"]
-                        },
-                        "xValue": 60,
-                        "yValue": 10,
-                        "xUnit": "%",
-                        "yUnit": "%",
-                        "zUnit": "PX"
-                    }
-                }]
-            }, {
-                "actionItems": [{
-                    "id": "a-15-n-4",
-                    "actionTypeId": "STYLE_OPACITY",
-                    "config": {
-                        "delay": 600,
-                        "easing": "ease",
-                        "duration": 1000,
-                        "target": {
-                            "selector": ".hero-logo",
-                            "selectorGuids": ["f6ab9cf2-cbde-8d8b-54e1-a184196e9ddf"]
-                        },
-                        "value": 1,
-                        "unit": ""
-                    }
-                }, {
-                    "id": "a-15-n-3",
-                    "actionTypeId": "STYLE_SIZE",
-                    "config": {
-                        "delay": 700,
-                        "easing": [0.45, 0.264, 0.193, 0.978],
-                        "duration": 2000,
-                        "target": {
-                            "selector": ".hero-logo",
-                            "selectorGuids": ["f6ab9cf2-cbde-8d8b-54e1-a184196e9ddf"]
-                        },
-                        "widthValue": 100,
-                        "heightValue": 100,
-                        "widthUnit": "px",
-                        "heightUnit": "px",
-                        "locked": false
-                    }
-                }, {
-                    "id": "a-15-n-13",
-                    "actionTypeId": "STYLE_OPACITY",
-                    "config": {
-                        "delay": 700,
-                        "easing": "ease",
-                        "duration": 1200,
-                        "target": {
-                            "selector": ".animate-on-load-2st",
-                            "selectorGuids": ["bf097afd-afb2-4d87-957a-2f00e0e7488c"]
-                        },
-                        "value": 1,
-                        "unit": ""
-                    }
-                }, {
-                    "id": "a-15-n-20",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 700,
-                        "easing": [0.456, 0.06, 0.333, 0.972],
-                        "duration": 2000,
-                        "target": {
-                            "selector": ".iphone-container._01",
-                            "selectorGuids": ["2d4fff1e-b224-598c-e71a-ceb4bb01fa6c", "be1f419b-6c36-ca11-7d3e-27bb1467ce75"]
-                        },
-                        "xValue": 0,
-                        "yValue": 0,
-                        "xUnit": "%",
-                        "yUnit": "%",
-                        "zUnit": "PX"
-                    }
-                }, {
-                    "id": "a-15-n-24",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 700,
-                        "easing": [0.456, 0.06, 0.333, 0.972],
-                        "duration": 2000,
-                        "target": {
-                            "selector": ".iphone-container._06",
-                            "selectorGuids": ["2d4fff1e-b224-598c-e71a-ceb4bb01fa6c", "ff4b85c2-173d-4403-5841-46842d2d83ff"]
-                        },
-                        "xValue": 0,
-                        "yValue": 0,
-                        "xUnit": "%",
-                        "yUnit": "%",
-                        "zUnit": "PX"
-                    }
-                }, {
-                    "id": "a-15-n-23",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 700,
-                        "easing": [0.456, 0.06, 0.333, 0.972],
-                        "duration": 2000,
-                        "target": {
-                            "selector": ".iphone-container._04",
-                            "selectorGuids": ["2d4fff1e-b224-598c-e71a-ceb4bb01fa6c", "53db14c5-c1b1-11e1-80d9-c85bb26ffabb"]
-                        },
-                        "xValue": 0,
-                        "yValue": 0,
-                        "xUnit": "%",
-                        "yUnit": "%",
-                        "zUnit": "PX"
-                    }
-                }, {
-                    "id": "a-15-n-22",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 700,
-                        "easing": [0.456, 0.06, 0.333, 0.972],
-                        "duration": 2000,
-                        "target": {
-                            "selector": ".iphone-container._03",
-                            "selectorGuids": ["2d4fff1e-b224-598c-e71a-ceb4bb01fa6c", "4234499f-9fec-7be7-c12a-9d5d77bf66f7"]
-                        },
-                        "xValue": 0,
-                        "yValue": 0,
-                        "xUnit": "%",
-                        "yUnit": "%",
-                        "zUnit": "PX"
-                    }
-                }, {
-                    "id": "a-15-n-21",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 700,
-                        "easing": [0.456, 0.06, 0.333, 0.972],
-                        "duration": 2000,
-                        "target": {
-                            "selector": ".iphone-container._02",
-                            "selectorGuids": ["2d4fff1e-b224-598c-e71a-ceb4bb01fa6c", "7475c385-7180-8927-9d9e-1a0d83ed1343"]
-                        },
-                        "xValue": 0,
-                        "yValue": 0,
-                        "xUnit": "%",
-                        "yUnit": "%",
-                        "zUnit": "PX"
-                    }
-                }, {
-                    "id": "a-15-n-14",
-                    "actionTypeId": "STYLE_OPACITY",
-                    "config": {
-                        "delay": 900,
-                        "easing": "ease",
-                        "duration": 1200,
-                        "target": {
-                            "selector": ".animate-on-load-3rd",
-                            "selectorGuids": ["6d398c37-5e23-365a-4393-64e79f0cf52c"]
-                        },
-                        "value": 1,
-                        "unit": ""
-                    }
-                }, {
-                    "id": "a-15-n-30",
-                    "actionTypeId": "STYLE_OPACITY",
-                    "config": {
-                        "delay": 900,
-                        "easing": "ease",
-                        "duration": 500,
-                        "target": {
-                            "selector": ".animate-on-load-4rd",
-                            "selectorGuids": ["e2d0c4d2-a6a8-93de-7c82-4c7bde3751e1"]
-                        },
-                        "value": 1,
-                        "unit": ""
-                    }
-                }, {
-                    "id": "a-15-n-28",
-                    "actionTypeId": "STYLE_OPACITY",
-                    "config": {
-                        "delay": 1200,
-                        "easing": "ease",
-                        "duration": 700,
-                        "target": {
-                            "selector": ".navbar",
-                            "selectorGuids": ["e120672f-745f-faa1-71e7-c904666db13c"]
-                        },
-                        "value": 1,
-                        "unit": ""
-                    }
-                }, {
-                    "id": "a-15-n-10",
-                    "actionTypeId": "STYLE_OPACITY",
-                    "config": {
-                        "delay": 2500,
-                        "easing": "ease",
-                        "duration": 500,
-                        "target": {
-                            "selector": ".animate-on-load-1st",
-                            "selectorGuids": ["b4248ab5-c0d7-7366-a104-1a5259d22f2d"]
-                        },
-                        "value": 1,
-                        "unit": ""
-                    }
-                }]
-            }],
-            "useFirstGroupAsInitialState": true,
-            "createdOn": 1639044633546
-        },
-        "a-25": {
-            "id": "a-25",
-            "title": "∞ Infinite Slider",
-            "actionItemGroups": [{
-                "actionItems": [{
-                    "id": "a-25-n",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "selector": ".infinite-slider-grid",
-                            "selectorGuids": ["f017d6db-54a1-5993-d42c-52549e685fda"]
-                        },
-                        "xValue": 0,
-                        "xUnit": "%",
-                        "yUnit": "PX",
-                        "zUnit": "PX"
-                    }
-                }]
-            }, {
-                "actionItems": [{
-                    "id": "a-25-n-2",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 40000,
-                        "target": {
-                            "selector": ".infinite-slider-grid",
-                            "selectorGuids": ["f017d6db-54a1-5993-d42c-52549e685fda"]
-                        },
-                        "xValue": -100,
-                        "xUnit": "%",
-                        "yUnit": "PX",
-                        "zUnit": "PX"
-                    }
-                }]
-            }, {
-                "actionItems": [{
-                    "id": "a-25-n-3",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 0,
-                        "target": {
-                            "selector": ".infinite-slider-grid",
-                            "selectorGuids": ["f017d6db-54a1-5993-d42c-52549e685fda"]
-                        },
-                        "xValue": 0,
-                        "xUnit": "%",
-                        "yUnit": "PX",
-                        "zUnit": "PX"
-                    }
-                }]
-            }],
-            "useFirstGroupAsInitialState": true,
-            "createdOn": 1645697020490
-        },
         "a-17": {
             "id": "a-17",
             "title": "👆Template Card -> Hover On",
@@ -21714,11 +23698,7 @@ Webflow.require('ix2').init({
                         "delay": 0,
                         "easing": "",
                         "duration": 500,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".template-hover-state",
-                            "selectorGuids": ["114fa3d6-3fee-65a7-a7ff-7aaa7fd81c4d"]
-                        },
+                        "target": {},
                         "value": 0,
                         "unit": ""
                     }
@@ -21729,11 +23709,7 @@ Webflow.require('ix2').init({
                         "delay": 0,
                         "easing": "",
                         "duration": 500,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".template-holder",
-                            "selectorGuids": ["a2c55527-c8f6-86cd-5110-93ef96bdd232"]
-                        },
+                        "target": {},
                         "xValue": 1,
                         "yValue": 1,
                         "locked": true
@@ -21764,11 +23740,7 @@ Webflow.require('ix2').init({
                         "delay": 0,
                         "easing": "ease",
                         "duration": 800,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".template-hover-state",
-                            "selectorGuids": ["114fa3d6-3fee-65a7-a7ff-7aaa7fd81c4d"]
-                        },
+                        "target": {},
                         "value": 1,
                         "unit": ""
                     }
@@ -21796,11 +23768,7 @@ Webflow.require('ix2').init({
                         "delay": 0,
                         "easing": "ease",
                         "duration": 800,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".template-holder",
-                            "selectorGuids": ["a2c55527-c8f6-86cd-5110-93ef96bdd232"]
-                        },
+                        "target": {},
                         "xValue": 1.05,
                         "yValue": 1.05,
                         "locked": true
@@ -21821,11 +23789,7 @@ Webflow.require('ix2').init({
                         "delay": 0,
                         "easing": "ease",
                         "duration": 800,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".template-hover-state",
-                            "selectorGuids": ["114fa3d6-3fee-65a7-a7ff-7aaa7fd81c4d"]
-                        },
+                        "target": {},
                         "value": 0,
                         "unit": ""
                     }
@@ -21836,11 +23800,7 @@ Webflow.require('ix2').init({
                         "delay": 0,
                         "easing": "ease",
                         "duration": 800,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".template-holder",
-                            "selectorGuids": ["a2c55527-c8f6-86cd-5110-93ef96bdd232"]
-                        },
+                        "target": {},
                         "xValue": 1,
                         "yValue": 1,
                         "locked": true
@@ -21867,394 +23827,28 @@ Webflow.require('ix2').init({
             "useFirstGroupAsInitialState": false,
             "createdOn": 1639400891923
         },
-        "a-20": {
-            "id": "a-20",
-            "title": "🟩 Tab Active Animation",
+        "a-16": {
+            "id": "a-16",
+            "title": "⏰ Default On Load Animation",
             "actionItemGroups": [{
                 "actionItems": [{
-                    "id": "a-20-n",
-                    "actionTypeId": "STYLE_OPACITY",
+                    "id": "a-16-n",
+                    "actionTypeId": "TRANSFORM_MOVE",
                     "config": {
                         "delay": 0,
                         "easing": "",
                         "duration": 500,
                         "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".tab-active",
-                            "selectorGuids": ["fe8f3407-8204-332c-cad8-2fa4951ad6f7"]
+                            "selector": ".navbar",
+                            "selectorGuids": ["e120672f-745f-faa1-71e7-c904666db13c"]
                         },
-                        "value": 0,
-                        "unit": ""
-                    }
-                }]
-            }, {
-                "actionItems": [{
-                    "id": "a-20-n-2",
-                    "actionTypeId": "STYLE_OPACITY",
-                    "config": {
-                        "delay": 0,
-                        "easing": "ease",
-                        "duration": 600,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".tab-active",
-                            "selectorGuids": ["fe8f3407-8204-332c-cad8-2fa4951ad6f7"]
-                        },
-                        "value": 1,
-                        "unit": ""
-                    }
-                }]
-            }],
-            "useFirstGroupAsInitialState": true,
-            "createdOn": 1645543370716
-        },
-        "a-21": {
-            "id": "a-21",
-            "title": "🟥 Tab Not Active Animation",
-            "actionItemGroups": [{
-                "actionItems": [{
-                    "id": "a-21-n",
-                    "actionTypeId": "STYLE_OPACITY",
-                    "config": {
-                        "delay": 0,
-                        "easing": "ease",
-                        "duration": 600,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".tab-active",
-                            "selectorGuids": ["fe8f3407-8204-332c-cad8-2fa4951ad6f7"]
-                        },
-                        "value": 0,
-                        "unit": ""
-                    }
-                }]
-            }],
-            "useFirstGroupAsInitialState": false,
-            "createdOn": 1645543370716
-        },
-        "a-22": {
-            "id": "a-22",
-            "title": "🎚 🟩 Slider In View Animation",
-            "actionItemGroups": [{
-                "actionItems": [{
-                    "id": "a-22-n-2",
-                    "actionTypeId": "STYLE_OPACITY",
-                    "config": {
-                        "delay": 0,
-                        "easing": "ease",
-                        "duration": 700,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".slider-content",
-                            "selectorGuids": ["3450558e-61c9-d4ce-7336-fc08bcd85582"]
-                        },
-                        "value": 1,
-                        "unit": ""
-                    }
-                }]
-            }],
-            "useFirstGroupAsInitialState": false,
-            "createdOn": 1645607569941
-        },
-        "a-23": {
-            "id": "a-23",
-            "title": "🎚 🟥 Slider Out Of View Animation",
-            "actionItemGroups": [{
-                "actionItems": [{
-                    "id": "a-23-n",
-                    "actionTypeId": "STYLE_OPACITY",
-                    "config": {
-                        "delay": 0,
-                        "easing": "ease",
-                        "duration": 700,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".slider-content",
-                            "selectorGuids": ["3450558e-61c9-d4ce-7336-fc08bcd85582"]
-                        },
-                        "value": 0.5,
-                        "unit": ""
-                    }
-                }]
-            }],
-            "useFirstGroupAsInitialState": false,
-            "createdOn": 1645607569941
-        },
-        "a-24": {
-            "id": "a-24",
-            "title": "Hero Phones Scroll",
-            "continuousParameterGroups": [{
-                "id": "a-24-p",
-                "type": "SCROLL_PROGRESS",
-                "parameterLabel": "Scroll",
-                "continuousActionGroups": [{
-                    "keyframe": 0,
-                    "actionItems": [{
-                        "id": "a-24-n",
-                        "actionTypeId": "TRANSFORM_MOVE",
-                        "config": {
-                            "delay": 0,
-                            "easing": "",
-                            "duration": 500,
-                            "target": {
-                                "useEventTarget": "CHILDREN",
-                                "selector": ".iphone-holder._02",
-                                "selectorGuids": ["8270fb7f-f173-26b5-c697-b637ff25c906", "a41fd355-1459-3596-a05e-d9d5f9c48c67"]
-                            },
-                            "yValue": -10,
-                            "xUnit": "PX",
-                            "yUnit": "%",
-                            "zUnit": "PX"
-                        }
-                    }, {
-                        "id": "a-24-n-3",
-                        "actionTypeId": "TRANSFORM_MOVE",
-                        "config": {
-                            "delay": 0,
-                            "easing": "",
-                            "duration": 500,
-                            "target": {
-                                "useEventTarget": "CHILDREN",
-                                "selector": ".iphone-holder._04",
-                                "selectorGuids": ["8270fb7f-f173-26b5-c697-b637ff25c906", "96339585-fbcf-3ff6-047e-9afe00b80e4c"]
-                            },
-                            "yValue": -10,
-                            "xUnit": "PX",
-                            "yUnit": "%",
-                            "zUnit": "PX"
-                        }
-                    }]
-                }, {
-                    "keyframe": 60,
-                    "actionItems": [{
-                        "id": "a-24-n-2",
-                        "actionTypeId": "TRANSFORM_MOVE",
-                        "config": {
-                            "delay": 0,
-                            "easing": "",
-                            "duration": 500,
-                            "target": {
-                                "useEventTarget": "CHILDREN",
-                                "selector": ".iphone-holder._02",
-                                "selectorGuids": ["8270fb7f-f173-26b5-c697-b637ff25c906", "a41fd355-1459-3596-a05e-d9d5f9c48c67"]
-                            },
-                            "yValue": 0,
-                            "xUnit": "PX",
-                            "yUnit": "%",
-                            "zUnit": "PX"
-                        }
-                    }, {
-                        "id": "a-24-n-4",
-                        "actionTypeId": "TRANSFORM_MOVE",
-                        "config": {
-                            "delay": 0,
-                            "easing": "",
-                            "duration": 500,
-                            "target": {
-                                "useEventTarget": "CHILDREN",
-                                "selector": ".iphone-holder._04",
-                                "selectorGuids": ["8270fb7f-f173-26b5-c697-b637ff25c906", "96339585-fbcf-3ff6-047e-9afe00b80e4c"]
-                            },
-                            "yValue": 0,
-                            "xUnit": "PX",
-                            "yUnit": "%",
-                            "zUnit": "PX"
-                        }
-                    }]
-                }]
-            }],
-            "createdOn": 1645625369305
-        },
-        "a-29": {
-            "id": "a-29",
-            "title": "🍥 Twitter Lottie Start",
-            "actionItemGroups": [{
-                "actionItems": [{
-                    "id": "a-29-n",
-                    "actionTypeId": "PLUGIN_LOTTIE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".lottie-animation",
-                            "selectorGuids": ["08ffa04b-815b-4de3-93c0-496ef5a3023a"]
-                        },
-                        "value": 0
-                    }
-                }]
-            }, {
-                "actionItems": [{
-                    "id": "a-29-n-2",
-                    "actionTypeId": "PLUGIN_LOTTIE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 4000,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".lottie-animation",
-                            "selectorGuids": ["08ffa04b-815b-4de3-93c0-496ef5a3023a"]
-                        },
-                        "value": 99.9
-                    }
-                }]
-            }],
-            "useFirstGroupAsInitialState": true,
-            "createdOn": 1645709399978
-        },
-        "a-27": {
-            "id": "a-27",
-            "title": "🍥 Social Media Lottie End",
-            "actionItemGroups": [{
-                "actionItems": [{
-                    "id": "a-27-n-2",
-                    "actionTypeId": "PLUGIN_LOTTIE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 300,
-                        "target": {
-                            "selector": ".lottie-animation",
-                            "selectorGuids": ["08ffa04b-815b-4de3-93c0-496ef5a3023a"]
-                        },
-                        "value": 0
-                    }
-                }]
-            }],
-            "useFirstGroupAsInitialState": false,
-            "createdOn": 1645709399978
-        },
-        "a-28": {
-            "id": "a-28",
-            "title": "🍥 Menu Lottie Start",
-            "actionItemGroups": [{
-                "actionItems": [{
-                    "id": "a-28-n",
-                    "actionTypeId": "PLUGIN_LOTTIE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".lottie-animation",
-                            "selectorGuids": ["08ffa04b-815b-4de3-93c0-496ef5a3023a"]
-                        },
-                        "value": 0
-                    }
-                }]
-            }, {
-                "actionItems": [{
-                    "id": "a-28-n-2",
-                    "actionTypeId": "PLUGIN_LOTTIE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".lottie-animation",
-                            "selectorGuids": ["08ffa04b-815b-4de3-93c0-496ef5a3023a"]
-                        },
-                        "value": 69
-                    }
-                }]
-            }],
-            "useFirstGroupAsInitialState": true,
-            "createdOn": 1645709399978
-        },
-        "a-26": {
-            "id": "a-26",
-            "title": "🍥 Social Media Lottie Start",
-            "actionItemGroups": [{
-                "actionItems": [{
-                    "id": "a-26-n-3",
-                    "actionTypeId": "PLUGIN_LOTTIE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".lottie-animation",
-                            "selectorGuids": ["08ffa04b-815b-4de3-93c0-496ef5a3023a"]
-                        },
-                        "value": 0
-                    }
-                }]
-            }, {
-                "actionItems": [{
-                    "id": "a-26-n-2",
-                    "actionTypeId": "PLUGIN_LOTTIE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "useEventTarget": "CHILDREN",
-                            "selector": ".lottie-animation",
-                            "selectorGuids": ["08ffa04b-815b-4de3-93c0-496ef5a3023a"]
-                        },
-                        "value": 99.9
-                    }
-                }]
-            }],
-            "useFirstGroupAsInitialState": true,
-            "createdOn": 1645709399978
-        },
-        "a-30": {
-            "id": "a-30",
-            "title": "⏱ Page On Load Animation Mobile",
-            "actionItemGroups": [{
-                "actionItems": [{
-                    "id": "a-30-n",
-                    "actionTypeId": "STYLE_SIZE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "selector": ".hero-logo",
-                            "selectorGuids": ["f6ab9cf2-cbde-8d8b-54e1-a184196e9ddf"]
-                        },
-                        "widthValue": 300,
-                        "heightValue": 300,
-                        "widthUnit": "px",
-                        "heightUnit": "px",
-                        "locked": false
+                        "yValue": -100,
+                        "xUnit": "PX",
+                        "yUnit": "%",
+                        "zUnit": "PX"
                     }
                 }, {
-                    "id": "a-30-n-25",
-                    "actionTypeId": "STYLE_OPACITY",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "selector": ".hero-iphone-holder",
-                            "selectorGuids": ["9196d3dc-9293-224b-0a7b-d8d62c700e99"]
-                        },
-                        "value": 0,
-                        "unit": ""
-                    }
-                }, {
-                    "id": "a-30-n-2",
-                    "actionTypeId": "STYLE_OPACITY",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "selector": ".animate-on-load-4rd",
-                            "selectorGuids": ["e2d0c4d2-a6a8-93de-7c82-4c7bde3751e1"]
-                        },
-                        "value": 0,
-                        "unit": ""
-                    }
-                }, {
-                    "id": "a-30-n-3",
+                    "id": "a-16-n-2",
                     "actionTypeId": "STYLE_OPACITY",
                     "config": {
                         "delay": 0,
@@ -22268,325 +23862,1238 @@ Webflow.require('ix2').init({
                         "unit": ""
                     }
                 }, {
-                    "id": "a-30-n-4",
+                    "id": "a-16-n-3",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {},
+                        "yValue": 30,
+                        "xUnit": "PX",
+                        "yUnit": "%",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "id": "a-16-n-4",
+                    "actionTypeId": "TRANSFORM_SCALE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {},
+                        "xValue": 0.8,
+                        "yValue": 0.8,
+                        "locked": true
+                    }
+                }, {
+                    "id": "a-16-n-5",
                     "actionTypeId": "STYLE_OPACITY",
                     "config": {
                         "delay": 0,
                         "easing": "",
                         "duration": 500,
-                        "target": {
-                            "selector": ".animate-on-load-1st",
-                            "selectorGuids": ["b4248ab5-c0d7-7366-a104-1a5259d22f2d"]
-                        },
+                        "target": {},
                         "value": 0,
                         "unit": ""
                     }
                 }, {
-                    "id": "a-30-n-5",
+                    "id": "a-16-n-6",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {},
+                        "yValue": 30,
+                        "xUnit": "PX",
+                        "yUnit": "%",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "id": "a-16-n-8",
                     "actionTypeId": "STYLE_OPACITY",
                     "config": {
                         "delay": 0,
                         "easing": "",
                         "duration": 500,
-                        "target": {
-                            "selector": ".hero-logo",
-                            "selectorGuids": ["f6ab9cf2-cbde-8d8b-54e1-a184196e9ddf"]
-                        },
+                        "target": {},
                         "value": 0,
                         "unit": ""
                     }
                 }, {
-                    "id": "a-30-n-6",
+                    "id": "a-16-n-7",
+                    "actionTypeId": "TRANSFORM_SCALE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {},
+                        "xValue": 0.8,
+                        "yValue": 0.8,
+                        "locked": true
+                    }
+                }, {
+                    "id": "a-16-n-9",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {},
+                        "yValue": 30,
+                        "xUnit": "PX",
+                        "yUnit": "%",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "id": "a-16-n-11",
+                    "actionTypeId": "TRANSFORM_SCALE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {},
+                        "xValue": 0.8,
+                        "yValue": 0.8,
+                        "locked": true
+                    }
+                }, {
+                    "id": "a-16-n-10",
                     "actionTypeId": "STYLE_OPACITY",
                     "config": {
                         "delay": 0,
                         "easing": "",
                         "duration": 500,
-                        "target": {
-                            "selector": ".animate-on-load-2st",
-                            "selectorGuids": ["bf097afd-afb2-4d87-957a-2f00e0e7488c"]
-                        },
+                        "target": {},
                         "value": 0,
                         "unit": ""
                     }
                 }, {
-                    "id": "a-30-n-7",
+                    "id": "a-16-n-12",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {},
+                        "yValue": 30,
+                        "xUnit": "PX",
+                        "yUnit": "%",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "id": "a-16-n-14",
                     "actionTypeId": "STYLE_OPACITY",
                     "config": {
                         "delay": 0,
                         "easing": "",
                         "duration": 500,
-                        "target": {
-                            "selector": ".animate-on-load-3rd",
-                            "selectorGuids": ["6d398c37-5e23-365a-4393-64e79f0cf52c"]
-                        },
+                        "target": {},
                         "value": 0,
                         "unit": ""
                     }
                 }, {
-                    "id": "a-30-n-8",
+                    "id": "a-16-n-13",
+                    "actionTypeId": "TRANSFORM_SCALE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {},
+                        "xValue": 0.8,
+                        "yValue": 0.8,
+                        "locked": true
+                    }
+                }, {
+                    "id": "a-16-n-15",
                     "actionTypeId": "TRANSFORM_MOVE",
                     "config": {
                         "delay": 0,
                         "easing": "",
                         "duration": 500,
-                        "target": {
-                            "selector": ".iphone-container._01",
-                            "selectorGuids": ["2d4fff1e-b224-598c-e71a-ceb4bb01fa6c", "be1f419b-6c36-ca11-7d3e-27bb1467ce75"]
-                        },
-                        "xValue": -60,
-                        "yValue": 10,
-                        "xUnit": "%",
+                        "target": {},
+                        "yValue": 30,
+                        "xUnit": "PX",
                         "yUnit": "%",
                         "zUnit": "PX"
                     }
                 }, {
-                    "id": "a-30-n-9",
-                    "actionTypeId": "TRANSFORM_MOVE",
+                    "id": "a-16-n-17",
+                    "actionTypeId": "TRANSFORM_SCALE",
                     "config": {
                         "delay": 0,
                         "easing": "",
                         "duration": 500,
-                        "target": {
-                            "selector": ".iphone-container._02",
-                            "selectorGuids": ["2d4fff1e-b224-598c-e71a-ceb4bb01fa6c", "7475c385-7180-8927-9d9e-1a0d83ed1343"]
-                        },
-                        "xValue": -40,
-                        "yValue": 0,
-                        "xUnit": "%",
-                        "yUnit": "%",
-                        "zUnit": "PX"
+                        "target": {},
+                        "xValue": 0.8,
+                        "yValue": 0.8,
+                        "locked": true
                     }
                 }, {
-                    "id": "a-30-n-10",
-                    "actionTypeId": "TRANSFORM_MOVE",
+                    "id": "a-16-n-16",
+                    "actionTypeId": "STYLE_OPACITY",
                     "config": {
                         "delay": 0,
                         "easing": "",
                         "duration": 500,
-                        "target": {
-                            "selector": ".iphone-container._03",
-                            "selectorGuids": ["2d4fff1e-b224-598c-e71a-ceb4bb01fa6c", "4234499f-9fec-7be7-c12a-9d5d77bf66f7"]
-                        },
-                        "xValue": 0,
-                        "yValue": -10,
-                        "xUnit": "%",
-                        "yUnit": "%",
-                        "zUnit": "PX"
-                    }
-                }, {
-                    "id": "a-30-n-11",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "selector": ".iphone-container._04",
-                            "selectorGuids": ["2d4fff1e-b224-598c-e71a-ceb4bb01fa6c", "53db14c5-c1b1-11e1-80d9-c85bb26ffabb"]
-                        },
-                        "xValue": 30,
-                        "yValue": 0,
-                        "xUnit": "%",
-                        "yUnit": "%",
-                        "zUnit": "PX"
-                    }
-                }, {
-                    "id": "a-30-n-12",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 0,
-                        "easing": "",
-                        "duration": 500,
-                        "target": {
-                            "selector": ".iphone-container._06",
-                            "selectorGuids": ["2d4fff1e-b224-598c-e71a-ceb4bb01fa6c", "ff4b85c2-173d-4403-5841-46842d2d83ff"]
-                        },
-                        "xValue": 60,
-                        "yValue": 10,
-                        "xUnit": "%",
-                        "yUnit": "%",
-                        "zUnit": "PX"
+                        "target": {},
+                        "value": 0,
+                        "unit": ""
                     }
                 }]
             }, {
                 "actionItems": [{
-                    "id": "a-30-n-13",
-                    "actionTypeId": "STYLE_OPACITY",
+                    "id": "a-16-n-18",
+                    "actionTypeId": "TRANSFORM_MOVE",
                     "config": {
-                        "delay": 600,
+                        "delay": 0,
                         "easing": "ease",
                         "duration": 1000,
+                        "target": {},
+                        "yValue": 0,
+                        "xUnit": "PX",
+                        "yUnit": "%",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "id": "a-16-n-20",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 1000,
+                        "target": {},
+                        "value": 1,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-16-n-19",
+                    "actionTypeId": "TRANSFORM_SCALE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 1000,
+                        "target": {},
+                        "xValue": 1,
+                        "yValue": 1,
+                        "locked": true
+                    }
+                }, {
+                    "id": "a-16-n-21",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 150,
+                        "easing": "ease",
+                        "duration": 1000,
+                        "target": {},
+                        "yValue": 0,
+                        "xUnit": "PX",
+                        "yUnit": "%",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "id": "a-16-n-23",
+                    "actionTypeId": "TRANSFORM_SCALE",
+                    "config": {
+                        "delay": 150,
+                        "easing": "ease",
+                        "duration": 1000,
+                        "target": {},
+                        "xValue": 1,
+                        "yValue": 1,
+                        "locked": true
+                    }
+                }, {
+                    "id": "a-16-n-22",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 150,
+                        "easing": "ease",
+                        "duration": 1000,
+                        "target": {},
+                        "value": 1,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-16-n-24",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 300,
+                        "easing": "ease",
+                        "duration": 1000,
+                        "target": {},
+                        "yValue": 0,
+                        "xUnit": "PX",
+                        "yUnit": "%",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "id": "a-16-n-26",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 300,
+                        "easing": "ease",
+                        "duration": 1000,
+                        "target": {},
+                        "value": 1,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-16-n-25",
+                    "actionTypeId": "TRANSFORM_SCALE",
+                    "config": {
+                        "delay": 300,
+                        "easing": "ease",
+                        "duration": 1000,
+                        "target": {},
+                        "xValue": 1,
+                        "yValue": 1,
+                        "locked": true
+                    }
+                }, {
+                    "id": "a-16-n-33",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 300,
+                        "easing": "ease",
+                        "duration": 1600,
                         "target": {
-                            "selector": ".hero-logo",
-                            "selectorGuids": ["f6ab9cf2-cbde-8d8b-54e1-a184196e9ddf"]
+                            "selector": ".navbar",
+                            "selectorGuids": ["e120672f-745f-faa1-71e7-c904666db13c"]
+                        },
+                        "yValue": 0,
+                        "xUnit": "PX",
+                        "yUnit": "%",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "id": "a-16-n-34",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 300,
+                        "easing": "ease",
+                        "duration": 1600,
+                        "target": {
+                            "selector": ".navbar",
+                            "selectorGuids": ["e120672f-745f-faa1-71e7-c904666db13c"]
                         },
                         "value": 1,
                         "unit": ""
                     }
                 }, {
-                    "id": "a-30-n-14",
+                    "id": "a-16-n-29",
+                    "actionTypeId": "TRANSFORM_SCALE",
+                    "config": {
+                        "delay": 450,
+                        "easing": "ease",
+                        "duration": 1000,
+                        "target": {},
+                        "xValue": 1,
+                        "yValue": 1,
+                        "locked": true
+                    }
+                }, {
+                    "id": "a-16-n-28",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 450,
+                        "easing": "ease",
+                        "duration": 1000,
+                        "target": {},
+                        "value": 1,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-16-n-27",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 450,
+                        "easing": "ease",
+                        "duration": 1000,
+                        "target": {},
+                        "yValue": 0,
+                        "xUnit": "PX",
+                        "yUnit": "%",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "id": "a-16-n-30",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 600,
+                        "easing": "ease",
+                        "duration": 1000,
+                        "target": {},
+                        "yValue": 0,
+                        "xUnit": "PX",
+                        "yUnit": "%",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "id": "a-16-n-32",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 600,
+                        "easing": "ease",
+                        "duration": 1000,
+                        "target": {},
+                        "value": 1,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-16-n-31",
+                    "actionTypeId": "TRANSFORM_SCALE",
+                    "config": {
+                        "delay": 600,
+                        "easing": "ease",
+                        "duration": 1000,
+                        "target": {},
+                        "xValue": 1,
+                        "yValue": 1,
+                        "locked": true
+                    }
+                }]
+            }],
+            "useFirstGroupAsInitialState": true,
+            "createdOn": 1639392502342
+        },
+        "a-22": {
+            "id": "a-22",
+            "title": "👆 Links -> Hover Out",
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "id": "a-22-n",
                     "actionTypeId": "STYLE_SIZE",
                     "config": {
-                        "delay": 700,
-                        "easing": [0.45, 0.264, 0.193, 0.978],
-                        "duration": 2000,
-                        "target": {
-                            "selector": ".hero-logo",
-                            "selectorGuids": ["f6ab9cf2-cbde-8d8b-54e1-a184196e9ddf"]
-                        },
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 500,
+                        "target": {},
+                        "widthValue": 20,
+                        "heightValue": 20,
+                        "widthUnit": "px",
+                        "heightUnit": "px",
+                        "locked": false
+                    }
+                }, {
+                    "id": "a-22-n-2",
+                    "actionTypeId": "STYLE_BORDER",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 500,
+                        "target": {},
+                        "globalSwatchId": "",
+                        "rValue": 255,
+                        "bValue": 255,
+                        "gValue": 255,
+                        "aValue": 0
+                    }
+                }, {
+                    "id": "a-22-n-3",
+                    "actionTypeId": "STYLE_BACKGROUND_COLOR",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 500,
+                        "target": {},
+                        "globalSwatchId": "",
+                        "rValue": 0,
+                        "bValue": 0,
+                        "gValue": 0,
+                        "aValue": 1
+                    }
+                }]
+            }],
+            "useFirstGroupAsInitialState": false,
+            "createdOn": 1638369025313
+        },
+        "a-21": {
+            "id": "a-21",
+            "title": "👆 Links -> Hover On",
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "id": "a-21-n",
+                    "actionTypeId": "STYLE_SIZE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {},
+                        "widthValue": 20,
+                        "heightValue": 20,
+                        "widthUnit": "px",
+                        "heightUnit": "px",
+                        "locked": false
+                    }
+                }, {
+                    "id": "a-21-n-2",
+                    "actionTypeId": "STYLE_BORDER",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {},
+                        "globalSwatchId": "",
+                        "rValue": 255,
+                        "bValue": 255,
+                        "gValue": 255,
+                        "aValue": 0
+                    }
+                }, {
+                    "id": "a-21-n-3",
+                    "actionTypeId": "STYLE_BACKGROUND_COLOR",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {},
+                        "globalSwatchId": "",
+                        "rValue": 0,
+                        "bValue": 0,
+                        "gValue": 0,
+                        "aValue": 1
+                    }
+                }]
+            }, {
+                "actionItems": [{
+                    "id": "a-21-n-4",
+                    "actionTypeId": "STYLE_BORDER",
+                    "config": {
+                        "delay": 0,
+                        "easing": "bouncePast",
+                        "duration": 500,
+                        "target": {},
+                        "globalSwatchId": "",
+                        "rValue": 190,
+                        "bValue": 190,
+                        "gValue": 190,
+                        "aValue": 1
+                    }
+                }, {
+                    "id": "a-21-n-5",
+                    "actionTypeId": "STYLE_BACKGROUND_COLOR",
+                    "config": {
+                        "delay": 0,
+                        "easing": "bouncePast",
+                        "duration": 500,
+                        "target": {},
+                        "globalSwatchId": "",
+                        "rValue": 219,
+                        "bValue": 219,
+                        "gValue": 219,
+                        "aValue": 0.45
+                    }
+                }, {
+                    "id": "a-21-n-6",
+                    "actionTypeId": "STYLE_SIZE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "bouncePast",
+                        "duration": 500,
+                        "target": {},
                         "widthValue": 50,
                         "heightValue": 50,
                         "widthUnit": "px",
                         "heightUnit": "px",
                         "locked": false
                     }
+                }]
+            }],
+            "useFirstGroupAsInitialState": true,
+            "createdOn": 1638369025313
+        },
+        "a-37": {
+            "id": "a-37",
+            "title": "Accordions Open",
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "id": "a-37-n",
+                    "actionTypeId": "STYLE_SIZE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".accordion-body",
+                            "selectorGuids": ["2c996c1a-69c4-b89e-35e6-744fc9d45230"]
+                        },
+                        "heightValue": 0,
+                        "widthUnit": "PX",
+                        "heightUnit": "px",
+                        "locked": false
+                    }
                 }, {
-                    "id": "a-30-n-15",
+                    "id": "a-37-n-13",
+                    "actionTypeId": "STYLE_BACKGROUND_COLOR",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".accordion-bottom-wrap",
+                            "selectorGuids": ["350c7ef8-40b7-13e9-6613-3b95f9cafce9"]
+                        },
+                        "globalSwatchId": "",
+                        "rValue": 216,
+                        "bValue": 216,
+                        "gValue": 216,
+                        "aValue": 1
+                    }
+                }, {
+                    "id": "a-37-n-7",
+                    "actionTypeId": "STYLE_BORDER",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".accordion-lottie-holder",
+                            "selectorGuids": ["7e6b7e00-10c8-cefd-2764-73ecf728a1f0"]
+                        },
+                        "globalSwatchId": "b93a76ed",
+                        "rValue": 197,
+                        "bValue": 197,
+                        "gValue": 197,
+                        "aValue": 1
+                    }
+                }, {
+                    "id": "a-37-n-2",
+                    "actionTypeId": "PLUGIN_LOTTIE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".lottie-animation",
+                            "selectorGuids": ["8be2b1e6-be15-b264-aa9e-68d0b3493e98"]
+                        },
+                        "value": 0
+                    }
+                }, {
+                    "id": "a-37-n-9",
                     "actionTypeId": "STYLE_OPACITY",
                     "config": {
-                        "delay": 700,
-                        "easing": "ease",
-                        "duration": 1200,
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
                         "target": {
-                            "selector": ".animate-on-load-2st",
-                            "selectorGuids": ["bf097afd-afb2-4d87-957a-2f00e0e7488c"]
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".lottie-animation",
+                            "selectorGuids": ["8be2b1e6-be15-b264-aa9e-68d0b3493e98"]
+                        },
+                        "value": 0.25,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-37-n-10",
+                    "actionTypeId": "STYLE_FILTER",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".lottie-animation",
+                            "selectorGuids": ["8be2b1e6-be15-b264-aa9e-68d0b3493e98"]
+                        },
+                        "filters": [{
+                            "type": "saturate",
+                            "filterId": "7351",
+                            "value": 0,
+                            "unit": "%"
+                        }]
+                    }
+                }]
+            }, {
+                "actionItems": [{
+                    "id": "a-37-n-4",
+                    "actionTypeId": "STYLE_SIZE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 700,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".accordion-body",
+                            "selectorGuids": ["2c996c1a-69c4-b89e-35e6-744fc9d45230"]
+                        },
+                        "widthUnit": "PX",
+                        "heightUnit": "AUTO",
+                        "locked": false
+                    }
+                }, {
+                    "id": "a-37-n-8",
+                    "actionTypeId": "STYLE_BORDER",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 700,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".accordion-lottie-holder",
+                            "selectorGuids": ["7e6b7e00-10c8-cefd-2764-73ecf728a1f0"]
+                        },
+                        "globalSwatchId": "cbcbaa85",
+                        "rValue": 23,
+                        "bValue": 242,
+                        "gValue": 67,
+                        "aValue": 1
+                    }
+                }, {
+                    "id": "a-37-n-5",
+                    "actionTypeId": "PLUGIN_LOTTIE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 700,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".lottie-animation",
+                            "selectorGuids": ["8be2b1e6-be15-b264-aa9e-68d0b3493e98"]
+                        },
+                        "value": 99
+                    }
+                }, {
+                    "id": "a-37-n-11",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 700,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".lottie-animation",
+                            "selectorGuids": ["8be2b1e6-be15-b264-aa9e-68d0b3493e98"]
                         },
                         "value": 1,
                         "unit": ""
                     }
                 }, {
-                    "id": "a-30-n-16",
-                    "actionTypeId": "TRANSFORM_MOVE",
+                    "id": "a-37-n-12",
+                    "actionTypeId": "STYLE_FILTER",
                     "config": {
-                        "delay": 700,
-                        "easing": [0.456, 0.06, 0.333, 0.972],
-                        "duration": 2000,
-                        "target": {
-                            "selector": ".iphone-container._01",
-                            "selectorGuids": ["2d4fff1e-b224-598c-e71a-ceb4bb01fa6c", "be1f419b-6c36-ca11-7d3e-27bb1467ce75"]
-                        },
-                        "xValue": 0,
-                        "yValue": 0,
-                        "xUnit": "%",
-                        "yUnit": "%",
-                        "zUnit": "PX"
-                    }
-                }, {
-                    "id": "a-30-n-17",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 700,
-                        "easing": [0.456, 0.06, 0.333, 0.972],
-                        "duration": 2000,
-                        "target": {
-                            "selector": ".iphone-container._06",
-                            "selectorGuids": ["2d4fff1e-b224-598c-e71a-ceb4bb01fa6c", "ff4b85c2-173d-4403-5841-46842d2d83ff"]
-                        },
-                        "xValue": 0,
-                        "yValue": 0,
-                        "xUnit": "%",
-                        "yUnit": "%",
-                        "zUnit": "PX"
-                    }
-                }, {
-                    "id": "a-30-n-18",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 700,
-                        "easing": [0.456, 0.06, 0.333, 0.972],
-                        "duration": 2000,
-                        "target": {
-                            "selector": ".iphone-container._04",
-                            "selectorGuids": ["2d4fff1e-b224-598c-e71a-ceb4bb01fa6c", "53db14c5-c1b1-11e1-80d9-c85bb26ffabb"]
-                        },
-                        "xValue": 0,
-                        "yValue": 0,
-                        "xUnit": "%",
-                        "yUnit": "%",
-                        "zUnit": "PX"
-                    }
-                }, {
-                    "id": "a-30-n-19",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 700,
-                        "easing": [0.456, 0.06, 0.333, 0.972],
-                        "duration": 2000,
-                        "target": {
-                            "selector": ".iphone-container._03",
-                            "selectorGuids": ["2d4fff1e-b224-598c-e71a-ceb4bb01fa6c", "4234499f-9fec-7be7-c12a-9d5d77bf66f7"]
-                        },
-                        "xValue": 0,
-                        "yValue": 0,
-                        "xUnit": "%",
-                        "yUnit": "%",
-                        "zUnit": "PX"
-                    }
-                }, {
-                    "id": "a-30-n-20",
-                    "actionTypeId": "TRANSFORM_MOVE",
-                    "config": {
-                        "delay": 700,
-                        "easing": [0.456, 0.06, 0.333, 0.972],
-                        "duration": 2000,
-                        "target": {
-                            "selector": ".iphone-container._02",
-                            "selectorGuids": ["2d4fff1e-b224-598c-e71a-ceb4bb01fa6c", "7475c385-7180-8927-9d9e-1a0d83ed1343"]
-                        },
-                        "xValue": 0,
-                        "yValue": 0,
-                        "xUnit": "%",
-                        "yUnit": "%",
-                        "zUnit": "PX"
-                    }
-                }, {
-                    "id": "a-30-n-26",
-                    "actionTypeId": "STYLE_OPACITY",
-                    "config": {
-                        "delay": 700,
+                        "delay": 0,
                         "easing": "ease",
-                        "duration": 2000,
+                        "duration": 700,
                         "target": {
-                            "selector": ".hero-iphone-holder",
-                            "selectorGuids": ["9196d3dc-9293-224b-0a7b-d8d62c700e99"]
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".lottie-animation",
+                            "selectorGuids": ["8be2b1e6-be15-b264-aa9e-68d0b3493e98"]
                         },
-                        "value": 1,
-                        "unit": ""
+                        "filters": [{
+                            "type": "saturate",
+                            "filterId": "7351",
+                            "value": 100,
+                            "unit": "%"
+                        }]
                     }
                 }, {
-                    "id": "a-30-n-21",
-                    "actionTypeId": "STYLE_OPACITY",
+                    "id": "a-37-n-14",
+                    "actionTypeId": "STYLE_BACKGROUND_COLOR",
                     "config": {
-                        "delay": 900,
-                        "easing": "ease",
-                        "duration": 1200,
-                        "target": {
-                            "selector": ".animate-on-load-3rd",
-                            "selectorGuids": ["6d398c37-5e23-365a-4393-64e79f0cf52c"]
-                        },
-                        "value": 1,
-                        "unit": ""
-                    }
-                }, {
-                    "id": "a-30-n-22",
-                    "actionTypeId": "STYLE_OPACITY",
-                    "config": {
-                        "delay": 900,
+                        "delay": 0,
                         "easing": "ease",
                         "duration": 500,
                         "target": {
-                            "selector": ".animate-on-load-4rd",
-                            "selectorGuids": ["e2d0c4d2-a6a8-93de-7c82-4c7bde3751e1"]
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".accordion-bottom-wrap",
+                            "selectorGuids": ["350c7ef8-40b7-13e9-6613-3b95f9cafce9"]
+                        },
+                        "globalSwatchId": "cbcbaa85",
+                        "rValue": 23,
+                        "bValue": 242,
+                        "gValue": 67,
+                        "aValue": 1
+                    }
+                }]
+            }],
+            "useFirstGroupAsInitialState": true,
+            "createdOn": 1665136547274
+        },
+        "a-38": {
+            "id": "a-38",
+            "title": "Accordions Close",
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "id": "a-38-n",
+                    "actionTypeId": "STYLE_SIZE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 700,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".accordion-body",
+                            "selectorGuids": ["2c996c1a-69c4-b89e-35e6-744fc9d45230"]
+                        },
+                        "heightValue": 0,
+                        "widthUnit": "PX",
+                        "heightUnit": "px",
+                        "locked": false
+                    }
+                }, {
+                    "id": "a-38-n-8",
+                    "actionTypeId": "STYLE_BACKGROUND_COLOR",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".accordion-bottom-wrap",
+                            "selectorGuids": ["350c7ef8-40b7-13e9-6613-3b95f9cafce9"]
+                        },
+                        "globalSwatchId": "",
+                        "rValue": 216,
+                        "bValue": 216,
+                        "gValue": 216,
+                        "aValue": 1
+                    }
+                }, {
+                    "id": "a-38-n-7",
+                    "actionTypeId": "STYLE_FILTER",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".lottie-animation",
+                            "selectorGuids": ["8be2b1e6-be15-b264-aa9e-68d0b3493e98"]
+                        },
+                        "filters": [{
+                            "type": "saturate",
+                            "filterId": "1a6e",
+                            "value": 0,
+                            "unit": "%"
+                        }]
+                    }
+                }, {
+                    "id": "a-38-n-6",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".lottie-animation",
+                            "selectorGuids": ["8be2b1e6-be15-b264-aa9e-68d0b3493e98"]
+                        },
+                        "value": 0.25,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-38-n-5",
+                    "actionTypeId": "STYLE_BORDER",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 700,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".accordion-lottie-holder",
+                            "selectorGuids": ["7e6b7e00-10c8-cefd-2764-73ecf728a1f0"]
+                        },
+                        "globalSwatchId": "b93a76ed",
+                        "rValue": 197,
+                        "bValue": 197,
+                        "gValue": 197,
+                        "aValue": 1
+                    }
+                }, {
+                    "id": "a-38-n-3",
+                    "actionTypeId": "PLUGIN_LOTTIE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 700,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".lottie-animation",
+                            "selectorGuids": ["8be2b1e6-be15-b264-aa9e-68d0b3493e98"]
+                        },
+                        "value": 0
+                    }
+                }]
+            }],
+            "useFirstGroupAsInitialState": false,
+            "createdOn": 1665136547274
+        },
+        "a-39": {
+            "id": "a-39",
+            "title": "Social Media Icon Hover In",
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "id": "a-39-n",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".social-media-image",
+                            "selectorGuids": ["2972d1b8-f088-391f-9395-c16f27911c12"]
+                        },
+                        "value": 0,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-39-n-2",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".social-media-image.gray-image",
+                            "selectorGuids": ["2972d1b8-f088-391f-9395-c16f27911c12", "463476a7-45e7-2821-4f9b-071d536271a6"]
+                        },
+                        "value": 1,
+                        "unit": ""
+                    }
+                }]
+            }],
+            "useFirstGroupAsInitialState": false,
+            "createdOn": 1665155344796
+        },
+        "a-40": {
+            "id": "a-40",
+            "title": "Social Media Icon Hover Out",
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "id": "a-40-n",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".social-media-image",
+                            "selectorGuids": ["2972d1b8-f088-391f-9395-c16f27911c12"]
                         },
                         "value": 1,
                         "unit": ""
                     }
                 }, {
-                    "id": "a-30-n-23",
+                    "id": "a-40-n-2",
                     "actionTypeId": "STYLE_OPACITY",
                     "config": {
-                        "delay": 1200,
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".social-media-image.gray-image",
+                            "selectorGuids": ["2972d1b8-f088-391f-9395-c16f27911c12", "463476a7-45e7-2821-4f9b-071d536271a6"]
+                        },
+                        "value": 0,
+                        "unit": ""
+                    }
+                }]
+            }],
+            "useFirstGroupAsInitialState": false,
+            "createdOn": 1665155344796
+        },
+        "a-44": {
+            "id": "a-44",
+            "title": "Blue TItle Holder",
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "id": "a-44-n",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {},
+                        "yValue": -150,
+                        "xUnit": "PX",
+                        "yUnit": "%",
+                        "zUnit": "PX"
+                    }
+                }]
+            }, {
+                "actionItems": [{
+                    "id": "a-44-n-2",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 500,
+                        "easing": "outQuart",
+                        "duration": 800,
+                        "target": {},
+                        "yValue": 0,
+                        "xUnit": "PX",
+                        "yUnit": "%",
+                        "zUnit": "PX"
+                    }
+                }]
+            }],
+            "useFirstGroupAsInitialState": true,
+            "createdOn": 1666165576685
+        },
+        "a-52": {
+            "id": "a-52",
+            "title": "🏡 Home On Load Animation",
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "id": "a-52-n",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "selector": ".animation-on-load-01",
+                            "selectorGuids": ["38a98184-277b-c463-e3cd-31977853e1e9"]
+                        },
+                        "yValue": 30,
+                        "xUnit": "PX",
+                        "yUnit": "px",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "id": "a-52-n-9",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "selector": ".hero-image-holder",
+                            "selectorGuids": ["eb4ddae3-0c9d-1c97-19cb-24cf1880b913"]
+                        },
+                        "value": 0,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-52-n-8",
+                    "actionTypeId": "TRANSFORM_ROTATE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "selector": ".hero-image-holder",
+                            "selectorGuids": ["eb4ddae3-0c9d-1c97-19cb-24cf1880b913"]
+                        },
+                        "xValue": 30,
+                        "xUnit": "deg",
+                        "yUnit": "DEG",
+                        "zUnit": "DEG"
+                    }
+                }, {
+                    "id": "a-52-n-7",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "selector": ".hero-section-animation-holder",
+                            "selectorGuids": ["dd4f820c-2469-87cb-b1e2-b49f6c5ed081"]
+                        },
+                        "yValue": -50,
+                        "xUnit": "PX",
+                        "yUnit": "vh",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "id": "a-52-n-2",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "selector": ".animation-on-load-01",
+                            "selectorGuids": ["38a98184-277b-c463-e3cd-31977853e1e9"]
+                        },
+                        "value": 0,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-52-n-3",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "selector": ".animation-on-load-02",
+                            "selectorGuids": ["b50e9e94-3e12-dde8-9035-88ce32cafa8d"]
+                        },
+                        "yValue": 30,
+                        "xUnit": "PX",
+                        "yUnit": "px",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "id": "a-52-n-4",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "selector": ".animation-on-load-02",
+                            "selectorGuids": ["b50e9e94-3e12-dde8-9035-88ce32cafa8d"]
+                        },
+                        "value": 0,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-52-n-5",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "selector": ".animation-on-load-03",
+                            "selectorGuids": ["20da5553-b6db-537f-33c5-2c3c2d0743f9"]
+                        },
+                        "yValue": 30,
+                        "xUnit": "PX",
+                        "yUnit": "px",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "id": "a-52-n-6",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "selector": ".animation-on-load-03",
+                            "selectorGuids": ["20da5553-b6db-537f-33c5-2c3c2d0743f9"]
+                        },
+                        "value": 0,
+                        "unit": ""
+                    }
+                }]
+            }, {
+                "actionItems": [{
+                    "id": "a-52-n-12",
+                    "actionTypeId": "TRANSFORM_ROTATE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 700,
+                        "target": {
+                            "selector": ".hero-image-holder",
+                            "selectorGuids": ["eb4ddae3-0c9d-1c97-19cb-24cf1880b913"]
+                        },
+                        "xValue": 0,
+                        "xUnit": "deg",
+                        "yUnit": "DEG",
+                        "zUnit": "DEG"
+                    }
+                }, {
+                    "id": "a-52-n-11",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 700,
+                        "target": {
+                            "selector": ".hero-image-holder",
+                            "selectorGuids": ["eb4ddae3-0c9d-1c97-19cb-24cf1880b913"]
+                        },
+                        "value": 1,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-52-n-13",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 700,
+                        "easing": "ease",
+                        "duration": 700,
+                        "target": {
+                            "selector": ".hero-section-animation-holder",
+                            "selectorGuids": ["dd4f820c-2469-87cb-b1e2-b49f6c5ed081"]
+                        },
+                        "yValue": 0,
+                        "xUnit": "PX",
+                        "yUnit": "vh",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "id": "a-52-n-10",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 900,
+                        "easing": "ease",
+                        "duration": 700,
+                        "target": {
+                            "selector": ".animation-on-load-01",
+                            "selectorGuids": ["38a98184-277b-c463-e3cd-31977853e1e9"]
+                        },
+                        "yValue": 0,
+                        "xUnit": "PX",
+                        "yUnit": "px",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "id": "a-52-n-14",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 900,
+                        "easing": "ease",
+                        "duration": 700,
+                        "target": {
+                            "selector": ".animation-on-load-01",
+                            "selectorGuids": ["38a98184-277b-c463-e3cd-31977853e1e9"]
+                        },
+                        "value": 1,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-52-n-16",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 1100,
+                        "easing": "ease",
+                        "duration": 700,
+                        "target": {
+                            "selector": ".animation-on-load-02",
+                            "selectorGuids": ["b50e9e94-3e12-dde8-9035-88ce32cafa8d"]
+                        },
+                        "value": 1,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-52-n-15",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 1100,
+                        "easing": "ease",
+                        "duration": 700,
+                        "target": {
+                            "selector": ".animation-on-load-02",
+                            "selectorGuids": ["b50e9e94-3e12-dde8-9035-88ce32cafa8d"]
+                        },
+                        "yValue": 0,
+                        "xUnit": "PX",
+                        "yUnit": "px",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "id": "a-52-n-20",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 1100,
                         "easing": "ease",
                         "duration": 700,
                         "target": {
@@ -22597,15 +25104,31 @@ Webflow.require('ix2').init({
                         "unit": ""
                     }
                 }, {
-                    "id": "a-30-n-24",
+                    "id": "a-52-n-17",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 1300,
+                        "easing": "ease",
+                        "duration": 700,
+                        "target": {
+                            "selector": ".animation-on-load-03",
+                            "selectorGuids": ["20da5553-b6db-537f-33c5-2c3c2d0743f9"]
+                        },
+                        "yValue": 0,
+                        "xUnit": "PX",
+                        "yUnit": "px",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "id": "a-52-n-18",
                     "actionTypeId": "STYLE_OPACITY",
                     "config": {
-                        "delay": 2500,
+                        "delay": 1300,
                         "easing": "ease",
-                        "duration": 500,
+                        "duration": 700,
                         "target": {
-                            "selector": ".animate-on-load-1st",
-                            "selectorGuids": ["b4248ab5-c0d7-7366-a104-1a5259d22f2d"]
+                            "selector": ".animation-on-load-03",
+                            "selectorGuids": ["20da5553-b6db-537f-33c5-2c3c2d0743f9"]
                         },
                         "value": 1,
                         "unit": ""
@@ -22613,7 +25136,1593 @@ Webflow.require('ix2').init({
                 }]
             }],
             "useFirstGroupAsInitialState": true,
-            "createdOn": 1639044633546
+            "createdOn": 1667293505989
+        },
+        "a-56": {
+            "id": "a-56",
+            "title": "Navbar Open Animation",
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "id": "a-56-n-7",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".nav-menu",
+                            "selectorGuids": ["9df74cd7-3386-15e3-379a-33c985e1f296"]
+                        },
+                        "value": 0,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-56-n-5",
+                    "actionTypeId": "TRANSFORM_SCALE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".nav-menu",
+                            "selectorGuids": ["9df74cd7-3386-15e3-379a-33c985e1f296"]
+                        },
+                        "xValue": 0.7,
+                        "yValue": 0.7,
+                        "locked": true
+                    }
+                }, {
+                    "id": "a-56-n-4",
+                    "actionTypeId": "STYLE_TEXT_COLOR",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".nav-menu-button",
+                            "selectorGuids": ["aa6c5eee-38e3-b65a-3a94-2b874e47e070"]
+                        },
+                        "globalSwatchId": "",
+                        "rValue": 255,
+                        "bValue": 255,
+                        "gValue": 255,
+                        "aValue": 1
+                    }
+                }, {
+                    "id": "a-56-n-3",
+                    "actionTypeId": "STYLE_FILTER",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".menu-icon",
+                            "selectorGuids": ["68ee877a-25f7-cad3-5924-2a838782e976"]
+                        },
+                        "filters": [{
+                            "type": "invert",
+                            "filterId": "8096",
+                            "value": 0,
+                            "unit": "%"
+                        }]
+                    }
+                }, {
+                    "id": "a-56-n-2",
+                    "actionTypeId": "STYLE_BACKGROUND_COLOR",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".nav-menu-button",
+                            "selectorGuids": ["aa6c5eee-38e3-b65a-3a94-2b874e47e070"]
+                        },
+                        "globalSwatchId": "",
+                        "rValue": 0,
+                        "bValue": 0,
+                        "gValue": 0,
+                        "aValue": 1
+                    }
+                }, {
+                    "id": "a-56-n-16",
+                    "actionTypeId": "TRANSFORM_ROTATE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".nav-menu",
+                            "selectorGuids": ["9df74cd7-3386-15e3-379a-33c985e1f296"]
+                        },
+                        "xValue": 50,
+                        "xUnit": "deg",
+                        "yUnit": "DEG",
+                        "zUnit": "DEG"
+                    }
+                }, {
+                    "id": "a-56-n-6",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".nav-menu",
+                            "selectorGuids": ["9df74cd7-3386-15e3-379a-33c985e1f296"]
+                        },
+                        "xValue": 10,
+                        "yValue": -32,
+                        "xUnit": "%",
+                        "yUnit": "%",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "id": "a-56-n-18",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".navbar-link._01",
+                            "selectorGuids": ["d07ac24a-64db-1b3f-73d4-b00a61295dbc", "17d9bf82-97c8-f138-53df-fed72dfb960f"]
+                        },
+                        "value": 0,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-56-n-22",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".navbar-link._05",
+                            "selectorGuids": ["d07ac24a-64db-1b3f-73d4-b00a61295dbc", "4b4dad13-7d24-0448-4a92-56e26767b39d"]
+                        },
+                        "value": 0,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-56-n-21",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".navbar-link._04",
+                            "selectorGuids": ["d07ac24a-64db-1b3f-73d4-b00a61295dbc", "bc3a077b-4a6d-8854-952a-46dd59bd1f32"]
+                        },
+                        "value": 0,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-56-n-20",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".navbar-link._03",
+                            "selectorGuids": ["d07ac24a-64db-1b3f-73d4-b00a61295dbc", "d199e2bf-d570-7a55-0529-2328396a4b3d"]
+                        },
+                        "value": 0,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-56-n-19",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".navbar-link._02",
+                            "selectorGuids": ["d07ac24a-64db-1b3f-73d4-b00a61295dbc", "44cdf5a1-38ec-f6bc-b800-52212deba81e"]
+                        },
+                        "value": 0,
+                        "unit": ""
+                    }
+                }]
+            }, {
+                "actionItems": [{
+                    "id": "a-56-n-14",
+                    "actionTypeId": "STYLE_BACKGROUND_COLOR",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 200,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".nav-menu-button",
+                            "selectorGuids": ["aa6c5eee-38e3-b65a-3a94-2b874e47e070"]
+                        },
+                        "globalSwatchId": "",
+                        "rValue": 255,
+                        "bValue": 255,
+                        "gValue": 255,
+                        "aValue": 1
+                    }
+                }, {
+                    "id": "a-56-n-15",
+                    "actionTypeId": "GENERAL_DISPLAY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "",
+                        "duration": 0,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".nav-menu",
+                            "selectorGuids": ["9df74cd7-3386-15e3-379a-33c985e1f296"]
+                        },
+                        "value": "flex"
+                    }
+                }, {
+                    "id": "a-56-n-13",
+                    "actionTypeId": "STYLE_FILTER",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 200,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".menu-icon",
+                            "selectorGuids": ["68ee877a-25f7-cad3-5924-2a838782e976"]
+                        },
+                        "filters": [{
+                            "type": "invert",
+                            "filterId": "8096",
+                            "value": 100,
+                            "unit": "%"
+                        }]
+                    }
+                }, {
+                    "id": "a-56-n-12",
+                    "actionTypeId": "STYLE_TEXT_COLOR",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 200,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".nav-menu-button",
+                            "selectorGuids": ["aa6c5eee-38e3-b65a-3a94-2b874e47e070"]
+                        },
+                        "globalSwatchId": "",
+                        "rValue": 0,
+                        "bValue": 0,
+                        "gValue": 0,
+                        "aValue": 1
+                    }
+                }, {
+                    "id": "a-56-n-11",
+                    "actionTypeId": "TRANSFORM_SCALE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 400,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".nav-menu",
+                            "selectorGuids": ["9df74cd7-3386-15e3-379a-33c985e1f296"]
+                        },
+                        "xValue": 1,
+                        "yValue": 1,
+                        "locked": true
+                    }
+                }, {
+                    "id": "a-56-n-10",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 400,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".nav-menu",
+                            "selectorGuids": ["9df74cd7-3386-15e3-379a-33c985e1f296"]
+                        },
+                        "xValue": 0,
+                        "yValue": 0,
+                        "xUnit": "%",
+                        "yUnit": "%",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "id": "a-56-n-9",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 400,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".nav-menu",
+                            "selectorGuids": ["9df74cd7-3386-15e3-379a-33c985e1f296"]
+                        },
+                        "value": 1,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-56-n-17",
+                    "actionTypeId": "TRANSFORM_ROTATE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".nav-menu",
+                            "selectorGuids": ["9df74cd7-3386-15e3-379a-33c985e1f296"]
+                        },
+                        "xValue": 0,
+                        "xUnit": "deg",
+                        "yUnit": "DEG",
+                        "zUnit": "DEG"
+                    }
+                }, {
+                    "id": "a-56-n-23",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".navbar-link._01",
+                            "selectorGuids": ["d07ac24a-64db-1b3f-73d4-b00a61295dbc", "17d9bf82-97c8-f138-53df-fed72dfb960f"]
+                        },
+                        "value": 1,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-56-n-27",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 100,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".navbar-link._02",
+                            "selectorGuids": ["d07ac24a-64db-1b3f-73d4-b00a61295dbc", "44cdf5a1-38ec-f6bc-b800-52212deba81e"]
+                        },
+                        "value": 1,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-56-n-26",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 200,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".navbar-link._03",
+                            "selectorGuids": ["d07ac24a-64db-1b3f-73d4-b00a61295dbc", "d199e2bf-d570-7a55-0529-2328396a4b3d"]
+                        },
+                        "value": 1,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-56-n-25",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 300,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".navbar-link._04",
+                            "selectorGuids": ["d07ac24a-64db-1b3f-73d4-b00a61295dbc", "bc3a077b-4a6d-8854-952a-46dd59bd1f32"]
+                        },
+                        "value": 1,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-56-n-24",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 400,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".navbar-link._05",
+                            "selectorGuids": ["d07ac24a-64db-1b3f-73d4-b00a61295dbc", "4b4dad13-7d24-0448-4a92-56e26767b39d"]
+                        },
+                        "value": 1,
+                        "unit": ""
+                    }
+                }]
+            }],
+            "useFirstGroupAsInitialState": true,
+            "createdOn": 1667467644783
+        },
+        "a-58": {
+            "id": "a-58",
+            "title": "Navbar Open Animation 2",
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "id": "a-58-n",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".nav-menu",
+                            "selectorGuids": ["9df74cd7-3386-15e3-379a-33c985e1f296"]
+                        },
+                        "value": 0,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-58-n-2",
+                    "actionTypeId": "TRANSFORM_SCALE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".nav-menu",
+                            "selectorGuids": ["9df74cd7-3386-15e3-379a-33c985e1f296"]
+                        },
+                        "xValue": 0.7,
+                        "yValue": 0.7,
+                        "locked": true
+                    }
+                }, {
+                    "id": "a-58-n-3",
+                    "actionTypeId": "STYLE_TEXT_COLOR",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".nav-menu-button",
+                            "selectorGuids": ["aa6c5eee-38e3-b65a-3a94-2b874e47e070"]
+                        },
+                        "globalSwatchId": "",
+                        "rValue": 255,
+                        "bValue": 255,
+                        "gValue": 255,
+                        "aValue": 1
+                    }
+                }, {
+                    "id": "a-58-n-4",
+                    "actionTypeId": "STYLE_FILTER",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".menu-icon",
+                            "selectorGuids": ["68ee877a-25f7-cad3-5924-2a838782e976"]
+                        },
+                        "filters": [{
+                            "type": "invert",
+                            "filterId": "8096",
+                            "value": 0,
+                            "unit": "%"
+                        }]
+                    }
+                }, {
+                    "id": "a-58-n-5",
+                    "actionTypeId": "STYLE_BACKGROUND_COLOR",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".nav-menu-button",
+                            "selectorGuids": ["aa6c5eee-38e3-b65a-3a94-2b874e47e070"]
+                        },
+                        "globalSwatchId": "",
+                        "rValue": 0,
+                        "bValue": 0,
+                        "gValue": 0,
+                        "aValue": 1
+                    }
+                }, {
+                    "id": "a-58-n-6",
+                    "actionTypeId": "TRANSFORM_ROTATE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".nav-menu",
+                            "selectorGuids": ["9df74cd7-3386-15e3-379a-33c985e1f296"]
+                        },
+                        "xValue": 50,
+                        "xUnit": "deg",
+                        "yUnit": "DEG",
+                        "zUnit": "DEG"
+                    }
+                }, {
+                    "id": "a-58-n-7",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".nav-menu",
+                            "selectorGuids": ["9df74cd7-3386-15e3-379a-33c985e1f296"]
+                        },
+                        "xValue": 10,
+                        "yValue": -32,
+                        "xUnit": "%",
+                        "yUnit": "%",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "id": "a-58-n-8",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".navbar-link._01",
+                            "selectorGuids": ["d07ac24a-64db-1b3f-73d4-b00a61295dbc", "17d9bf82-97c8-f138-53df-fed72dfb960f"]
+                        },
+                        "value": 0,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-58-n-9",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".navbar-link._05",
+                            "selectorGuids": ["d07ac24a-64db-1b3f-73d4-b00a61295dbc", "4b4dad13-7d24-0448-4a92-56e26767b39d"]
+                        },
+                        "value": 0,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-58-n-10",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".navbar-link._04",
+                            "selectorGuids": ["d07ac24a-64db-1b3f-73d4-b00a61295dbc", "bc3a077b-4a6d-8854-952a-46dd59bd1f32"]
+                        },
+                        "value": 0,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-58-n-11",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".navbar-link._03",
+                            "selectorGuids": ["d07ac24a-64db-1b3f-73d4-b00a61295dbc", "d199e2bf-d570-7a55-0529-2328396a4b3d"]
+                        },
+                        "value": 0,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-58-n-12",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".navbar-link._02",
+                            "selectorGuids": ["d07ac24a-64db-1b3f-73d4-b00a61295dbc", "44cdf5a1-38ec-f6bc-b800-52212deba81e"]
+                        },
+                        "value": 0,
+                        "unit": ""
+                    }
+                }]
+            }, {
+                "actionItems": [{
+                    "id": "a-58-n-13",
+                    "actionTypeId": "GENERAL_DISPLAY",
+                    "config": {
+                        "delay": 100,
+                        "easing": "",
+                        "duration": 0,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".nav-menu",
+                            "selectorGuids": ["9df74cd7-3386-15e3-379a-33c985e1f296"]
+                        },
+                        "value": "none"
+                    }
+                }]
+            }],
+            "useFirstGroupAsInitialState": false,
+            "createdOn": 1667467644783
+        },
+        "a-59": {
+            "id": "a-59",
+            "title": "Scroll Into View Scale Animation",
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "id": "a-59-n",
+                    "actionTypeId": "TRANSFORM_SCALE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": true,
+                            "id": "6358e86f2749b89214ffed65|f452c9b1-cea9-12e0-3fa4-b72e920ff79d"
+                        },
+                        "xValue": 0.7,
+                        "yValue": 0.7,
+                        "locked": true
+                    }
+                }]
+            }, {
+                "actionItems": [{
+                    "id": "a-59-n-2",
+                    "actionTypeId": "TRANSFORM_SCALE",
+                    "config": {
+                        "delay": 1000,
+                        "easing": "ease",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": true,
+                            "id": "6358e86f2749b89214ffed65|f452c9b1-cea9-12e0-3fa4-b72e920ff79d"
+                        },
+                        "xValue": 0.8,
+                        "yValue": 0.8,
+                        "locked": true
+                    }
+                }]
+            }],
+            "useFirstGroupAsInitialState": true,
+            "createdOn": 1667568117221
+        },
+        "a-62": {
+            "id": "a-62",
+            "title": "Image Moce In Scroll",
+            "continuousParameterGroups": [{
+                "id": "a-62-p",
+                "type": "SCROLL_PROGRESS",
+                "parameterLabel": "Scroll",
+                "continuousActionGroups": [{
+                    "keyframe": 0,
+                    "actionItems": [{
+                        "id": "a-62-n",
+                        "actionTypeId": "TRANSFORM_MOVE",
+                        "config": {
+                            "delay": 0,
+                            "easing": "ease",
+                            "duration": 500,
+                            "target": {
+                                "useEventTarget": true,
+                                "id": "6358e86f2749b89214ffed65|cc0e86f1-cf77-af1e-cd74-c8003f85affc"
+                            },
+                            "yValue": -15,
+                            "xUnit": "PX",
+                            "yUnit": "%",
+                            "zUnit": "PX"
+                        }
+                    }]
+                }, {
+                    "keyframe": 100,
+                    "actionItems": [{
+                        "id": "a-62-n-2",
+                        "actionTypeId": "TRANSFORM_MOVE",
+                        "config": {
+                            "delay": 0,
+                            "easing": "ease",
+                            "duration": 500,
+                            "target": {
+                                "useEventTarget": true,
+                                "id": "6358e86f2749b89214ffed65|cc0e86f1-cf77-af1e-cd74-c8003f85affc"
+                            },
+                            "yValue": 0,
+                            "xUnit": "PX",
+                            "yUnit": "%",
+                            "zUnit": "PX"
+                        }
+                    }]
+                }]
+            }],
+            "createdOn": 1667571538215
+        },
+        "a-63": {
+            "id": "a-63",
+            "title": "Navbar Transparent",
+            "continuousParameterGroups": [{
+                "id": "a-63-p",
+                "type": "SCROLL_PROGRESS",
+                "parameterLabel": "Scroll",
+                "continuousActionGroups": [{
+                    "keyframe": 0,
+                    "actionItems": [{
+                        "id": "a-63-n",
+                        "actionTypeId": "STYLE_BACKGROUND_COLOR",
+                        "config": {
+                            "delay": 0,
+                            "easing": "ease",
+                            "duration": 500,
+                            "target": {
+                                "selector": ".navbar",
+                                "selectorGuids": ["e120672f-745f-faa1-71e7-c904666db13c"]
+                            },
+                            "globalSwatchId": "",
+                            "rValue": 255,
+                            "bValue": 255,
+                            "gValue": 255,
+                            "aValue": 0
+                        }
+                    }]
+                }, {
+                    "keyframe": 1,
+                    "actionItems": [{
+                        "id": "a-63-n-2",
+                        "actionTypeId": "STYLE_BACKGROUND_COLOR",
+                        "config": {
+                            "delay": 0,
+                            "easing": "",
+                            "duration": 500,
+                            "target": {
+                                "selector": ".navbar",
+                                "selectorGuids": ["e120672f-745f-faa1-71e7-c904666db13c"]
+                            },
+                            "globalSwatchId": "",
+                            "rValue": 255,
+                            "bValue": 255,
+                            "gValue": 255,
+                            "aValue": 1
+                        }
+                    }]
+                }]
+            }],
+            "createdOn": 1667578306290
+        },
+        "a-64": {
+            "id": "a-64",
+            "title": "Arrow Rotate Hover In",
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "id": "a-64-n-2",
+                    "actionTypeId": "TRANSFORM_ROTATE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".white-arrow",
+                            "selectorGuids": ["e652b85c-abad-61de-0a29-d15f948510ef"]
+                        },
+                        "zValue": 45,
+                        "xUnit": "DEG",
+                        "yUnit": "DEG",
+                        "zUnit": "deg"
+                    }
+                }]
+            }],
+            "useFirstGroupAsInitialState": false,
+            "createdOn": 1667896506055
+        },
+        "a-65": {
+            "id": "a-65",
+            "title": "Arrow Rotate Hover Out",
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "id": "a-65-n",
+                    "actionTypeId": "TRANSFORM_ROTATE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".white-arrow",
+                            "selectorGuids": ["e652b85c-abad-61de-0a29-d15f948510ef"]
+                        },
+                        "zValue": 0,
+                        "xUnit": "DEG",
+                        "yUnit": "DEG",
+                        "zUnit": "deg"
+                    }
+                }]
+            }],
+            "useFirstGroupAsInitialState": false,
+            "createdOn": 1667896506055
+        },
+        "a-67": {
+            "id": "a-67",
+            "title": "Overlay Fade",
+            "continuousParameterGroups": [{
+                "id": "a-67-p",
+                "type": "SCROLL_PROGRESS",
+                "parameterLabel": "Scroll",
+                "continuousActionGroups": [{
+                    "keyframe": 60,
+                    "actionItems": [{
+                        "id": "a-67-n",
+                        "actionTypeId": "STYLE_OPACITY",
+                        "config": {
+                            "delay": 0,
+                            "easing": "",
+                            "duration": 500,
+                            "target": {
+                                "useEventTarget": "CHILDREN",
+                                "selector": ".white-overlay",
+                                "selectorGuids": ["45d59a61-4956-4cba-2492-f4f9228bc7ee"]
+                            },
+                            "value": 1,
+                            "unit": ""
+                        }
+                    }]
+                }, {
+                    "keyframe": 65,
+                    "actionItems": [{
+                        "id": "a-67-n-2",
+                        "actionTypeId": "STYLE_OPACITY",
+                        "config": {
+                            "delay": 0,
+                            "easing": "",
+                            "duration": 500,
+                            "target": {
+                                "useEventTarget": "CHILDREN",
+                                "selector": ".white-overlay",
+                                "selectorGuids": ["45d59a61-4956-4cba-2492-f4f9228bc7ee"]
+                            },
+                            "value": 0,
+                            "unit": ""
+                        }
+                    }]
+                }]
+            }],
+            "createdOn": 1667984483811
+        },
+        "a-70": {
+            "id": "a-70",
+            "title": "Parallax Scroll",
+            "continuousParameterGroups": [{
+                "id": "a-70-p",
+                "type": "SCROLL_PROGRESS",
+                "parameterLabel": "Scroll",
+                "continuousActionGroups": [{
+                    "keyframe": 0,
+                    "actionItems": [{
+                        "id": "a-70-n",
+                        "actionTypeId": "TRANSFORM_MOVE",
+                        "config": {
+                            "delay": 0,
+                            "easing": "ease",
+                            "duration": 500,
+                            "target": {
+                                "useEventTarget": true,
+                                "id": "6358e86f2749b89214ffed65|6bd3f44c-6fec-3bfb-60e4-fc3d5b7e15cb"
+                            },
+                            "yValue": -40,
+                            "xUnit": "PX",
+                            "yUnit": "%",
+                            "zUnit": "PX"
+                        }
+                    }]
+                }, {
+                    "keyframe": 100,
+                    "actionItems": [{
+                        "id": "a-70-n-2",
+                        "actionTypeId": "TRANSFORM_MOVE",
+                        "config": {
+                            "delay": 0,
+                            "easing": "ease",
+                            "duration": 500,
+                            "target": {
+                                "useEventTarget": true,
+                                "id": "6358e86f2749b89214ffed65|6bd3f44c-6fec-3bfb-60e4-fc3d5b7e15cb"
+                            },
+                            "yValue": 0,
+                            "xUnit": "PX",
+                            "yUnit": "%",
+                            "zUnit": "PX"
+                        }
+                    }]
+                }]
+            }],
+            "createdOn": 1668524914820
+        },
+        "a-71": {
+            "id": "a-71",
+            "title": "Gradient Hover In",
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "id": "a-71-n-3",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".button-gradient-bg",
+                            "selectorGuids": ["46fed148-17fd-8a77-128c-06b666374e25"]
+                        },
+                        "value": 0,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-71-n",
+                    "actionTypeId": "STYLE_BACKGROUND_COLOR",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".link-block-button",
+                            "selectorGuids": ["35007bbd-f702-71a0-ae10-7953a7277e40"]
+                        },
+                        "globalSwatchId": "0dd09a5f",
+                        "rValue": 22,
+                        "bValue": 26,
+                        "gValue": 22,
+                        "aValue": 1
+                    }
+                }, {
+                    "id": "a-71-n-2",
+                    "actionTypeId": "STYLE_TEXT_COLOR",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".link-block-button",
+                            "selectorGuids": ["35007bbd-f702-71a0-ae10-7953a7277e40"]
+                        },
+                        "globalSwatchId": "9a22f6d7",
+                        "rValue": 241,
+                        "bValue": 241,
+                        "gValue": 241,
+                        "aValue": 1
+                    }
+                }]
+            }, {
+                "actionItems": [{
+                    "id": "a-71-n-4",
+                    "actionTypeId": "STYLE_BACKGROUND_COLOR",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".link-block-button",
+                            "selectorGuids": ["35007bbd-f702-71a0-ae10-7953a7277e40"]
+                        },
+                        "globalSwatchId": "f3837e07",
+                        "rValue": 247,
+                        "bValue": 254,
+                        "gValue": 248,
+                        "aValue": 1
+                    }
+                }, {
+                    "id": "a-71-n-6",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".button-gradient-bg",
+                            "selectorGuids": ["46fed148-17fd-8a77-128c-06b666374e25"]
+                        },
+                        "value": 1,
+                        "unit": ""
+                    }
+                }, {
+                    "id": "a-71-n-5",
+                    "actionTypeId": "STYLE_TEXT_COLOR",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".link-block-button",
+                            "selectorGuids": ["35007bbd-f702-71a0-ae10-7953a7277e40"]
+                        },
+                        "globalSwatchId": "0dd09a5f",
+                        "rValue": 22,
+                        "bValue": 26,
+                        "gValue": 22,
+                        "aValue": 1
+                    }
+                }]
+            }],
+            "useFirstGroupAsInitialState": true,
+            "createdOn": 1668593317764
+        },
+        "a-72": {
+            "id": "a-72",
+            "title": "Gradient Hover Out",
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "id": "a-72-n-2",
+                    "actionTypeId": "STYLE_BACKGROUND_COLOR",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "selector": ".link-block-button",
+                            "selectorGuids": ["35007bbd-f702-71a0-ae10-7953a7277e40"]
+                        },
+                        "globalSwatchId": "0dd09a5f",
+                        "rValue": 22,
+                        "bValue": 26,
+                        "gValue": 22,
+                        "aValue": 1
+                    }
+                }, {
+                    "id": "a-72-n-3",
+                    "actionTypeId": "STYLE_TEXT_COLOR",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "selector": ".link-block-button",
+                            "selectorGuids": ["35007bbd-f702-71a0-ae10-7953a7277e40"]
+                        },
+                        "globalSwatchId": "9a22f6d7",
+                        "rValue": 241,
+                        "bValue": 241,
+                        "gValue": 241,
+                        "aValue": 1
+                    }
+                }, {
+                    "id": "a-72-n",
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".button-gradient-bg",
+                            "selectorGuids": ["46fed148-17fd-8a77-128c-06b666374e25"]
+                        },
+                        "value": 0,
+                        "unit": ""
+                    }
+                }]
+            }],
+            "useFirstGroupAsInitialState": false,
+            "createdOn": 1668593317764
+        },
+        "a-73": {
+            "id": "a-73",
+            "title": "Market Place Link  Scrolled Up Animation",
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "id": "a-73-n",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 800,
+                        "target": {
+                            "selector": ".brand-marketplace-wrapper",
+                            "selectorGuids": ["53f42e2b-cf05-9fdd-2091-6a371b6e2f6a"]
+                        },
+                        "yValue": 0,
+                        "xUnit": "PX",
+                        "yUnit": "%",
+                        "zUnit": "PX"
+                    }
+                }]
+            }],
+            "useFirstGroupAsInitialState": false,
+            "createdOn": 1668607882729
+        },
+        "a-74": {
+            "id": "a-74",
+            "title": "Market Place Link  Scrolled Down Animation 2",
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "id": "a-74-n",
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 800,
+                        "target": {
+                            "selector": ".brand-marketplace-wrapper",
+                            "selectorGuids": ["53f42e2b-cf05-9fdd-2091-6a371b6e2f6a"]
+                        },
+                        "yValue": 120,
+                        "xUnit": "PX",
+                        "yUnit": "%",
+                        "zUnit": "PX"
+                    }
+                }]
+            }],
+            "useFirstGroupAsInitialState": false,
+            "createdOn": 1668607882729
+        },
+        "a-75": {
+            "id": "a-75",
+            "title": "Market Place Link → On Hover",
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "id": "a-75-n",
+                    "actionTypeId": "TRANSFORM_ROTATE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".arrows-holder",
+                            "selectorGuids": ["53f42e2b-cf05-9fdd-2091-6a371b6e2f6b"]
+                        },
+                        "zValue": 0,
+                        "xUnit": "DEG",
+                        "yUnit": "DEG",
+                        "zUnit": "deg"
+                    }
+                }]
+            }, {
+                "actionItems": [{
+                    "id": "a-75-n-2",
+                    "actionTypeId": "TRANSFORM_ROTATE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".arrows-holder",
+                            "selectorGuids": ["53f42e2b-cf05-9fdd-2091-6a371b6e2f6b"]
+                        },
+                        "zValue": 45,
+                        "xUnit": "DEG",
+                        "yUnit": "DEG",
+                        "zUnit": "deg"
+                    }
+                }, {
+                    "id": "a-75-n-3",
+                    "actionTypeId": "STYLE_TEXT_COLOR",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "selector": ".brand-marketplace-link",
+                            "selectorGuids": ["53f42e2b-cf05-9fdd-2091-6a371b6e2f6f"]
+                        },
+                        "rValue": 231,
+                        "gValue": 131,
+                        "bValue": 252,
+                        "aValue": 1
+                    }
+                }]
+            }],
+            "useFirstGroupAsInitialState": true,
+            "createdOn": 1668607882729
+        },
+        "a-76": {
+            "id": "a-76",
+            "title": "Market Place Link  → Hover Out",
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "id": "a-76-n",
+                    "actionTypeId": "TRANSFORM_ROTATE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 500,
+                        "target": {
+                            "useEventTarget": "CHILDREN",
+                            "selector": ".arrows-holder",
+                            "selectorGuids": ["53f42e2b-cf05-9fdd-2091-6a371b6e2f6b"]
+                        },
+                        "zValue": 0,
+                        "xUnit": "DEG",
+                        "yUnit": "DEG",
+                        "zUnit": "deg"
+                    }
+                }, {
+                    "id": "a-76-n-2",
+                    "actionTypeId": "STYLE_TEXT_COLOR",
+                    "config": {
+                        "delay": 0,
+                        "easing": "ease",
+                        "duration": 300,
+                        "target": {
+                            "selector": ".brand-marketplace-link",
+                            "selectorGuids": ["53f42e2b-cf05-9fdd-2091-6a371b6e2f6f"]
+                        },
+                        "rValue": 255,
+                        "gValue": 255,
+                        "bValue": 255,
+                        "aValue": 1
+                    }
+                }]
+            }],
+            "useFirstGroupAsInitialState": false,
+            "createdOn": 1668607882729
+        },
+        "slideInRight": {
+            "id": "slideInRight",
+            "useFirstGroupAsInitialState": true,
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "duration": 0,
+                        "target": {
+                            "id": "N/A",
+                            "appliesTo": "TRIGGER_ELEMENT",
+                            "useEventTarget": true
+                        },
+                        "value": 0
+                    }
+                }]
+            }, {
+                "actionItems": [{
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 0,
+                        "duration": 0,
+                        "target": {
+                            "id": "N/A",
+                            "appliesTo": "TRIGGER_ELEMENT",
+                            "useEventTarget": true
+                        },
+                        "xValue": 100,
+                        "yValue": 0,
+                        "xUnit": "PX",
+                        "yUnit": "PX",
+                        "zUnit": "PX"
+                    }
+                }]
+            }, {
+                "actionItems": [{
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "outQuart",
+                        "duration": 1000,
+                        "target": {
+                            "id": "N/A",
+                            "appliesTo": "TRIGGER_ELEMENT",
+                            "useEventTarget": true
+                        },
+                        "value": 1
+                    }
+                }, {
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "outQuart",
+                        "duration": 1000,
+                        "target": {
+                            "id": "N/A",
+                            "appliesTo": "TRIGGER_ELEMENT",
+                            "useEventTarget": true
+                        },
+                        "xValue": 0,
+                        "yValue": 0,
+                        "xUnit": "PX",
+                        "yUnit": "PX",
+                        "zUnit": "PX"
+                    }
+                }]
+            }]
+        },
+        "slideInBottom": {
+            "id": "slideInBottom",
+            "useFirstGroupAsInitialState": true,
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "duration": 0,
+                        "target": {
+                            "id": "N/A",
+                            "appliesTo": "TRIGGER_ELEMENT",
+                            "useEventTarget": true
+                        },
+                        "value": 0
+                    }
+                }]
+            }, {
+                "actionItems": [{
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 0,
+                        "duration": 0,
+                        "target": {
+                            "id": "N/A",
+                            "appliesTo": "TRIGGER_ELEMENT",
+                            "useEventTarget": true
+                        },
+                        "xValue": 0,
+                        "yValue": 100,
+                        "xUnit": "PX",
+                        "yUnit": "PX",
+                        "zUnit": "PX"
+                    }
+                }]
+            }, {
+                "actionItems": [{
+                    "actionTypeId": "TRANSFORM_MOVE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "outQuart",
+                        "duration": 1000,
+                        "target": {
+                            "id": "N/A",
+                            "appliesTo": "TRIGGER_ELEMENT",
+                            "useEventTarget": true
+                        },
+                        "xValue": 0,
+                        "yValue": 0,
+                        "xUnit": "PX",
+                        "yUnit": "PX",
+                        "zUnit": "PX"
+                    }
+                }, {
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "outQuart",
+                        "duration": 1000,
+                        "target": {
+                            "id": "N/A",
+                            "appliesTo": "TRIGGER_ELEMENT",
+                            "useEventTarget": true
+                        },
+                        "value": 1
+                    }
+                }]
+            }]
+        },
+        "growIn": {
+            "id": "growIn",
+            "useFirstGroupAsInitialState": true,
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "duration": 0,
+                        "target": {
+                            "id": "N/A",
+                            "appliesTo": "TRIGGER_ELEMENT",
+                            "useEventTarget": true
+                        },
+                        "value": 0
+                    }
+                }]
+            }, {
+                "actionItems": [{
+                    "actionTypeId": "TRANSFORM_SCALE",
+                    "config": {
+                        "delay": 0,
+                        "duration": 0,
+                        "target": {
+                            "id": "N/A",
+                            "appliesTo": "TRIGGER_ELEMENT",
+                            "useEventTarget": true
+                        },
+                        "xValue": 0.7500000000000001,
+                        "yValue": 0.7500000000000001
+                    }
+                }]
+            }, {
+                "actionItems": [{
+                    "actionTypeId": "TRANSFORM_SCALE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "outQuart",
+                        "duration": 1000,
+                        "target": {
+                            "id": "N/A",
+                            "appliesTo": "TRIGGER_ELEMENT",
+                            "useEventTarget": true
+                        },
+                        "xValue": 1,
+                        "yValue": 1
+                    }
+                }, {
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "outQuart",
+                        "duration": 1000,
+                        "target": {
+                            "id": "N/A",
+                            "appliesTo": "TRIGGER_ELEMENT",
+                            "useEventTarget": true
+                        },
+                        "value": 1
+                    }
+                }]
+            }]
+        },
+        "flipInBottom": {
+            "id": "flipInBottom",
+            "useFirstGroupAsInitialState": true,
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "duration": 0,
+                        "target": {
+                            "id": "N/A",
+                            "appliesTo": "TRIGGER_ELEMENT",
+                            "useEventTarget": true
+                        },
+                        "value": 0
+                    }
+                }]
+            }, {
+                "actionItems": [{
+                    "actionTypeId": "TRANSFORM_ROTATE",
+                    "config": {
+                        "delay": 0,
+                        "duration": 0,
+                        "target": {
+                            "id": "N/A",
+                            "appliesTo": "TRIGGER_ELEMENT",
+                            "useEventTarget": true
+                        },
+                        "xValue": -90,
+                        "yValue": 0,
+                        "zValue": 0,
+                        "xUnit": "DEG",
+                        "yUnit": "DEG",
+                        "zUnit": "DEG"
+                    }
+                }]
+            }, {
+                "actionItems": [{
+                    "actionTypeId": "TRANSFORM_ROTATE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "outQuart",
+                        "duration": 1000,
+                        "target": {
+                            "id": "N/A",
+                            "appliesTo": "TRIGGER_ELEMENT",
+                            "useEventTarget": true
+                        },
+                        "xValue": 0,
+                        "yValue": 0,
+                        "zValue": 0,
+                        "xUnit": "DEG",
+                        "yUnit": "DEG",
+                        "zUnit": "DEG"
+                    }
+                }, {
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "outQuart",
+                        "duration": 1000,
+                        "target": {
+                            "id": "N/A",
+                            "appliesTo": "TRIGGER_ELEMENT",
+                            "useEventTarget": true
+                        },
+                        "value": 1
+                    }
+                }]
+            }]
+        },
+        "growBigIn": {
+            "id": "growBigIn",
+            "useFirstGroupAsInitialState": true,
+            "actionItemGroups": [{
+                "actionItems": [{
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "duration": 0,
+                        "target": {
+                            "id": "N/A",
+                            "appliesTo": "TRIGGER_ELEMENT",
+                            "useEventTarget": true
+                        },
+                        "value": 0
+                    }
+                }]
+            }, {
+                "actionItems": [{
+                    "actionTypeId": "TRANSFORM_SCALE",
+                    "config": {
+                        "delay": 0,
+                        "duration": 0,
+                        "target": {
+                            "id": "N/A",
+                            "appliesTo": "TRIGGER_ELEMENT",
+                            "useEventTarget": true
+                        },
+                        "xValue": 0,
+                        "yValue": 0
+                    }
+                }]
+            }, {
+                "actionItems": [{
+                    "actionTypeId": "TRANSFORM_SCALE",
+                    "config": {
+                        "delay": 0,
+                        "easing": "outQuart",
+                        "duration": 1000,
+                        "target": {
+                            "id": "N/A",
+                            "appliesTo": "TRIGGER_ELEMENT",
+                            "useEventTarget": true
+                        },
+                        "xValue": 1,
+                        "yValue": 1
+                    }
+                }, {
+                    "actionTypeId": "STYLE_OPACITY",
+                    "config": {
+                        "delay": 0,
+                        "easing": "outQuart",
+                        "duration": 1000,
+                        "target": {
+                            "id": "N/A",
+                            "appliesTo": "TRIGGER_ELEMENT",
+                            "useEventTarget": true
+                        },
+                        "value": 1
+                    }
+                }]
+            }]
         }
     },
     "site": {
