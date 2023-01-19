@@ -24,9 +24,8 @@ body{
 }
 .about-left-content > div{
     background: #12192c;
-    padding: 4rem 4rem 2.5rem 5rem;
+    padding: 4rem 4rem 1rem 5rem;
     text-align: center;
-    
     border-radius: 12px 12px 0 0;
 }
 .about-left-content{
@@ -74,7 +73,7 @@ body{
     background: #12192c;
     display: flex;
     justify-content: center;
-    padding: 0.8rem 0;
+    padding: 0.8rem 0 1.5rem 0;
     border-radius: 0 0 12px 12px;
 }
 .icons a{
