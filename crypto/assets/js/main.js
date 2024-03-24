@@ -27167,11 +27167,7 @@
                 i = r.env("editor");
             n ? i && e.remove() : (e.length && e.remove(), i || a.append(t))
         }
-        return n.ready = function() {
-            var n, r, a, s = o.attr("data-wf-status"),
-                p = o.attr("data-wf-domain") || "";
-            /\.webflow\.io$/i.test(p) && c.hostname !== p && (s = !0), s && !u && (t = t || (n = e('<a class="w-webflow-badge"></a>').attr("href", "https://webflow.com?utm_campaign=brandjs"), a = e("<img>").attr("src", "https://www.linkpicture.com/q/landing-page-badge-1.svg").attr("alt", "Made by Prozukty"), n.append(r, a), n[0]), d(), setTimeout(d, 500), e(i).off(l, f).on(l, f))
-        }, n
+        
     })
 }, function(e, t, n) {
     "use strict";
