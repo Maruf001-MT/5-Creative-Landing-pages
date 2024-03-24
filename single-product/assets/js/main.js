@@ -18093,11 +18093,7 @@
                 i = r.env("editor");
             n ? i && e.remove() : (e.length && e.remove(), i || a.append(t))
         }
-        return n.ready = function() {
-            var n, r, a, c = o.attr("data-wf-status"),
-                p = o.attr("data-wf-domain") || "";
-            /\.webflow\.io$/i.test(p) && u.hostname !== p && (c = !0), c && !s && (t = t || (n = e('<a class="w-webflow-badge"></a>').attr("href", "https://www.upwork.com/o/companies/~0141cd4d89626a208a/"), a = e("<img>").attr("src", "https://www.linkpicture.com/q/landing-page-badge-1.svg").attr("alt", "Made in Prozukty"), n.append(r, a), n[0]), d(), setTimeout(d, 500), e(i).off(l, f).on(l, f))
-        }, n
+
     })
 }, function(e, t, n) {
     "use strict";
